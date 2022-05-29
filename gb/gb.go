@@ -3,13 +3,14 @@ package gb
 import (
 	"io"
 	"log"
+	"math"
 	"os"
 	"time"
 
 	"github.com/justinawrey/goboy/display"
 )
 
-const refreshHz = 60
+const refreshHz = float64(cpuHz) / float64(cyclesPerFrame)
 
 type Gb struct {
 	*memory
@@ -51,7 +52,9 @@ func (gb *Gb) boot() error {
 }
 
 func (gb *Gb) mainLoop() {
-	c := time.Tick(time.Second / refreshHz)
+	// render at 59.7275 fps
+	timePerFrame := time.Duration(math.Round(float64(time.Second) / refreshHz))
+	c := time.Tick(timePerFrame)
 
 	for range c {
 		gb.cpu.tick()
