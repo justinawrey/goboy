@@ -1,3 +1,4 @@
 package display
 
-func Draw() {}
+func Draw() {
+}

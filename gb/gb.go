@@ -31,7 +31,7 @@ func NewGb() *Gb {
 	return gb
 }
 
-func (gb *Gb) LoadCartridge (path string) {
+func (gb *Gb) LoadCartridge(path string) {
 	f, err := os.Open(path)
 	if err != nil {
 		log.Fatal(err)
@@ -45,12 +45,12 @@ func (gb *Gb) LoadCartridge (path string) {
 	}
 }
 
-func (gb *Gb) boot () error {
+func (gb *Gb) boot() error {
 	gb.cpu.pc = 0x0100
 	return nil
 }
 
-func (gb *Gb) mainLoop () {
+func (gb *Gb) mainLoop() {
 	c := time.Tick(time.Second / refreshHz)
 
 	for range c {
@@ -59,11 +59,10 @@ func (gb *Gb) mainLoop () {
 	}
 }
 
-func (gb *Gb) Run () {
+func (gb *Gb) Run() {
 	if err := gb.boot(); err != nil {
 		log.Fatal(err)
 	}
 
 	gb.mainLoop()
 }
-

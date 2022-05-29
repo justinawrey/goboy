@@ -1,14 +1,14 @@
 package gb
 
 const cpuHz = 4194304
-const cyclesPerFrame = cpuHz / refreshHz
+const cyclesPerFrame = 70224
 
 type cpu struct {
 	*memory
 	*ppu
 	a, b, c, d, e, h, l byte
-	sp uint16
-	pc uint16
+	sp                  uint16
+	pc                  uint16
 	flags
 }
 
@@ -74,7 +74,7 @@ func (cpu *cpu) decode() instruction {
 }
 
 // invoked at 60Hz
-func (cpu *cpu) tick () {
+func (cpu *cpu) tick() {
 	elapsedCycles := 0
 
 	for elapsedCycles < cyclesPerFrame {
