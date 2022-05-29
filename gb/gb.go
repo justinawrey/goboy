@@ -6,14 +6,16 @@ import (
 	"math"
 	"os"
 	"time"
-
-	"github.com/justinawrey/goboy/display"
 )
 
 const refreshHz = float64(cpuHz) / float64(cyclesPerFrame)
 
+type Renderer interface {
+	Render()
+}
+
 type Gb struct {
-	display *display.Display
+	renderer Renderer
 	*memory
 	*ppu
 	cpu
@@ -47,8 +49,8 @@ func (gb *Gb) LoadCartridge(path string) {
 	}
 }
 
-func (gb *Gb) ConnectDisplay(d *display.Display) {
-	gb.display = d
+func (gb *Gb) ConnectDisplay(r Renderer) {
+	gb.renderer = r
 }
 
 func (gb *Gb) boot() error {
@@ -63,7 +65,7 @@ func (gb *Gb) mainLoop() {
 
 	for range c {
 		gb.cpu.tick()
-		gb.display.Render()
+		gb.renderer.Render()
 	}
 }
 
