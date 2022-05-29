@@ -13,6 +13,7 @@ import (
 const refreshHz = float64(cpuHz) / float64(cyclesPerFrame)
 
 type Gb struct {
+	display *display.Display
 	*memory
 	*ppu
 	cpu
@@ -46,6 +47,10 @@ func (gb *Gb) LoadCartridge(path string) {
 	}
 }
 
+func (gb *Gb) ConnectDisplay(d *display.Display) {
+	gb.display = d
+}
+
 func (gb *Gb) boot() error {
 	gb.cpu.pc = 0x0100
 	return nil
@@ -58,7 +63,7 @@ func (gb *Gb) mainLoop() {
 
 	for range c {
 		gb.cpu.tick()
-		display.Draw()
+		gb.display.Render()
 	}
 }
 
