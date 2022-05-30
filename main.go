@@ -6,9 +6,13 @@ import (
 )
 
 func main() {
+	display.Run(run)
+}
+
+func run() {
 	gb := gb.NewGb()
 	display := display.New()
-	defer display.Close()
+	defer display.Destroy()
 
 	gb.ConnectDisplay(display)
 	gb.LoadCartridge("./rom/tetris.gb")

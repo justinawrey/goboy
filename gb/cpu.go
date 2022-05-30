@@ -1,7 +1,9 @@
 package gb
 
-const cpuHz = 4194304
-const cyclesPerFrame = 70224
+const (
+	cpuHz          = 4194304
+	cyclesPerFrame = 70224
+)
 
 type cpu struct {
 	*memory
