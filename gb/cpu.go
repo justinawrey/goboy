@@ -81,23 +81,22 @@ func (cpu *cpu) tick() {
 		instruction := cpu.decode()
 
 		currPc := cpu.pc
-		actionTaken := instruction.execute(cpu)
+		instruction.execute(cpu)
+
+		jumped := currPc != cpu.pc
+		if !jumped {
+			cpu.pc += instruction.size
+		}
 
 		var cycles int
-		if actionTaken {
-			cycles = instruction.actionCycles
+		if jumped {
+			cycles = instruction.jumpCycles
 		} else {
-			cycles = instruction.noActionCycles
+			cycles = instruction.noJumpCycles
 		}
 
 		elapsedCycles += cycles
 		cpu.ppu.scanCycles += cycles
-
-		// only increment pc if the instruction didn't
-		// already change it itself (i.e. the instruction was a jump)
-		if currPc == cpu.pc {
-			cpu.pc += instruction.size
-		}
 
 		if cpu.ppu.scanCycles >= 456 {
 			cpu.ppu.tick()
