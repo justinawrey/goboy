@@ -49,27 +49,25 @@ func (cpu *cpu) decode() instruction {
 	case 0x00:
 		return nop
 	case 0xC3:
-		return jpnn
+		return jp_a16
 	case 0xAF:
-		return xora
+		return xor_a
 	case 0xA8:
-		return xorb
+		return xor_b
 	case 0xA9:
-		return xorc
+		return xor_c
 	case 0xAA:
-		return xord
+		return xor_d
 	case 0xAB:
-		return xore
+		return xor_e
 	case 0xAC:
-		return xorh
+		return xor_h
 	case 0xAD:
-		return xorl
+		return xor_l
 	case 0xAE:
-		return xorhl
+		return xor__hl_
 	case 0xEE:
-		return xorn
-	case 0x0A:
-		return ldabc
+		return xor_d8
 	default:
 		return nop
 	}
@@ -82,14 +80,24 @@ func (cpu *cpu) tick() {
 	for elapsedCycles < cyclesPerFrame {
 		instruction := cpu.decode()
 
-		instruction.execute(cpu)
+		currPc := cpu.pc
+		actionTaken := instruction.execute(cpu)
 
-		if !instruction.hasJump {
-			cpu.pc += instruction.size
+		var cycles int
+		if actionTaken {
+			cycles = instruction.actionCycles
+		} else {
+			cycles = instruction.noActionCycles
 		}
 
-		elapsedCycles += instruction.cycles
-		cpu.ppu.scanCycles += instruction.cycles
+		elapsedCycles += cycles
+		cpu.ppu.scanCycles += cycles
+
+		// only increment pc if the instruction didn't
+		// already change it itself (i.e. the instruction was a jump)
+		if currPc == cpu.pc {
+			cpu.pc += instruction.size
+		}
 
 		if cpu.ppu.scanCycles >= 456 {
 			cpu.ppu.tick()
