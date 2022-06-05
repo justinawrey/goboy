@@ -1,7 +1,6 @@
 package display
 
 import (
-	"image/color"
 	"log"
 	"os"
 
@@ -17,11 +16,12 @@ const (
 )
 
 var (
-	lighter = color.RGBA{155, 188, 15, 1}
-	light   = color.RGBA{139, 172, 15, 1}
-	dark    = color.RGBA{48, 98, 48, 1}
-	darker  = color.RGBA{15, 56, 15, 1}
-	colors  = map[int]color.RGBA{
+	white   = pixel.RGB(1, 1, 1)
+	lighter = pixel.RGB(0.608, 0.737, 0.059)
+	light   = pixel.RGB(0.545, 0.675, 0.059)
+	dark    = pixel.RGB(0.188, 0.384, 0.188)
+	darker  = pixel.RGB(0.059, 0.220, 0.059)
+	colors  = map[int]pixel.RGBA{
 		0: lighter,
 		1: light,
 		2: dark,
@@ -69,7 +69,7 @@ func (d *Display) Render(pixels []int) {
 		}
 	}
 
-	d.Window.Clear(color.White)
+	d.Window.Clear(white)
 	d.IMDraw.Draw(d.Window)
 	d.Window.Update()
 }
