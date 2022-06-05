@@ -37,9 +37,7 @@ var ld__bc___a = instruction{
 	n:            "-",
 	h:            "-",
 	c:            "-",
-	execute: func(cpu *cpu) {
-
-	},
+	execute:      func(cpu *cpu) {},
 }
 
 var inc_bc = instruction{
@@ -52,9 +50,7 @@ var inc_bc = instruction{
 	n:            "-",
 	h:            "-",
 	c:            "-",
-	execute: func(cpu *cpu) {
-
-	},
+	execute:      func(cpu *cpu) {},
 }
 
 var ld_bc__d16 = instruction{
@@ -67,9 +63,7 @@ var ld_bc__d16 = instruction{
 	n:            "-",
 	h:            "-",
 	c:            "-",
-	execute: func(cpu *cpu) {
-
-	},
+	execute:      func(cpu *cpu) {},
 }
 
 var inc_b = instruction{
@@ -82,9 +76,7 @@ var inc_b = instruction{
 	n:            "0",
 	h:            "H",
 	c:            "-",
-	execute: func(cpu *cpu) {
-
-	},
+	execute:      func(cpu *cpu) {},
 }
 
 var ld_b__d8 = instruction{
@@ -97,9 +89,7 @@ var ld_b__d8 = instruction{
 	n:            "-",
 	h:            "-",
 	c:            "-",
-	execute: func(cpu *cpu) {
-
-	},
+	execute:      func(cpu *cpu) {},
 }
 
 var dec_b = instruction{
@@ -112,9 +102,7 @@ var dec_b = instruction{
 	n:            "1",
 	h:            "H",
 	c:            "-",
-	execute: func(cpu *cpu) {
-
-	},
+	execute:      func(cpu *cpu) {},
 }
 
 var rlca = instruction{
@@ -127,9 +115,7 @@ var rlca = instruction{
 	n:            "0",
 	h:            "0",
 	c:            "A7",
-	execute: func(cpu *cpu) {
-
-	},
+	execute:      func(cpu *cpu) {},
 }
 
 var ld__a16___sp = instruction{
@@ -142,9 +128,7 @@ var ld__a16___sp = instruction{
 	n:            "-",
 	h:            "-",
 	c:            "-",
-	execute: func(cpu *cpu) {
-
-	},
+	execute:      func(cpu *cpu) {},
 }
 
 var ld_a___bc_ = instruction{
@@ -157,9 +141,7 @@ var ld_a___bc_ = instruction{
 	n:            "-",
 	h:            "-",
 	c:            "-",
-	execute: func(cpu *cpu) {
-
-	},
+	execute:      func(cpu *cpu) {},
 }
 
 var add_hl__bc = instruction{
@@ -172,9 +154,7 @@ var add_hl__bc = instruction{
 	n:            "0",
 	h:            "H",
 	c:            "CY",
-	execute: func(cpu *cpu) {
-
-	},
+	execute:      func(cpu *cpu) {},
 }
 
 var inc_c = instruction{
@@ -187,9 +167,7 @@ var inc_c = instruction{
 	n:            "0",
 	h:            "H",
 	c:            "-",
-	execute: func(cpu *cpu) {
-
-	},
+	execute:      func(cpu *cpu) {},
 }
 
 var dec_bc = instruction{
@@ -202,9 +180,7 @@ var dec_bc = instruction{
 	n:            "-",
 	h:            "-",
 	c:            "-",
-	execute: func(cpu *cpu) {
-
-	},
+	execute:      func(cpu *cpu) {},
 }
 
 var dec_c = instruction{
@@ -217,9 +193,7 @@ var dec_c = instruction{
 	n:            "1",
 	h:            "H",
 	c:            "-",
-	execute: func(cpu *cpu) {
-
-	},
+	execute:      func(cpu *cpu) {},
 }
 
 var stop = instruction{
@@ -232,9 +206,7 @@ var stop = instruction{
 	n:            "-",
 	h:            "-",
 	c:            "-",
-	execute: func(cpu *cpu) {
-
-	},
+	execute:      func(cpu *cpu) {},
 }
 
 var ld_c__d8 = instruction{
@@ -247,9 +219,7 @@ var ld_c__d8 = instruction{
 	n:            "-",
 	h:            "-",
 	c:            "-",
-	execute: func(cpu *cpu) {
-
-	},
+	execute:      func(cpu *cpu) {},
 }
 
 var ld__de___a = instruction{
@@ -262,9 +232,7 @@ var ld__de___a = instruction{
 	n:            "-",
 	h:            "-",
 	c:            "-",
-	execute: func(cpu *cpu) {
-
-	},
+	execute:      func(cpu *cpu) {},
 }
 
 var rrca = instruction{
@@ -277,9 +245,7 @@ var rrca = instruction{
 	n:            "0",
 	h:            "0",
 	c:            "A0",
-	execute: func(cpu *cpu) {
-
-	},
+	execute:      func(cpu *cpu) {},
 }
 
 var ld_de__d16 = instruction{
@@ -292,9 +258,7 @@ var ld_de__d16 = instruction{
 	n:            "-",
 	h:            "-",
 	c:            "-",
-	execute: func(cpu *cpu) {
-
-	},
+	execute:      func(cpu *cpu) {},
 }
 
 var inc_d = instruction{
@@ -307,9 +271,7 @@ var inc_d = instruction{
 	n:            "0",
 	h:            "H",
 	c:            "-",
-	execute: func(cpu *cpu) {
-
-	},
+	execute:      func(cpu *cpu) {},
 }
 
 var inc_de = instruction{
@@ -322,9 +284,7 @@ var inc_de = instruction{
 	n:            "-",
 	h:            "-",
 	c:            "-",
-	execute: func(cpu *cpu) {
-
-	},
+	execute:      func(cpu *cpu) {},
 }
 
 var rla = instruction{
@@ -337,9 +297,7 @@ var rla = instruction{
 	n:            "0",
 	h:            "0",
 	c:            "A7",
-	execute: func(cpu *cpu) {
-
-	},
+	execute:      func(cpu *cpu) {},
 }
 
 var dec_d = instruction{
@@ -352,9 +310,7 @@ var dec_d = instruction{
 	n:            "1",
 	h:            "H",
 	c:            "-",
-	execute: func(cpu *cpu) {
-
-	},
+	execute:      func(cpu *cpu) {},
 }
 
 var add_hl__de = instruction{
@@ -367,9 +323,7 @@ var add_hl__de = instruction{
 	n:            "0",
 	h:            "H",
 	c:            "CY",
-	execute: func(cpu *cpu) {
-
-	},
+	execute:      func(cpu *cpu) {},
 }
 
 var ld_d__d8 = instruction{
@@ -382,9 +336,7 @@ var ld_d__d8 = instruction{
 	n:            "-",
 	h:            "-",
 	c:            "-",
-	execute: func(cpu *cpu) {
-
-	},
+	execute:      func(cpu *cpu) {},
 }
 
 var jr_s8 = instruction{
@@ -397,9 +349,7 @@ var jr_s8 = instruction{
 	n:            "-",
 	h:            "-",
 	c:            "-",
-	execute: func(cpu *cpu) {
-
-	},
+	execute:      func(cpu *cpu) {},
 }
 
 var dec_de = instruction{
@@ -412,9 +362,7 @@ var dec_de = instruction{
 	n:            "-",
 	h:            "-",
 	c:            "-",
-	execute: func(cpu *cpu) {
-
-	},
+	execute:      func(cpu *cpu) {},
 }
 
 var ld_a___de_ = instruction{
@@ -427,9 +375,7 @@ var ld_a___de_ = instruction{
 	n:            "-",
 	h:            "-",
 	c:            "-",
-	execute: func(cpu *cpu) {
-
-	},
+	execute:      func(cpu *cpu) {},
 }
 
 var ld_e__d8 = instruction{
@@ -442,9 +388,7 @@ var ld_e__d8 = instruction{
 	n:            "-",
 	h:            "-",
 	c:            "-",
-	execute: func(cpu *cpu) {
-
-	},
+	execute:      func(cpu *cpu) {},
 }
 
 var dec_e = instruction{
@@ -457,9 +401,7 @@ var dec_e = instruction{
 	n:            "1",
 	h:            "H",
 	c:            "-",
-	execute: func(cpu *cpu) {
-
-	},
+	execute:      func(cpu *cpu) {},
 }
 
 var jr_nz__s8 = instruction{
@@ -472,9 +414,7 @@ var jr_nz__s8 = instruction{
 	n:            "-",
 	h:            "-",
 	c:            "-",
-	execute: func(cpu *cpu) {
-
-	},
+	execute:      func(cpu *cpu) {},
 }
 
 var inc_e = instruction{
@@ -487,9 +427,7 @@ var inc_e = instruction{
 	n:            "0",
 	h:            "H",
 	c:            "-",
-	execute: func(cpu *cpu) {
-
-	},
+	execute:      func(cpu *cpu) {},
 }
 
 var rra = instruction{
@@ -502,9 +440,7 @@ var rra = instruction{
 	n:            "0",
 	h:            "0",
 	c:            "A0",
-	execute: func(cpu *cpu) {
-
-	},
+	execute:      func(cpu *cpu) {},
 }
 
 var ld__hlp___a = instruction{
@@ -517,9 +453,7 @@ var ld__hlp___a = instruction{
 	n:            "-",
 	h:            "-",
 	c:            "-",
-	execute: func(cpu *cpu) {
-
-	},
+	execute:      func(cpu *cpu) {},
 }
 
 var inc_hl = instruction{
@@ -532,9 +466,7 @@ var inc_hl = instruction{
 	n:            "-",
 	h:            "-",
 	c:            "-",
-	execute: func(cpu *cpu) {
-
-	},
+	execute:      func(cpu *cpu) {},
 }
 
 var dec_h = instruction{
@@ -547,9 +479,7 @@ var dec_h = instruction{
 	n:            "1",
 	h:            "H",
 	c:            "-",
-	execute: func(cpu *cpu) {
-
-	},
+	execute:      func(cpu *cpu) {},
 }
 
 var ld_hl__d16 = instruction{
@@ -562,9 +492,7 @@ var ld_hl__d16 = instruction{
 	n:            "-",
 	h:            "-",
 	c:            "-",
-	execute: func(cpu *cpu) {
-
-	},
+	execute:      func(cpu *cpu) {},
 }
 
 var inc_h = instruction{
@@ -577,9 +505,7 @@ var inc_h = instruction{
 	n:            "0",
 	h:            "H",
 	c:            "-",
-	execute: func(cpu *cpu) {
-
-	},
+	execute:      func(cpu *cpu) {},
 }
 
 var daa = instruction{
@@ -592,9 +518,7 @@ var daa = instruction{
 	n:            "-",
 	h:            "0",
 	c:            "CY",
-	execute: func(cpu *cpu) {
-
-	},
+	execute:      func(cpu *cpu) {},
 }
 
 var jr_z__s8 = instruction{
@@ -607,9 +531,7 @@ var jr_z__s8 = instruction{
 	n:            "-",
 	h:            "-",
 	c:            "-",
-	execute: func(cpu *cpu) {
-
-	},
+	execute:      func(cpu *cpu) {},
 }
 
 var ld_h__d8 = instruction{
@@ -622,9 +544,7 @@ var ld_h__d8 = instruction{
 	n:            "-",
 	h:            "-",
 	c:            "-",
-	execute: func(cpu *cpu) {
-
-	},
+	execute:      func(cpu *cpu) {},
 }
 
 var add_hl__hl = instruction{
@@ -637,9 +557,7 @@ var add_hl__hl = instruction{
 	n:            "0",
 	h:            "H",
 	c:            "CY",
-	execute: func(cpu *cpu) {
-
-	},
+	execute:      func(cpu *cpu) {},
 }
 
 var dec_l = instruction{
@@ -652,9 +570,7 @@ var dec_l = instruction{
 	n:            "1",
 	h:            "H",
 	c:            "-",
-	execute: func(cpu *cpu) {
-
-	},
+	execute:      func(cpu *cpu) {},
 }
 
 var inc_l = instruction{
@@ -667,9 +583,7 @@ var inc_l = instruction{
 	n:            "0",
 	h:            "H",
 	c:            "-",
-	execute: func(cpu *cpu) {
-
-	},
+	execute:      func(cpu *cpu) {},
 }
 
 var ld_l__d8 = instruction{
@@ -682,9 +596,7 @@ var ld_l__d8 = instruction{
 	n:            "-",
 	h:            "-",
 	c:            "-",
-	execute: func(cpu *cpu) {
-
-	},
+	execute:      func(cpu *cpu) {},
 }
 
 var jr_nc__s8 = instruction{
@@ -697,9 +609,7 @@ var jr_nc__s8 = instruction{
 	n:            "-",
 	h:            "-",
 	c:            "-",
-	execute: func(cpu *cpu) {
-
-	},
+	execute:      func(cpu *cpu) {},
 }
 
 var cpl = instruction{
@@ -712,9 +622,7 @@ var cpl = instruction{
 	n:            "1",
 	h:            "1",
 	c:            "-",
-	execute: func(cpu *cpu) {
-
-	},
+	execute:      func(cpu *cpu) {},
 }
 
 var ld__hlm____a = instruction{
@@ -727,9 +635,7 @@ var ld__hlm____a = instruction{
 	n:            "-",
 	h:            "-",
 	c:            "-",
-	execute: func(cpu *cpu) {
-
-	},
+	execute:      func(cpu *cpu) {},
 }
 
 var inc_sp = instruction{
@@ -742,9 +648,7 @@ var inc_sp = instruction{
 	n:            "-",
 	h:            "-",
 	c:            "-",
-	execute: func(cpu *cpu) {
-
-	},
+	execute:      func(cpu *cpu) {},
 }
 
 var ld_sp__d16 = instruction{
@@ -757,9 +661,7 @@ var ld_sp__d16 = instruction{
 	n:            "-",
 	h:            "-",
 	c:            "-",
-	execute: func(cpu *cpu) {
-
-	},
+	execute:      func(cpu *cpu) {},
 }
 
 var dec_hl = instruction{
@@ -772,9 +674,7 @@ var dec_hl = instruction{
 	n:            "-",
 	h:            "-",
 	c:            "-",
-	execute: func(cpu *cpu) {
-
-	},
+	execute:      func(cpu *cpu) {},
 }
 
 var ld__hl___d8 = instruction{
@@ -787,9 +687,7 @@ var ld__hl___d8 = instruction{
 	n:            "-",
 	h:            "-",
 	c:            "-",
-	execute: func(cpu *cpu) {
-
-	},
+	execute:      func(cpu *cpu) {},
 }
 
 var dec__hl_ = instruction{
@@ -802,9 +700,7 @@ var dec__hl_ = instruction{
 	n:            "1",
 	h:            "H",
 	c:            "-",
-	execute: func(cpu *cpu) {
-
-	},
+	execute:      func(cpu *cpu) {},
 }
 
 var ld_a___hlp_ = instruction{
@@ -817,9 +713,7 @@ var ld_a___hlp_ = instruction{
 	n:            "-",
 	h:            "-",
 	c:            "-",
-	execute: func(cpu *cpu) {
-
-	},
+	execute:      func(cpu *cpu) {},
 }
 
 var inc__hl_ = instruction{
@@ -832,9 +726,7 @@ var inc__hl_ = instruction{
 	n:            "0",
 	h:            "H",
 	c:            "-",
-	execute: func(cpu *cpu) {
-
-	},
+	execute:      func(cpu *cpu) {},
 }
 
 var dec_sp = instruction{
@@ -847,9 +739,7 @@ var dec_sp = instruction{
 	n:            "-",
 	h:            "-",
 	c:            "-",
-	execute: func(cpu *cpu) {
-
-	},
+	execute:      func(cpu *cpu) {},
 }
 
 var inc_a = instruction{
@@ -862,9 +752,7 @@ var inc_a = instruction{
 	n:            "0",
 	h:            "H",
 	c:            "-",
-	execute: func(cpu *cpu) {
-
-	},
+	execute:      func(cpu *cpu) {},
 }
 
 var ld_a___hlm_ = instruction{
@@ -877,9 +765,7 @@ var ld_a___hlm_ = instruction{
 	n:            "-",
 	h:            "-",
 	c:            "-",
-	execute: func(cpu *cpu) {
-
-	},
+	execute:      func(cpu *cpu) {},
 }
 
 var ld_a__d8 = instruction{
@@ -892,9 +778,7 @@ var ld_a__d8 = instruction{
 	n:            "-",
 	h:            "-",
 	c:            "-",
-	execute: func(cpu *cpu) {
-
-	},
+	execute:      func(cpu *cpu) {},
 }
 
 var ccf = instruction{
@@ -907,9 +791,7 @@ var ccf = instruction{
 	n:            "0",
 	h:            "0",
 	c:            "!CY",
-	execute: func(cpu *cpu) {
-
-	},
+	execute:      func(cpu *cpu) {},
 }
 
 var dec_a = instruction{
@@ -922,9 +804,7 @@ var dec_a = instruction{
 	n:            "1",
 	h:            "H",
 	c:            "-",
-	execute: func(cpu *cpu) {
-
-	},
+	execute:      func(cpu *cpu) {},
 }
 
 var ld_b__c = instruction{
@@ -937,9 +817,7 @@ var ld_b__c = instruction{
 	n:            "-",
 	h:            "-",
 	c:            "-",
-	execute: func(cpu *cpu) {
-
-	},
+	execute:      func(cpu *cpu) {},
 }
 
 var ld_b__d = instruction{
@@ -952,9 +830,7 @@ var ld_b__d = instruction{
 	n:            "-",
 	h:            "-",
 	c:            "-",
-	execute: func(cpu *cpu) {
-
-	},
+	execute:      func(cpu *cpu) {},
 }
 
 var scf = instruction{
@@ -967,9 +843,7 @@ var scf = instruction{
 	n:            "0",
 	h:            "0",
 	c:            "1",
-	execute: func(cpu *cpu) {
-
-	},
+	execute:      func(cpu *cpu) {},
 }
 
 var ld_b__h = instruction{
@@ -982,9 +856,7 @@ var ld_b__h = instruction{
 	n:            "-",
 	h:            "-",
 	c:            "-",
-	execute: func(cpu *cpu) {
-
-	},
+	execute:      func(cpu *cpu) {},
 }
 
 var ld_b__l = instruction{
@@ -997,9 +869,7 @@ var ld_b__l = instruction{
 	n:            "-",
 	h:            "-",
 	c:            "-",
-	execute: func(cpu *cpu) {
-
-	},
+	execute:      func(cpu *cpu) {},
 }
 
 var ld_b__b = instruction{
@@ -1012,9 +882,7 @@ var ld_b__b = instruction{
 	n:            "-",
 	h:            "-",
 	c:            "-",
-	execute: func(cpu *cpu) {
-
-	},
+	execute:      func(cpu *cpu) {},
 }
 
 var ld_b__a = instruction{
@@ -1027,9 +895,7 @@ var ld_b__a = instruction{
 	n:            "-",
 	h:            "-",
 	c:            "-",
-	execute: func(cpu *cpu) {
-
-	},
+	execute:      func(cpu *cpu) {},
 }
 
 var add_hl__sp = instruction{
@@ -1042,9 +908,7 @@ var add_hl__sp = instruction{
 	n:            "0",
 	h:            "H",
 	c:            "CY",
-	execute: func(cpu *cpu) {
-
-	},
+	execute:      func(cpu *cpu) {},
 }
 
 var ld_b___hl_ = instruction{
@@ -1057,9 +921,7 @@ var ld_b___hl_ = instruction{
 	n:            "-",
 	h:            "-",
 	c:            "-",
-	execute: func(cpu *cpu) {
-
-	},
+	execute:      func(cpu *cpu) {},
 }
 
 var jr_c__s8 = instruction{
@@ -1072,9 +934,7 @@ var jr_c__s8 = instruction{
 	n:            "-",
 	h:            "-",
 	c:            "-",
-	execute: func(cpu *cpu) {
-
-	},
+	execute:      func(cpu *cpu) {},
 }
 
 var ld_c__c = instruction{
@@ -1087,9 +947,7 @@ var ld_c__c = instruction{
 	n:            "-",
 	h:            "-",
 	c:            "-",
-	execute: func(cpu *cpu) {
-
-	},
+	execute:      func(cpu *cpu) {},
 }
 
 var ld_c__l = instruction{
@@ -1102,9 +960,7 @@ var ld_c__l = instruction{
 	n:            "-",
 	h:            "-",
 	c:            "-",
-	execute: func(cpu *cpu) {
-
-	},
+	execute:      func(cpu *cpu) {},
 }
 
 var ld_c__e = instruction{
@@ -1117,9 +973,7 @@ var ld_c__e = instruction{
 	n:            "-",
 	h:            "-",
 	c:            "-",
-	execute: func(cpu *cpu) {
-
-	},
+	execute:      func(cpu *cpu) {},
 }
 
 var ld_c__b = instruction{
@@ -1132,9 +986,7 @@ var ld_c__b = instruction{
 	n:            "-",
 	h:            "-",
 	c:            "-",
-	execute: func(cpu *cpu) {
-
-	},
+	execute:      func(cpu *cpu) {},
 }
 
 var ld_c__a = instruction{
@@ -1147,9 +999,7 @@ var ld_c__a = instruction{
 	n:            "-",
 	h:            "-",
 	c:            "-",
-	execute: func(cpu *cpu) {
-
-	},
+	execute:      func(cpu *cpu) {},
 }
 
 var ld_c___hl_ = instruction{
@@ -1162,9 +1012,7 @@ var ld_c___hl_ = instruction{
 	n:            "-",
 	h:            "-",
 	c:            "-",
-	execute: func(cpu *cpu) {
-
-	},
+	execute:      func(cpu *cpu) {},
 }
 
 var ld_d__d = instruction{
@@ -1177,9 +1025,7 @@ var ld_d__d = instruction{
 	n:            "-",
 	h:            "-",
 	c:            "-",
-	execute: func(cpu *cpu) {
-
-	},
+	execute:      func(cpu *cpu) {},
 }
 
 var ld_d__c = instruction{
@@ -1192,9 +1038,7 @@ var ld_d__c = instruction{
 	n:            "-",
 	h:            "-",
 	c:            "-",
-	execute: func(cpu *cpu) {
-
-	},
+	execute:      func(cpu *cpu) {},
 }
 
 var ld_d__e = instruction{
@@ -1207,9 +1051,7 @@ var ld_d__e = instruction{
 	n:            "-",
 	h:            "-",
 	c:            "-",
-	execute: func(cpu *cpu) {
-
-	},
+	execute:      func(cpu *cpu) {},
 }
 
 var ld_c__h = instruction{
@@ -1222,9 +1064,7 @@ var ld_c__h = instruction{
 	n:            "-",
 	h:            "-",
 	c:            "-",
-	execute: func(cpu *cpu) {
-
-	},
+	execute:      func(cpu *cpu) {},
 }
 
 var ld_d__h = instruction{
@@ -1237,9 +1077,7 @@ var ld_d__h = instruction{
 	n:            "-",
 	h:            "-",
 	c:            "-",
-	execute: func(cpu *cpu) {
-
-	},
+	execute:      func(cpu *cpu) {},
 }
 
 var ld_d__l = instruction{
@@ -1252,9 +1090,7 @@ var ld_d__l = instruction{
 	n:            "-",
 	h:            "-",
 	c:            "-",
-	execute: func(cpu *cpu) {
-
-	},
+	execute:      func(cpu *cpu) {},
 }
 
 var ld_d__a = instruction{
@@ -1267,9 +1103,7 @@ var ld_d__a = instruction{
 	n:            "-",
 	h:            "-",
 	c:            "-",
-	execute: func(cpu *cpu) {
-
-	},
+	execute:      func(cpu *cpu) {},
 }
 
 var ld_e__b = instruction{
@@ -1282,9 +1116,7 @@ var ld_e__b = instruction{
 	n:            "-",
 	h:            "-",
 	c:            "-",
-	execute: func(cpu *cpu) {
-
-	},
+	execute:      func(cpu *cpu) {},
 }
 
 var ld_d___hl_ = instruction{
@@ -1297,9 +1129,7 @@ var ld_d___hl_ = instruction{
 	n:            "-",
 	h:            "-",
 	c:            "-",
-	execute: func(cpu *cpu) {
-
-	},
+	execute:      func(cpu *cpu) {},
 }
 
 var ld_e__d = instruction{
@@ -1312,9 +1142,7 @@ var ld_e__d = instruction{
 	n:            "-",
 	h:            "-",
 	c:            "-",
-	execute: func(cpu *cpu) {
-
-	},
+	execute:      func(cpu *cpu) {},
 }
 
 var ld_e__e = instruction{
@@ -1327,9 +1155,7 @@ var ld_e__e = instruction{
 	n:            "-",
 	h:            "-",
 	c:            "-",
-	execute: func(cpu *cpu) {
-
-	},
+	execute:      func(cpu *cpu) {},
 }
 
 var ld_c__d = instruction{
@@ -1342,9 +1168,7 @@ var ld_c__d = instruction{
 	n:            "-",
 	h:            "-",
 	c:            "-",
-	execute: func(cpu *cpu) {
-
-	},
+	execute:      func(cpu *cpu) {},
 }
 
 var ld_e__l = instruction{
@@ -1357,9 +1181,7 @@ var ld_e__l = instruction{
 	n:            "-",
 	h:            "-",
 	c:            "-",
-	execute: func(cpu *cpu) {
-
-	},
+	execute:      func(cpu *cpu) {},
 }
 
 var ld_b__e = instruction{
@@ -1372,9 +1194,7 @@ var ld_b__e = instruction{
 	n:            "-",
 	h:            "-",
 	c:            "-",
-	execute: func(cpu *cpu) {
-
-	},
+	execute:      func(cpu *cpu) {},
 }
 
 var ld_h__b = instruction{
@@ -1387,9 +1207,7 @@ var ld_h__b = instruction{
 	n:            "-",
 	h:            "-",
 	c:            "-",
-	execute: func(cpu *cpu) {
-
-	},
+	execute:      func(cpu *cpu) {},
 }
 
 var ld_e___hl_ = instruction{
@@ -1402,9 +1220,7 @@ var ld_e___hl_ = instruction{
 	n:            "-",
 	h:            "-",
 	c:            "-",
-	execute: func(cpu *cpu) {
-
-	},
+	execute:      func(cpu *cpu) {},
 }
 
 var ld_h__d = instruction{
@@ -1417,9 +1233,7 @@ var ld_h__d = instruction{
 	n:            "-",
 	h:            "-",
 	c:            "-",
-	execute: func(cpu *cpu) {
-
-	},
+	execute:      func(cpu *cpu) {},
 }
 
 var ld_e__a = instruction{
@@ -1432,9 +1246,7 @@ var ld_e__a = instruction{
 	n:            "-",
 	h:            "-",
 	c:            "-",
-	execute: func(cpu *cpu) {
-
-	},
+	execute:      func(cpu *cpu) {},
 }
 
 var ld_h__c = instruction{
@@ -1447,9 +1259,7 @@ var ld_h__c = instruction{
 	n:            "-",
 	h:            "-",
 	c:            "-",
-	execute: func(cpu *cpu) {
-
-	},
+	execute:      func(cpu *cpu) {},
 }
 
 var ld_h__h = instruction{
@@ -1462,9 +1272,7 @@ var ld_h__h = instruction{
 	n:            "-",
 	h:            "-",
 	c:            "-",
-	execute: func(cpu *cpu) {
-
-	},
+	execute:      func(cpu *cpu) {},
 }
 
 var ld_h__e = instruction{
@@ -1477,9 +1285,7 @@ var ld_h__e = instruction{
 	n:            "-",
 	h:            "-",
 	c:            "-",
-	execute: func(cpu *cpu) {
-
-	},
+	execute:      func(cpu *cpu) {},
 }
 
 var ld_h__a = instruction{
@@ -1492,9 +1298,7 @@ var ld_h__a = instruction{
 	n:            "-",
 	h:            "-",
 	c:            "-",
-	execute: func(cpu *cpu) {
-
-	},
+	execute:      func(cpu *cpu) {},
 }
 
 var ld_h__l = instruction{
@@ -1507,9 +1311,7 @@ var ld_h__l = instruction{
 	n:            "-",
 	h:            "-",
 	c:            "-",
-	execute: func(cpu *cpu) {
-
-	},
+	execute:      func(cpu *cpu) {},
 }
 
 var ld_h___hl_ = instruction{
@@ -1522,9 +1324,7 @@ var ld_h___hl_ = instruction{
 	n:            "-",
 	h:            "-",
 	c:            "-",
-	execute: func(cpu *cpu) {
-
-	},
+	execute:      func(cpu *cpu) {},
 }
 
 var ld_l__c = instruction{
@@ -1537,9 +1337,7 @@ var ld_l__c = instruction{
 	n:            "-",
 	h:            "-",
 	c:            "-",
-	execute: func(cpu *cpu) {
-
-	},
+	execute:      func(cpu *cpu) {},
 }
 
 var ld_l__d = instruction{
@@ -1552,9 +1350,7 @@ var ld_l__d = instruction{
 	n:            "-",
 	h:            "-",
 	c:            "-",
-	execute: func(cpu *cpu) {
-
-	},
+	execute:      func(cpu *cpu) {},
 }
 
 var ld_l__b = instruction{
@@ -1567,9 +1363,7 @@ var ld_l__b = instruction{
 	n:            "-",
 	h:            "-",
 	c:            "-",
-	execute: func(cpu *cpu) {
-
-	},
+	execute:      func(cpu *cpu) {},
 }
 
 var ld_l__h = instruction{
@@ -1582,9 +1376,7 @@ var ld_l__h = instruction{
 	n:            "-",
 	h:            "-",
 	c:            "-",
-	execute: func(cpu *cpu) {
-
-	},
+	execute:      func(cpu *cpu) {},
 }
 
 var ld_l__l = instruction{
@@ -1597,9 +1389,7 @@ var ld_l__l = instruction{
 	n:            "-",
 	h:            "-",
 	c:            "-",
-	execute: func(cpu *cpu) {
-
-	},
+	execute:      func(cpu *cpu) {},
 }
 
 var ld_e__c = instruction{
@@ -1612,9 +1402,7 @@ var ld_e__c = instruction{
 	n:            "-",
 	h:            "-",
 	c:            "-",
-	execute: func(cpu *cpu) {
-
-	},
+	execute:      func(cpu *cpu) {},
 }
 
 var ld_l__a = instruction{
@@ -1627,9 +1415,7 @@ var ld_l__a = instruction{
 	n:            "-",
 	h:            "-",
 	c:            "-",
-	execute: func(cpu *cpu) {
-
-	},
+	execute:      func(cpu *cpu) {},
 }
 
 var ld_l___hl_ = instruction{
@@ -1642,9 +1428,7 @@ var ld_l___hl_ = instruction{
 	n:            "-",
 	h:            "-",
 	c:            "-",
-	execute: func(cpu *cpu) {
-
-	},
+	execute:      func(cpu *cpu) {},
 }
 
 var ld__hl___b = instruction{
@@ -1657,9 +1441,7 @@ var ld__hl___b = instruction{
 	n:            "-",
 	h:            "-",
 	c:            "-",
-	execute: func(cpu *cpu) {
-
-	},
+	execute:      func(cpu *cpu) {},
 }
 
 var ld_d__b = instruction{
@@ -1672,9 +1454,7 @@ var ld_d__b = instruction{
 	n:            "-",
 	h:            "-",
 	c:            "-",
-	execute: func(cpu *cpu) {
-
-	},
+	execute:      func(cpu *cpu) {},
 }
 
 var ld__hl___c = instruction{
@@ -1687,9 +1467,7 @@ var ld__hl___c = instruction{
 	n:            "-",
 	h:            "-",
 	c:            "-",
-	execute: func(cpu *cpu) {
-
-	},
+	execute:      func(cpu *cpu) {},
 }
 
 var ld__hl___h = instruction{
@@ -1702,9 +1480,7 @@ var ld__hl___h = instruction{
 	n:            "-",
 	h:            "-",
 	c:            "-",
-	execute: func(cpu *cpu) {
-
-	},
+	execute:      func(cpu *cpu) {},
 }
 
 var ld__hl___l = instruction{
@@ -1717,9 +1493,7 @@ var ld__hl___l = instruction{
 	n:            "-",
 	h:            "-",
 	c:            "-",
-	execute: func(cpu *cpu) {
-
-	},
+	execute:      func(cpu *cpu) {},
 }
 
 var ld__hl___e = instruction{
@@ -1732,9 +1506,7 @@ var ld__hl___e = instruction{
 	n:            "-",
 	h:            "-",
 	c:            "-",
-	execute: func(cpu *cpu) {
-
-	},
+	execute:      func(cpu *cpu) {},
 }
 
 var ld_l__e = instruction{
@@ -1747,9 +1519,7 @@ var ld_l__e = instruction{
 	n:            "-",
 	h:            "-",
 	c:            "-",
-	execute: func(cpu *cpu) {
-
-	},
+	execute:      func(cpu *cpu) {},
 }
 
 var ld_a__b = instruction{
@@ -1762,9 +1532,7 @@ var ld_a__b = instruction{
 	n:            "-",
 	h:            "-",
 	c:            "-",
-	execute: func(cpu *cpu) {
-
-	},
+	execute:      func(cpu *cpu) {},
 }
 
 var ld_e__h = instruction{
@@ -1777,9 +1545,7 @@ var ld_e__h = instruction{
 	n:            "-",
 	h:            "-",
 	c:            "-",
-	execute: func(cpu *cpu) {
-
-	},
+	execute:      func(cpu *cpu) {},
 }
 
 var ld_a__d = instruction{
@@ -1792,9 +1558,7 @@ var ld_a__d = instruction{
 	n:            "-",
 	h:            "-",
 	c:            "-",
-	execute: func(cpu *cpu) {
-
-	},
+	execute:      func(cpu *cpu) {},
 }
 
 var ld_a__e = instruction{
@@ -1807,9 +1571,7 @@ var ld_a__e = instruction{
 	n:            "-",
 	h:            "-",
 	c:            "-",
-	execute: func(cpu *cpu) {
-
-	},
+	execute:      func(cpu *cpu) {},
 }
 
 var ld_a__c = instruction{
@@ -1822,9 +1584,7 @@ var ld_a__c = instruction{
 	n:            "-",
 	h:            "-",
 	c:            "-",
-	execute: func(cpu *cpu) {
-
-	},
+	execute:      func(cpu *cpu) {},
 }
 
 var ld_a__l = instruction{
@@ -1837,9 +1597,7 @@ var ld_a__l = instruction{
 	n:            "-",
 	h:            "-",
 	c:            "-",
-	execute: func(cpu *cpu) {
-
-	},
+	execute:      func(cpu *cpu) {},
 }
 
 var ld_a___hl_ = instruction{
@@ -1852,9 +1610,7 @@ var ld_a___hl_ = instruction{
 	n:            "-",
 	h:            "-",
 	c:            "-",
-	execute: func(cpu *cpu) {
-
-	},
+	execute:      func(cpu *cpu) {},
 }
 
 var ld_a__h = instruction{
@@ -1867,9 +1623,7 @@ var ld_a__h = instruction{
 	n:            "-",
 	h:            "-",
 	c:            "-",
-	execute: func(cpu *cpu) {
-
-	},
+	execute:      func(cpu *cpu) {},
 }
 
 var add_a__b = instruction{
@@ -1882,9 +1636,7 @@ var add_a__b = instruction{
 	n:            "0",
 	h:            "H",
 	c:            "CY",
-	execute: func(cpu *cpu) {
-
-	},
+	execute:      func(cpu *cpu) {},
 }
 
 var add_a__c = instruction{
@@ -1897,9 +1649,7 @@ var add_a__c = instruction{
 	n:            "0",
 	h:            "H",
 	c:            "CY",
-	execute: func(cpu *cpu) {
-
-	},
+	execute:      func(cpu *cpu) {},
 }
 
 var ld_a__a = instruction{
@@ -1912,9 +1662,7 @@ var ld_a__a = instruction{
 	n:            "-",
 	h:            "-",
 	c:            "-",
-	execute: func(cpu *cpu) {
-
-	},
+	execute:      func(cpu *cpu) {},
 }
 
 var add_a__e = instruction{
@@ -1927,9 +1675,7 @@ var add_a__e = instruction{
 	n:            "0",
 	h:            "H",
 	c:            "CY",
-	execute: func(cpu *cpu) {
-
-	},
+	execute:      func(cpu *cpu) {},
 }
 
 var add_a__h = instruction{
@@ -1942,9 +1688,7 @@ var add_a__h = instruction{
 	n:            "0",
 	h:            "H",
 	c:            "CY",
-	execute: func(cpu *cpu) {
-
-	},
+	execute:      func(cpu *cpu) {},
 }
 
 var add_a__d = instruction{
@@ -1957,9 +1701,7 @@ var add_a__d = instruction{
 	n:            "0",
 	h:            "H",
 	c:            "CY",
-	execute: func(cpu *cpu) {
-
-	},
+	execute:      func(cpu *cpu) {},
 }
 
 var add_a___hl_ = instruction{
@@ -1972,9 +1714,7 @@ var add_a___hl_ = instruction{
 	n:            "0",
 	h:            "H",
 	c:            "CY",
-	execute: func(cpu *cpu) {
-
-	},
+	execute:      func(cpu *cpu) {},
 }
 
 var add_a__a = instruction{
@@ -1987,9 +1727,7 @@ var add_a__a = instruction{
 	n:            "0",
 	h:            "H",
 	c:            "CY",
-	execute: func(cpu *cpu) {
-
-	},
+	execute:      func(cpu *cpu) {},
 }
 
 var add_a__l = instruction{
@@ -2002,9 +1740,7 @@ var add_a__l = instruction{
 	n:            "0",
 	h:            "H",
 	c:            "CY",
-	execute: func(cpu *cpu) {
-
-	},
+	execute:      func(cpu *cpu) {},
 }
 
 var adc_a__c = instruction{
@@ -2017,9 +1753,7 @@ var adc_a__c = instruction{
 	n:            "0",
 	h:            "H",
 	c:            "CY",
-	execute: func(cpu *cpu) {
-
-	},
+	execute:      func(cpu *cpu) {},
 }
 
 var adc_a__b = instruction{
@@ -2032,9 +1766,7 @@ var adc_a__b = instruction{
 	n:            "0",
 	h:            "H",
 	c:            "CY",
-	execute: func(cpu *cpu) {
-
-	},
+	execute:      func(cpu *cpu) {},
 }
 
 var halt = instruction{
@@ -2047,9 +1779,7 @@ var halt = instruction{
 	n:            "-",
 	h:            "-",
 	c:            "-",
-	execute: func(cpu *cpu) {
-
-	},
+	execute:      func(cpu *cpu) {},
 }
 
 var adc_a__e = instruction{
@@ -2062,9 +1792,7 @@ var adc_a__e = instruction{
 	n:            "0",
 	h:            "H",
 	c:            "CY",
-	execute: func(cpu *cpu) {
-
-	},
+	execute:      func(cpu *cpu) {},
 }
 
 var adc_a__d = instruction{
@@ -2077,9 +1805,7 @@ var adc_a__d = instruction{
 	n:            "0",
 	h:            "H",
 	c:            "CY",
-	execute: func(cpu *cpu) {
-
-	},
+	execute:      func(cpu *cpu) {},
 }
 
 var adc_a___hl_ = instruction{
@@ -2092,9 +1818,7 @@ var adc_a___hl_ = instruction{
 	n:            "0",
 	h:            "H",
 	c:            "CY",
-	execute: func(cpu *cpu) {
-
-	},
+	execute:      func(cpu *cpu) {},
 }
 
 var adc_a__l = instruction{
@@ -2107,9 +1831,7 @@ var adc_a__l = instruction{
 	n:            "0",
 	h:            "H",
 	c:            "CY",
-	execute: func(cpu *cpu) {
-
-	},
+	execute:      func(cpu *cpu) {},
 }
 
 var sub_b = instruction{
@@ -2122,9 +1844,7 @@ var sub_b = instruction{
 	n:            "1",
 	h:            "H",
 	c:            "CY",
-	execute: func(cpu *cpu) {
-
-	},
+	execute:      func(cpu *cpu) {},
 }
 
 var sub_c = instruction{
@@ -2137,9 +1857,7 @@ var sub_c = instruction{
 	n:            "1",
 	h:            "H",
 	c:            "CY",
-	execute: func(cpu *cpu) {
-
-	},
+	execute:      func(cpu *cpu) {},
 }
 
 var adc_a__a = instruction{
@@ -2152,9 +1870,7 @@ var adc_a__a = instruction{
 	n:            "0",
 	h:            "H",
 	c:            "CY",
-	execute: func(cpu *cpu) {
-
-	},
+	execute:      func(cpu *cpu) {},
 }
 
 var sub_e = instruction{
@@ -2167,9 +1883,7 @@ var sub_e = instruction{
 	n:            "1",
 	h:            "H",
 	c:            "CY",
-	execute: func(cpu *cpu) {
-
-	},
+	execute:      func(cpu *cpu) {},
 }
 
 var sub_h = instruction{
@@ -2182,9 +1896,7 @@ var sub_h = instruction{
 	n:            "1",
 	h:            "H",
 	c:            "CY",
-	execute: func(cpu *cpu) {
-
-	},
+	execute:      func(cpu *cpu) {},
 }
 
 var ld__hl___a = instruction{
@@ -2197,9 +1909,7 @@ var ld__hl___a = instruction{
 	n:            "-",
 	h:            "-",
 	c:            "-",
-	execute: func(cpu *cpu) {
-
-	},
+	execute:      func(cpu *cpu) {},
 }
 
 var sub__hl_ = instruction{
@@ -2212,9 +1922,7 @@ var sub__hl_ = instruction{
 	n:            "1",
 	h:            "H",
 	c:            "CY",
-	execute: func(cpu *cpu) {
-
-	},
+	execute:      func(cpu *cpu) {},
 }
 
 var sub_a = instruction{
@@ -2227,9 +1935,7 @@ var sub_a = instruction{
 	n:            "1",
 	h:            "H",
 	c:            "CY",
-	execute: func(cpu *cpu) {
-
-	},
+	execute:      func(cpu *cpu) {},
 }
 
 var sub_l = instruction{
@@ -2242,9 +1948,7 @@ var sub_l = instruction{
 	n:            "1",
 	h:            "H",
 	c:            "CY",
-	execute: func(cpu *cpu) {
-
-	},
+	execute:      func(cpu *cpu) {},
 }
 
 var sbc_a__c = instruction{
@@ -2257,9 +1961,7 @@ var sbc_a__c = instruction{
 	n:            "1",
 	h:            "H",
 	c:            "CY",
-	execute: func(cpu *cpu) {
-
-	},
+	execute:      func(cpu *cpu) {},
 }
 
 var sbc_a__d = instruction{
@@ -2272,9 +1974,7 @@ var sbc_a__d = instruction{
 	n:            "1",
 	h:            "H",
 	c:            "CY",
-	execute: func(cpu *cpu) {
-
-	},
+	execute:      func(cpu *cpu) {},
 }
 
 var sbc_a__b = instruction{
@@ -2287,9 +1987,7 @@ var sbc_a__b = instruction{
 	n:            "1",
 	h:            "H",
 	c:            "CY",
-	execute: func(cpu *cpu) {
-
-	},
+	execute:      func(cpu *cpu) {},
 }
 
 var sbc_a__h = instruction{
@@ -2302,9 +2000,7 @@ var sbc_a__h = instruction{
 	n:            "1",
 	h:            "H",
 	c:            "CY",
-	execute: func(cpu *cpu) {
-
-	},
+	execute:      func(cpu *cpu) {},
 }
 
 var sbc_a__l = instruction{
@@ -2317,9 +2013,7 @@ var sbc_a__l = instruction{
 	n:            "1",
 	h:            "H",
 	c:            "CY",
-	execute: func(cpu *cpu) {
-
-	},
+	execute:      func(cpu *cpu) {},
 }
 
 var sbc_a__e = instruction{
@@ -2332,9 +2026,7 @@ var sbc_a__e = instruction{
 	n:            "1",
 	h:            "H",
 	c:            "CY",
-	execute: func(cpu *cpu) {
-
-	},
+	execute:      func(cpu *cpu) {},
 }
 
 var sbc_a__a = instruction{
@@ -2347,9 +2039,7 @@ var sbc_a__a = instruction{
 	n:            "1",
 	h:            "H",
 	c:            "CY",
-	execute: func(cpu *cpu) {
-
-	},
+	execute:      func(cpu *cpu) {},
 }
 
 var and_b = instruction{
@@ -2362,9 +2052,7 @@ var and_b = instruction{
 	n:            "0",
 	h:            "1",
 	c:            "0",
-	execute: func(cpu *cpu) {
-
-	},
+	execute:      func(cpu *cpu) {},
 }
 
 var sbc_a___hl_ = instruction{
@@ -2377,9 +2065,7 @@ var sbc_a___hl_ = instruction{
 	n:            "1",
 	h:            "H",
 	c:            "CY",
-	execute: func(cpu *cpu) {
-
-	},
+	execute:      func(cpu *cpu) {},
 }
 
 var and_d = instruction{
@@ -2392,9 +2078,7 @@ var and_d = instruction{
 	n:            "0",
 	h:            "1",
 	c:            "0",
-	execute: func(cpu *cpu) {
-
-	},
+	execute:      func(cpu *cpu) {},
 }
 
 var and_e = instruction{
@@ -2407,9 +2091,7 @@ var and_e = instruction{
 	n:            "0",
 	h:            "1",
 	c:            "0",
-	execute: func(cpu *cpu) {
-
-	},
+	execute:      func(cpu *cpu) {},
 }
 
 var and_c = instruction{
@@ -2422,9 +2104,7 @@ var and_c = instruction{
 	n:            "0",
 	h:            "1",
 	c:            "0",
-	execute: func(cpu *cpu) {
-
-	},
+	execute:      func(cpu *cpu) {},
 }
 
 var and_l = instruction{
@@ -2437,9 +2117,7 @@ var and_l = instruction{
 	n:            "0",
 	h:            "1",
 	c:            "0",
-	execute: func(cpu *cpu) {
-
-	},
+	execute:      func(cpu *cpu) {},
 }
 
 var and__hl_ = instruction{
@@ -2452,9 +2130,7 @@ var and__hl_ = instruction{
 	n:            "0",
 	h:            "1",
 	c:            "0",
-	execute: func(cpu *cpu) {
-
-	},
+	execute:      func(cpu *cpu) {},
 }
 
 var and_h = instruction{
@@ -2467,9 +2143,7 @@ var and_h = instruction{
 	n:            "0",
 	h:            "1",
 	c:            "0",
-	execute: func(cpu *cpu) {
-
-	},
+	execute:      func(cpu *cpu) {},
 }
 
 var xor_b = instruction{
@@ -2497,9 +2171,7 @@ var and_a = instruction{
 	n:            "0",
 	h:            "1",
 	c:            "0",
-	execute: func(cpu *cpu) {
-
-	},
+	execute:      func(cpu *cpu) {},
 }
 
 var xor_e = instruction{
@@ -2602,9 +2274,7 @@ var or_b = instruction{
 	n:            "0",
 	h:            "0",
 	c:            "0",
-	execute: func(cpu *cpu) {
-
-	},
+	execute:      func(cpu *cpu) {},
 }
 
 var xor_a = instruction{
@@ -2632,9 +2302,7 @@ var or_c = instruction{
 	n:            "0",
 	h:            "0",
 	c:            "0",
-	execute: func(cpu *cpu) {
-
-	},
+	execute:      func(cpu *cpu) {},
 }
 
 var or_d = instruction{
@@ -2647,9 +2315,7 @@ var or_d = instruction{
 	n:            "0",
 	h:            "0",
 	c:            "0",
-	execute: func(cpu *cpu) {
-
-	},
+	execute:      func(cpu *cpu) {},
 }
 
 var or_l = instruction{
@@ -2662,9 +2328,7 @@ var or_l = instruction{
 	n:            "0",
 	h:            "0",
 	c:            "0",
-	execute: func(cpu *cpu) {
-
-	},
+	execute:      func(cpu *cpu) {},
 }
 
 var adc_a__h = instruction{
@@ -2677,9 +2341,7 @@ var adc_a__h = instruction{
 	n:            "0",
 	h:            "H",
 	c:            "CY",
-	execute: func(cpu *cpu) {
-
-	},
+	execute:      func(cpu *cpu) {},
 }
 
 var or_h = instruction{
@@ -2692,9 +2354,7 @@ var or_h = instruction{
 	n:            "0",
 	h:            "0",
 	c:            "0",
-	execute: func(cpu *cpu) {
-
-	},
+	execute:      func(cpu *cpu) {},
 }
 
 var or_a = instruction{
@@ -2707,9 +2367,7 @@ var or_a = instruction{
 	n:            "0",
 	h:            "0",
 	c:            "0",
-	execute: func(cpu *cpu) {
-
-	},
+	execute:      func(cpu *cpu) {},
 }
 
 var cp_b = instruction{
@@ -2722,9 +2380,7 @@ var cp_b = instruction{
 	n:            "1",
 	h:            "H",
 	c:            "CY",
-	execute: func(cpu *cpu) {
-
-	},
+	execute:      func(cpu *cpu) {},
 }
 
 var or__hl_ = instruction{
@@ -2737,9 +2393,7 @@ var or__hl_ = instruction{
 	n:            "0",
 	h:            "0",
 	c:            "0",
-	execute: func(cpu *cpu) {
-
-	},
+	execute:      func(cpu *cpu) {},
 }
 
 var cp_d = instruction{
@@ -2752,9 +2406,7 @@ var cp_d = instruction{
 	n:            "1",
 	h:            "H",
 	c:            "CY",
-	execute: func(cpu *cpu) {
-
-	},
+	execute:      func(cpu *cpu) {},
 }
 
 var cp_e = instruction{
@@ -2767,9 +2419,7 @@ var cp_e = instruction{
 	n:            "1",
 	h:            "H",
 	c:            "CY",
-	execute: func(cpu *cpu) {
-
-	},
+	execute:      func(cpu *cpu) {},
 }
 
 var cp_c = instruction{
@@ -2782,9 +2432,7 @@ var cp_c = instruction{
 	n:            "1",
 	h:            "H",
 	c:            "CY",
-	execute: func(cpu *cpu) {
-
-	},
+	execute:      func(cpu *cpu) {},
 }
 
 var cp_l = instruction{
@@ -2797,9 +2445,7 @@ var cp_l = instruction{
 	n:            "1",
 	h:            "H",
 	c:            "CY",
-	execute: func(cpu *cpu) {
-
-	},
+	execute:      func(cpu *cpu) {},
 }
 
 var cp_h = instruction{
@@ -2812,9 +2458,7 @@ var cp_h = instruction{
 	n:            "1",
 	h:            "H",
 	c:            "CY",
-	execute: func(cpu *cpu) {
-
-	},
+	execute:      func(cpu *cpu) {},
 }
 
 var cp__hl_ = instruction{
@@ -2827,9 +2471,7 @@ var cp__hl_ = instruction{
 	n:            "1",
 	h:            "H",
 	c:            "CY",
-	execute: func(cpu *cpu) {
-
-	},
+	execute:      func(cpu *cpu) {},
 }
 
 var ret_nz = instruction{
@@ -2842,9 +2484,7 @@ var ret_nz = instruction{
 	n:            "-",
 	h:            "-",
 	c:            "-",
-	execute: func(cpu *cpu) {
-
-	},
+	execute:      func(cpu *cpu) {},
 }
 
 var cp_a = instruction{
@@ -2857,9 +2497,7 @@ var cp_a = instruction{
 	n:            "1",
 	h:            "H",
 	c:            "CY",
-	execute: func(cpu *cpu) {
-
-	},
+	execute:      func(cpu *cpu) {},
 }
 
 var jp_nz__a16 = instruction{
@@ -2872,9 +2510,7 @@ var jp_nz__a16 = instruction{
 	n:            "-",
 	h:            "-",
 	c:            "-",
-	execute: func(cpu *cpu) {
-
-	},
+	execute:      func(cpu *cpu) {},
 }
 
 var jp_a16 = instruction{
@@ -2902,9 +2538,7 @@ var pop_bc = instruction{
 	n:            "-",
 	h:            "-",
 	c:            "-",
-	execute: func(cpu *cpu) {
-
-	},
+	execute:      func(cpu *cpu) {},
 }
 
 var push_bc = instruction{
@@ -2917,9 +2551,7 @@ var push_bc = instruction{
 	n:            "-",
 	h:            "-",
 	c:            "-",
-	execute: func(cpu *cpu) {
-
-	},
+	execute:      func(cpu *cpu) {},
 }
 
 var call_nz__a16 = instruction{
@@ -2932,9 +2564,7 @@ var call_nz__a16 = instruction{
 	n:            "-",
 	h:            "-",
 	c:            "-",
-	execute: func(cpu *cpu) {
-
-	},
+	execute:      func(cpu *cpu) {},
 }
 
 var add_a__d8 = instruction{
@@ -2947,9 +2577,7 @@ var add_a__d8 = instruction{
 	n:            "0",
 	h:            "H",
 	c:            "CY",
-	execute: func(cpu *cpu) {
-
-	},
+	execute:      func(cpu *cpu) {},
 }
 
 var ret_z = instruction{
@@ -2962,9 +2590,7 @@ var ret_z = instruction{
 	n:            "-",
 	h:            "-",
 	c:            "-",
-	execute: func(cpu *cpu) {
-
-	},
+	execute:      func(cpu *cpu) {},
 }
 
 var rst_0 = instruction{
@@ -2977,9 +2603,7 @@ var rst_0 = instruction{
 	n:            "-",
 	h:            "-",
 	c:            "-",
-	execute: func(cpu *cpu) {
-
-	},
+	execute:      func(cpu *cpu) {},
 }
 
 var jp_z__a16 = instruction{
@@ -2992,9 +2616,7 @@ var jp_z__a16 = instruction{
 	n:            "-",
 	h:            "-",
 	c:            "-",
-	execute: func(cpu *cpu) {
-
-	},
+	execute:      func(cpu *cpu) {},
 }
 
 var call_z__a16 = instruction{
@@ -3007,9 +2629,7 @@ var call_z__a16 = instruction{
 	n:            "-",
 	h:            "-",
 	c:            "-",
-	execute: func(cpu *cpu) {
-
-	},
+	execute:      func(cpu *cpu) {},
 }
 
 var ret = instruction{
@@ -3022,9 +2642,7 @@ var ret = instruction{
 	n:            "-",
 	h:            "-",
 	c:            "-",
-	execute: func(cpu *cpu) {
-
-	},
+	execute:      func(cpu *cpu) {},
 }
 
 var adc_a__d8 = instruction{
@@ -3037,9 +2655,7 @@ var adc_a__d8 = instruction{
 	n:            "0",
 	h:            "H",
 	c:            "CY",
-	execute: func(cpu *cpu) {
-
-	},
+	execute:      func(cpu *cpu) {},
 }
 
 var rst_1 = instruction{
@@ -3052,9 +2668,7 @@ var rst_1 = instruction{
 	n:            "-",
 	h:            "-",
 	c:            "-",
-	execute: func(cpu *cpu) {
-
-	},
+	execute:      func(cpu *cpu) {},
 }
 
 var ld__hl___d = instruction{
@@ -3067,9 +2681,7 @@ var ld__hl___d = instruction{
 	n:            "-",
 	h:            "-",
 	c:            "-",
-	execute: func(cpu *cpu) {
-
-	},
+	execute:      func(cpu *cpu) {},
 }
 
 var pop_de = instruction{
@@ -3082,9 +2694,7 @@ var pop_de = instruction{
 	n:            "-",
 	h:            "-",
 	c:            "-",
-	execute: func(cpu *cpu) {
-
-	},
+	execute:      func(cpu *cpu) {},
 }
 
 var ret_nc = instruction{
@@ -3097,9 +2707,7 @@ var ret_nc = instruction{
 	n:            "-",
 	h:            "-",
 	c:            "-",
-	execute: func(cpu *cpu) {
-
-	},
+	execute:      func(cpu *cpu) {},
 }
 
 var push_de = instruction{
@@ -3112,9 +2720,7 @@ var push_de = instruction{
 	n:            "-",
 	h:            "-",
 	c:            "-",
-	execute: func(cpu *cpu) {
-
-	},
+	execute:      func(cpu *cpu) {},
 }
 
 var jp_nc__a16 = instruction{
@@ -3127,9 +2733,7 @@ var jp_nc__a16 = instruction{
 	n:            "-",
 	h:            "-",
 	c:            "-",
-	execute: func(cpu *cpu) {
-
-	},
+	execute:      func(cpu *cpu) {},
 }
 
 var rst_2 = instruction{
@@ -3142,9 +2746,7 @@ var rst_2 = instruction{
 	n:            "-",
 	h:            "-",
 	c:            "-",
-	execute: func(cpu *cpu) {
-
-	},
+	execute:      func(cpu *cpu) {},
 }
 
 var call_nc__a16 = instruction{
@@ -3157,9 +2759,7 @@ var call_nc__a16 = instruction{
 	n:            "-",
 	h:            "-",
 	c:            "-",
-	execute: func(cpu *cpu) {
-
-	},
+	execute:      func(cpu *cpu) {},
 }
 
 var sub_d8 = instruction{
@@ -3172,9 +2772,7 @@ var sub_d8 = instruction{
 	n:            "1",
 	h:            "H",
 	c:            "CY",
-	execute: func(cpu *cpu) {
-
-	},
+	execute:      func(cpu *cpu) {},
 }
 
 var sub_d = instruction{
@@ -3187,9 +2785,7 @@ var sub_d = instruction{
 	n:            "1",
 	h:            "H",
 	c:            "CY",
-	execute: func(cpu *cpu) {
-
-	},
+	execute:      func(cpu *cpu) {},
 }
 
 var ret_c = instruction{
@@ -3202,9 +2798,7 @@ var ret_c = instruction{
 	n:            "-",
 	h:            "-",
 	c:            "-",
-	execute: func(cpu *cpu) {
-
-	},
+	execute:      func(cpu *cpu) {},
 }
 
 var jp_c__a16 = instruction{
@@ -3217,9 +2811,7 @@ var jp_c__a16 = instruction{
 	n:            "-",
 	h:            "-",
 	c:            "-",
-	execute: func(cpu *cpu) {
-
-	},
+	execute:      func(cpu *cpu) {},
 }
 
 var call_c__a16 = instruction{
@@ -3232,9 +2824,7 @@ var call_c__a16 = instruction{
 	n:            "-",
 	h:            "-",
 	c:            "-",
-	execute: func(cpu *cpu) {
-
-	},
+	execute:      func(cpu *cpu) {},
 }
 
 var sbc_a__d8 = instruction{
@@ -3247,9 +2837,7 @@ var sbc_a__d8 = instruction{
 	n:            "1",
 	h:            "H",
 	c:            "CY",
-	execute: func(cpu *cpu) {
-
-	},
+	execute:      func(cpu *cpu) {},
 }
 
 var rst_3 = instruction{
@@ -3262,9 +2850,7 @@ var rst_3 = instruction{
 	n:            "-",
 	h:            "-",
 	c:            "-",
-	execute: func(cpu *cpu) {
-
-	},
+	execute:      func(cpu *cpu) {},
 }
 
 var ld__a8___a = instruction{
@@ -3277,9 +2863,7 @@ var ld__a8___a = instruction{
 	n:            "-",
 	h:            "-",
 	c:            "-",
-	execute: func(cpu *cpu) {
-
-	},
+	execute:      func(cpu *cpu) {},
 }
 
 var pop_hl = instruction{
@@ -3292,9 +2876,7 @@ var pop_hl = instruction{
 	n:            "-",
 	h:            "-",
 	c:            "-",
-	execute: func(cpu *cpu) {
-
-	},
+	execute:      func(cpu *cpu) {},
 }
 
 var ld__c___a = instruction{
@@ -3307,9 +2889,7 @@ var ld__c___a = instruction{
 	n:            "-",
 	h:            "-",
 	c:            "-",
-	execute: func(cpu *cpu) {
-
-	},
+	execute:      func(cpu *cpu) {},
 }
 
 var reti = instruction{
@@ -3322,9 +2902,7 @@ var reti = instruction{
 	n:            "-",
 	h:            "-",
 	c:            "-",
-	execute: func(cpu *cpu) {
-
-	},
+	execute:      func(cpu *cpu) {},
 }
 
 var and_d8 = instruction{
@@ -3337,9 +2915,7 @@ var and_d8 = instruction{
 	n:            "0",
 	h:            "1",
 	c:            "0",
-	execute: func(cpu *cpu) {
-
-	},
+	execute:      func(cpu *cpu) {},
 }
 
 var rst_4 = instruction{
@@ -3352,9 +2928,7 @@ var rst_4 = instruction{
 	n:            "-",
 	h:            "-",
 	c:            "-",
-	execute: func(cpu *cpu) {
-
-	},
+	execute:      func(cpu *cpu) {},
 }
 
 var add_sp__s8 = instruction{
@@ -3367,9 +2941,7 @@ var add_sp__s8 = instruction{
 	n:            "0",
 	h:            "H",
 	c:            "CY",
-	execute: func(cpu *cpu) {
-
-	},
+	execute:      func(cpu *cpu) {},
 }
 
 var jp_hl = instruction{
@@ -3382,9 +2954,7 @@ var jp_hl = instruction{
 	n:            "-",
 	h:            "-",
 	c:            "-",
-	execute: func(cpu *cpu) {
-
-	},
+	execute:      func(cpu *cpu) {},
 }
 
 var ld__a16___a = instruction{
@@ -3397,9 +2967,7 @@ var ld__a16___a = instruction{
 	n:            "-",
 	h:            "-",
 	c:            "-",
-	execute: func(cpu *cpu) {
-
-	},
+	execute:      func(cpu *cpu) {},
 }
 
 var xor_d8 = instruction{
@@ -3427,9 +2995,7 @@ var rst_5 = instruction{
 	n:            "-",
 	h:            "-",
 	c:            "-",
-	execute: func(cpu *cpu) {
-
-	},
+	execute:      func(cpu *cpu) {},
 }
 
 var ld_a___a8_ = instruction{
@@ -3442,9 +3008,7 @@ var ld_a___a8_ = instruction{
 	n:            "-",
 	h:            "-",
 	c:            "-",
-	execute: func(cpu *cpu) {
-
-	},
+	execute:      func(cpu *cpu) {},
 }
 
 var pop_af = instruction{
@@ -3457,9 +3021,7 @@ var pop_af = instruction{
 	n:            "-",
 	h:            "-",
 	c:            "-",
-	execute: func(cpu *cpu) {
-
-	},
+	execute:      func(cpu *cpu) {},
 }
 
 var ld_a___c_ = instruction{
@@ -3472,9 +3034,7 @@ var ld_a___c_ = instruction{
 	n:            "-",
 	h:            "-",
 	c:            "-",
-	execute: func(cpu *cpu) {
-
-	},
+	execute:      func(cpu *cpu) {},
 }
 
 var di = instruction{
@@ -3487,9 +3047,7 @@ var di = instruction{
 	n:            "-",
 	h:            "-",
 	c:            "-",
-	execute: func(cpu *cpu) {
-
-	},
+	execute:      func(cpu *cpu) {},
 }
 
 var push_hl = instruction{
@@ -3502,9 +3060,7 @@ var push_hl = instruction{
 	n:            "-",
 	h:            "-",
 	c:            "-",
-	execute: func(cpu *cpu) {
-
-	},
+	execute:      func(cpu *cpu) {},
 }
 
 var or_d8 = instruction{
@@ -3517,9 +3073,7 @@ var or_d8 = instruction{
 	n:            "0",
 	h:            "0",
 	c:            "0",
-	execute: func(cpu *cpu) {
-
-	},
+	execute:      func(cpu *cpu) {},
 }
 
 var rst_6 = instruction{
@@ -3532,9 +3086,7 @@ var rst_6 = instruction{
 	n:            "-",
 	h:            "-",
 	c:            "-",
-	execute: func(cpu *cpu) {
-
-	},
+	execute:      func(cpu *cpu) {},
 }
 
 var ld_sp__hl = instruction{
@@ -3547,9 +3099,7 @@ var ld_sp__hl = instruction{
 	n:            "-",
 	h:            "-",
 	c:            "-",
-	execute: func(cpu *cpu) {
-
-	},
+	execute:      func(cpu *cpu) {},
 }
 
 var ld_hl__sp_s8 = instruction{
@@ -3562,9 +3112,7 @@ var ld_hl__sp_s8 = instruction{
 	n:            "0",
 	h:            "H",
 	c:            "CY",
-	execute: func(cpu *cpu) {
-
-	},
+	execute:      func(cpu *cpu) {},
 }
 
 var ei = instruction{
@@ -3577,9 +3125,7 @@ var ei = instruction{
 	n:            "-",
 	h:            "-",
 	c:            "-",
-	execute: func(cpu *cpu) {
-
-	},
+	execute:      func(cpu *cpu) {},
 }
 
 var ld_a___a16_ = instruction{
@@ -3592,9 +3138,7 @@ var ld_a___a16_ = instruction{
 	n:            "-",
 	h:            "-",
 	c:            "-",
-	execute: func(cpu *cpu) {
-
-	},
+	execute:      func(cpu *cpu) {},
 }
 
 var cp_d8 = instruction{
@@ -3607,9 +3151,7 @@ var cp_d8 = instruction{
 	n:            "1",
 	h:            "H",
 	c:            "CY",
-	execute: func(cpu *cpu) {
-
-	},
+	execute:      func(cpu *cpu) {},
 }
 
 var rst_7 = instruction{
@@ -3622,9 +3164,7 @@ var rst_7 = instruction{
 	n:            "-",
 	h:            "-",
 	c:            "-",
-	execute: func(cpu *cpu) {
-
-	},
+	execute:      func(cpu *cpu) {},
 }
 
 // 16-bit instructions
@@ -3638,9 +3178,7 @@ var rlc_b = instruction{
 	n:            "0",
 	h:            "0",
 	c:            "B7",
-	execute: func(cpu *cpu) {
-
-	},
+	execute:      func(cpu *cpu) {},
 }
 
 var rlc_c = instruction{
@@ -3653,9 +3191,7 @@ var rlc_c = instruction{
 	n:            "0",
 	h:            "0",
 	c:            "C7",
-	execute: func(cpu *cpu) {
-
-	},
+	execute:      func(cpu *cpu) {},
 }
 
 var or_e = instruction{
@@ -3668,9 +3204,7 @@ var or_e = instruction{
 	n:            "0",
 	h:            "0",
 	c:            "0",
-	execute: func(cpu *cpu) {
-
-	},
+	execute:      func(cpu *cpu) {},
 }
 
 var push_af = instruction{
@@ -3683,9 +3217,7 @@ var push_af = instruction{
 	n:            "-",
 	h:            "-",
 	c:            "-",
-	execute: func(cpu *cpu) {
-
-	},
+	execute:      func(cpu *cpu) {},
 }
 
 var call_a16 = instruction{
@@ -3698,9 +3230,7 @@ var call_a16 = instruction{
 	n:            "-",
 	h:            "-",
 	c:            "-",
-	execute: func(cpu *cpu) {
-
-	},
+	execute:      func(cpu *cpu) {},
 }
 
 var rlc__hl_ = instruction{
@@ -3713,9 +3243,7 @@ var rlc__hl_ = instruction{
 	n:            "0",
 	h:            "0",
 	c:            "(HL)7",
-	execute: func(cpu *cpu) {
-
-	},
+	execute:      func(cpu *cpu) {},
 }
 
 var rlc_l = instruction{
@@ -3728,9 +3256,7 @@ var rlc_l = instruction{
 	n:            "0",
 	h:            "0",
 	c:            "L7",
-	execute: func(cpu *cpu) {
-
-	},
+	execute:      func(cpu *cpu) {},
 }
 
 var rlc_a = instruction{
@@ -3743,9 +3269,7 @@ var rlc_a = instruction{
 	n:            "0",
 	h:            "0",
 	c:            "A7",
-	execute: func(cpu *cpu) {
-
-	},
+	execute:      func(cpu *cpu) {},
 }
 
 var rrc_b = instruction{
@@ -3758,9 +3282,7 @@ var rrc_b = instruction{
 	n:            "0",
 	h:            "0",
 	c:            "B0",
-	execute: func(cpu *cpu) {
-
-	},
+	execute:      func(cpu *cpu) {},
 }
 
 var rrc_c = instruction{
@@ -3773,9 +3295,7 @@ var rrc_c = instruction{
 	n:            "0",
 	h:            "0",
 	c:            "C0",
-	execute: func(cpu *cpu) {
-
-	},
+	execute:      func(cpu *cpu) {},
 }
 
 var rlc_e = instruction{
@@ -3788,9 +3308,7 @@ var rlc_e = instruction{
 	n:            "0",
 	h:            "0",
 	c:            "E7",
-	execute: func(cpu *cpu) {
-
-	},
+	execute:      func(cpu *cpu) {},
 }
 
 var rrc_d = instruction{
@@ -3803,9 +3321,7 @@ var rrc_d = instruction{
 	n:            "0",
 	h:            "0",
 	c:            "D0",
-	execute: func(cpu *cpu) {
-
-	},
+	execute:      func(cpu *cpu) {},
 }
 
 var rrc_h = instruction{
@@ -3818,9 +3334,7 @@ var rrc_h = instruction{
 	n:            "0",
 	h:            "0",
 	c:            "H0",
-	execute: func(cpu *cpu) {
-
-	},
+	execute:      func(cpu *cpu) {},
 }
 
 var rrc__hl_ = instruction{
@@ -3833,9 +3347,7 @@ var rrc__hl_ = instruction{
 	n:            "0",
 	h:            "0",
 	c:            "(HL)0",
-	execute: func(cpu *cpu) {
-
-	},
+	execute:      func(cpu *cpu) {},
 }
 
 var rrc_l = instruction{
@@ -3848,9 +3360,7 @@ var rrc_l = instruction{
 	n:            "0",
 	h:            "0",
 	c:            "L0",
-	execute: func(cpu *cpu) {
-
-	},
+	execute:      func(cpu *cpu) {},
 }
 
 var rl_b = instruction{
@@ -3863,9 +3373,7 @@ var rl_b = instruction{
 	n:            "0",
 	h:            "0",
 	c:            "B7",
-	execute: func(cpu *cpu) {
-
-	},
+	execute:      func(cpu *cpu) {},
 }
 
 var rl_c = instruction{
@@ -3878,9 +3386,7 @@ var rl_c = instruction{
 	n:            "0",
 	h:            "0",
 	c:            "C7",
-	execute: func(cpu *cpu) {
-
-	},
+	execute:      func(cpu *cpu) {},
 }
 
 var rlc_h = instruction{
@@ -3893,9 +3399,7 @@ var rlc_h = instruction{
 	n:            "0",
 	h:            "0",
 	c:            "H7",
-	execute: func(cpu *cpu) {
-
-	},
+	execute:      func(cpu *cpu) {},
 }
 
 var rl_e = instruction{
@@ -3908,9 +3412,7 @@ var rl_e = instruction{
 	n:            "0",
 	h:            "0",
 	c:            "E7",
-	execute: func(cpu *cpu) {
-
-	},
+	execute:      func(cpu *cpu) {},
 }
 
 var rl_h = instruction{
@@ -3923,9 +3425,7 @@ var rl_h = instruction{
 	n:            "0",
 	h:            "0",
 	c:            "H7",
-	execute: func(cpu *cpu) {
-
-	},
+	execute:      func(cpu *cpu) {},
 }
 
 var rl_d = instruction{
@@ -3938,9 +3438,7 @@ var rl_d = instruction{
 	n:            "0",
 	h:            "0",
 	c:            "D7",
-	execute: func(cpu *cpu) {
-
-	},
+	execute:      func(cpu *cpu) {},
 }
 
 var rl__hl_ = instruction{
@@ -3953,9 +3451,7 @@ var rl__hl_ = instruction{
 	n:            "0",
 	h:            "0",
 	c:            "(HL)7",
-	execute: func(cpu *cpu) {
-
-	},
+	execute:      func(cpu *cpu) {},
 }
 
 var rl_a = instruction{
@@ -3968,9 +3464,7 @@ var rl_a = instruction{
 	n:            "0",
 	h:            "0",
 	c:            "A7",
-	execute: func(cpu *cpu) {
-
-	},
+	execute:      func(cpu *cpu) {},
 }
 
 var rl_l = instruction{
@@ -3983,9 +3477,7 @@ var rl_l = instruction{
 	n:            "0",
 	h:            "0",
 	c:            "L7",
-	execute: func(cpu *cpu) {
-
-	},
+	execute:      func(cpu *cpu) {},
 }
 
 var rr_c = instruction{
@@ -3998,9 +3490,7 @@ var rr_c = instruction{
 	n:            "0",
 	h:            "0",
 	c:            "C0",
-	execute: func(cpu *cpu) {
-
-	},
+	execute:      func(cpu *cpu) {},
 }
 
 var rr_d = instruction{
@@ -4013,9 +3503,7 @@ var rr_d = instruction{
 	n:            "0",
 	h:            "0",
 	c:            "D0",
-	execute: func(cpu *cpu) {
-
-	},
+	execute:      func(cpu *cpu) {},
 }
 
 var rr_b = instruction{
@@ -4028,9 +3516,7 @@ var rr_b = instruction{
 	n:            "0",
 	h:            "0",
 	c:            "B0",
-	execute: func(cpu *cpu) {
-
-	},
+	execute:      func(cpu *cpu) {},
 }
 
 var rr_h = instruction{
@@ -4043,9 +3529,7 @@ var rr_h = instruction{
 	n:            "0",
 	h:            "0",
 	c:            "H0",
-	execute: func(cpu *cpu) {
-
-	},
+	execute:      func(cpu *cpu) {},
 }
 
 var rr_l = instruction{
@@ -4058,9 +3542,7 @@ var rr_l = instruction{
 	n:            "0",
 	h:            "0",
 	c:            "L0",
-	execute: func(cpu *cpu) {
-
-	},
+	execute:      func(cpu *cpu) {},
 }
 
 var rr_e = instruction{
@@ -4073,9 +3555,7 @@ var rr_e = instruction{
 	n:            "0",
 	h:            "0",
 	c:            "E0",
-	execute: func(cpu *cpu) {
-
-	},
+	execute:      func(cpu *cpu) {},
 }
 
 var rr_a = instruction{
@@ -4088,9 +3568,7 @@ var rr_a = instruction{
 	n:            "0",
 	h:            "0",
 	c:            "A0",
-	execute: func(cpu *cpu) {
-
-	},
+	execute:      func(cpu *cpu) {},
 }
 
 var sla_b = instruction{
@@ -4103,9 +3581,7 @@ var sla_b = instruction{
 	n:            "0",
 	h:            "0",
 	c:            "B7",
-	execute: func(cpu *cpu) {
-
-	},
+	execute:      func(cpu *cpu) {},
 }
 
 var rr__hl_ = instruction{
@@ -4118,9 +3594,7 @@ var rr__hl_ = instruction{
 	n:            "0",
 	h:            "0",
 	c:            "(HL)0",
-	execute: func(cpu *cpu) {
-
-	},
+	execute:      func(cpu *cpu) {},
 }
 
 var sla_d = instruction{
@@ -4133,9 +3607,7 @@ var sla_d = instruction{
 	n:            "0",
 	h:            "0",
 	c:            "D7",
-	execute: func(cpu *cpu) {
-
-	},
+	execute:      func(cpu *cpu) {},
 }
 
 var sla_e = instruction{
@@ -4148,9 +3620,7 @@ var sla_e = instruction{
 	n:            "0",
 	h:            "0",
 	c:            "E7",
-	execute: func(cpu *cpu) {
-
-	},
+	execute:      func(cpu *cpu) {},
 }
 
 var rrc_a = instruction{
@@ -4163,9 +3633,7 @@ var rrc_a = instruction{
 	n:            "0",
 	h:            "0",
 	c:            "A0",
-	execute: func(cpu *cpu) {
-
-	},
+	execute:      func(cpu *cpu) {},
 }
 
 var rlc_d = instruction{
@@ -4178,9 +3646,7 @@ var rlc_d = instruction{
 	n:            "0",
 	h:            "0",
 	c:            "D7",
-	execute: func(cpu *cpu) {
-
-	},
+	execute:      func(cpu *cpu) {},
 }
 
 var sla_h = instruction{
@@ -4193,9 +3659,7 @@ var sla_h = instruction{
 	n:            "0",
 	h:            "0",
 	c:            "H7",
-	execute: func(cpu *cpu) {
-
-	},
+	execute:      func(cpu *cpu) {},
 }
 
 var sla__hl_ = instruction{
@@ -4208,9 +3672,7 @@ var sla__hl_ = instruction{
 	n:            "0",
 	h:            "0",
 	c:            "(HL)7",
-	execute: func(cpu *cpu) {
-
-	},
+	execute:      func(cpu *cpu) {},
 }
 
 var sla_a = instruction{
@@ -4223,9 +3685,7 @@ var sla_a = instruction{
 	n:            "0",
 	h:            "0",
 	c:            "A7",
-	execute: func(cpu *cpu) {
-
-	},
+	execute:      func(cpu *cpu) {},
 }
 
 var sra_b = instruction{
@@ -4238,9 +3698,7 @@ var sra_b = instruction{
 	n:            "0",
 	h:            "0",
 	c:            "B0",
-	execute: func(cpu *cpu) {
-
-	},
+	execute:      func(cpu *cpu) {},
 }
 
 var sra_c = instruction{
@@ -4253,9 +3711,7 @@ var sra_c = instruction{
 	n:            "0",
 	h:            "0",
 	c:            "C0",
-	execute: func(cpu *cpu) {
-
-	},
+	execute:      func(cpu *cpu) {},
 }
 
 var sra_d = instruction{
@@ -4268,9 +3724,7 @@ var sra_d = instruction{
 	n:            "0",
 	h:            "0",
 	c:            "D0",
-	execute: func(cpu *cpu) {
-
-	},
+	execute:      func(cpu *cpu) {},
 }
 
 var sra_e = instruction{
@@ -4283,9 +3737,7 @@ var sra_e = instruction{
 	n:            "0",
 	h:            "0",
 	c:            "E0",
-	execute: func(cpu *cpu) {
-
-	},
+	execute:      func(cpu *cpu) {},
 }
 
 var sla_c = instruction{
@@ -4298,9 +3750,7 @@ var sla_c = instruction{
 	n:            "0",
 	h:            "0",
 	c:            "C7",
-	execute: func(cpu *cpu) {
-
-	},
+	execute:      func(cpu *cpu) {},
 }
 
 var sra_l = instruction{
@@ -4313,9 +3763,7 @@ var sra_l = instruction{
 	n:            "0",
 	h:            "0",
 	c:            "L0",
-	execute: func(cpu *cpu) {
-
-	},
+	execute:      func(cpu *cpu) {},
 }
 
 var sra__hl_ = instruction{
@@ -4328,9 +3776,7 @@ var sra__hl_ = instruction{
 	n:            "0",
 	h:            "0",
 	c:            "(HL)0",
-	execute: func(cpu *cpu) {
-
-	},
+	execute:      func(cpu *cpu) {},
 }
 
 var sra_a = instruction{
@@ -4343,9 +3789,7 @@ var sra_a = instruction{
 	n:            "0",
 	h:            "0",
 	c:            "A0",
-	execute: func(cpu *cpu) {
-
-	},
+	execute:      func(cpu *cpu) {},
 }
 
 var swap_b = instruction{
@@ -4358,9 +3802,7 @@ var swap_b = instruction{
 	n:            "0",
 	h:            "0",
 	c:            "0",
-	execute: func(cpu *cpu) {
-
-	},
+	execute:      func(cpu *cpu) {},
 }
 
 var swap_c = instruction{
@@ -4373,9 +3815,7 @@ var swap_c = instruction{
 	n:            "0",
 	h:            "0",
 	c:            "0",
-	execute: func(cpu *cpu) {
-
-	},
+	execute:      func(cpu *cpu) {},
 }
 
 var swap_d = instruction{
@@ -4388,9 +3828,7 @@ var swap_d = instruction{
 	n:            "0",
 	h:            "0",
 	c:            "0",
-	execute: func(cpu *cpu) {
-
-	},
+	execute:      func(cpu *cpu) {},
 }
 
 var swap_e = instruction{
@@ -4403,9 +3841,7 @@ var swap_e = instruction{
 	n:            "0",
 	h:            "0",
 	c:            "0",
-	execute: func(cpu *cpu) {
-
-	},
+	execute:      func(cpu *cpu) {},
 }
 
 var swap_h = instruction{
@@ -4418,9 +3854,7 @@ var swap_h = instruction{
 	n:            "0",
 	h:            "0",
 	c:            "0",
-	execute: func(cpu *cpu) {
-
-	},
+	execute:      func(cpu *cpu) {},
 }
 
 var swap_l = instruction{
@@ -4433,9 +3867,7 @@ var swap_l = instruction{
 	n:            "0",
 	h:            "0",
 	c:            "0",
-	execute: func(cpu *cpu) {
-
-	},
+	execute:      func(cpu *cpu) {},
 }
 
 var swap__hl_ = instruction{
@@ -4448,9 +3880,7 @@ var swap__hl_ = instruction{
 	n:            "0",
 	h:            "0",
 	c:            "0",
-	execute: func(cpu *cpu) {
-
-	},
+	execute:      func(cpu *cpu) {},
 }
 
 var swap_a = instruction{
@@ -4463,9 +3893,7 @@ var swap_a = instruction{
 	n:            "0",
 	h:            "0",
 	c:            "0",
-	execute: func(cpu *cpu) {
-
-	},
+	execute:      func(cpu *cpu) {},
 }
 
 var sra_h = instruction{
@@ -4478,9 +3906,7 @@ var sra_h = instruction{
 	n:            "0",
 	h:            "0",
 	c:            "H0",
-	execute: func(cpu *cpu) {
-
-	},
+	execute:      func(cpu *cpu) {},
 }
 
 var sla_l = instruction{
@@ -4493,9 +3919,7 @@ var sla_l = instruction{
 	n:            "0",
 	h:            "0",
 	c:            "L7",
-	execute: func(cpu *cpu) {
-
-	},
+	execute:      func(cpu *cpu) {},
 }
 
 var rrc_e = instruction{
@@ -4508,9 +3932,7 @@ var rrc_e = instruction{
 	n:            "0",
 	h:            "0",
 	c:            "E0",
-	execute: func(cpu *cpu) {
-
-	},
+	execute:      func(cpu *cpu) {},
 }
 
 var srl_b = instruction{
@@ -4523,9 +3945,7 @@ var srl_b = instruction{
 	n:            "0",
 	h:            "0",
 	c:            "B0",
-	execute: func(cpu *cpu) {
-
-	},
+	execute:      func(cpu *cpu) {},
 }
 
 var srl_h = instruction{
@@ -4538,9 +3958,7 @@ var srl_h = instruction{
 	n:            "0",
 	h:            "0",
 	c:            "H0",
-	execute: func(cpu *cpu) {
-
-	},
+	execute:      func(cpu *cpu) {},
 }
 
 var srl_l = instruction{
@@ -4553,9 +3971,7 @@ var srl_l = instruction{
 	n:            "0",
 	h:            "0",
 	c:            "L0",
-	execute: func(cpu *cpu) {
-
-	},
+	execute:      func(cpu *cpu) {},
 }
 
 var srl_e = instruction{
@@ -4568,9 +3984,7 @@ var srl_e = instruction{
 	n:            "0",
 	h:            "0",
 	c:            "E0",
-	execute: func(cpu *cpu) {
-
-	},
+	execute:      func(cpu *cpu) {},
 }
 
 var srl_a = instruction{
@@ -4583,9 +3997,7 @@ var srl_a = instruction{
 	n:            "0",
 	h:            "0",
 	c:            "A0",
-	execute: func(cpu *cpu) {
-
-	},
+	execute:      func(cpu *cpu) {},
 }
 
 var bit_0__b = instruction{
@@ -4598,9 +4010,7 @@ var bit_0__b = instruction{
 	n:            "0",
 	h:            "1",
 	c:            "-",
-	execute: func(cpu *cpu) {
-
-	},
+	execute:      func(cpu *cpu) {},
 }
 
 var bit_0__c = instruction{
@@ -4613,9 +4023,7 @@ var bit_0__c = instruction{
 	n:            "0",
 	h:            "1",
 	c:            "-",
-	execute: func(cpu *cpu) {
-
-	},
+	execute:      func(cpu *cpu) {},
 }
 
 var bit_0__d = instruction{
@@ -4628,9 +4036,7 @@ var bit_0__d = instruction{
 	n:            "0",
 	h:            "1",
 	c:            "-",
-	execute: func(cpu *cpu) {
-
-	},
+	execute:      func(cpu *cpu) {},
 }
 
 var bit_0__e = instruction{
@@ -4643,9 +4049,7 @@ var bit_0__e = instruction{
 	n:            "0",
 	h:            "1",
 	c:            "-",
-	execute: func(cpu *cpu) {
-
-	},
+	execute:      func(cpu *cpu) {},
 }
 
 var bit_0__h = instruction{
@@ -4658,9 +4062,7 @@ var bit_0__h = instruction{
 	n:            "0",
 	h:            "1",
 	c:            "-",
-	execute: func(cpu *cpu) {
-
-	},
+	execute:      func(cpu *cpu) {},
 }
 
 var bit_0__l = instruction{
@@ -4673,9 +4075,7 @@ var bit_0__l = instruction{
 	n:            "0",
 	h:            "1",
 	c:            "-",
-	execute: func(cpu *cpu) {
-
-	},
+	execute:      func(cpu *cpu) {},
 }
 
 var bit_0___hl_ = instruction{
@@ -4688,9 +4088,7 @@ var bit_0___hl_ = instruction{
 	n:            "0",
 	h:            "1",
 	c:            "-",
-	execute: func(cpu *cpu) {
-
-	},
+	execute:      func(cpu *cpu) {},
 }
 
 var bit_0__a = instruction{
@@ -4703,9 +4101,7 @@ var bit_0__a = instruction{
 	n:            "0",
 	h:            "1",
 	c:            "-",
-	execute: func(cpu *cpu) {
-
-	},
+	execute:      func(cpu *cpu) {},
 }
 
 var bit_1__b = instruction{
@@ -4718,9 +4114,7 @@ var bit_1__b = instruction{
 	n:            "0",
 	h:            "1",
 	c:            "-",
-	execute: func(cpu *cpu) {
-
-	},
+	execute:      func(cpu *cpu) {},
 }
 
 var bit_1__c = instruction{
@@ -4733,9 +4127,7 @@ var bit_1__c = instruction{
 	n:            "0",
 	h:            "1",
 	c:            "-",
-	execute: func(cpu *cpu) {
-
-	},
+	execute:      func(cpu *cpu) {},
 }
 
 var bit_1__d = instruction{
@@ -4748,9 +4140,7 @@ var bit_1__d = instruction{
 	n:            "0",
 	h:            "1",
 	c:            "-",
-	execute: func(cpu *cpu) {
-
-	},
+	execute:      func(cpu *cpu) {},
 }
 
 var bit_1__e = instruction{
@@ -4763,9 +4153,7 @@ var bit_1__e = instruction{
 	n:            "0",
 	h:            "1",
 	c:            "-",
-	execute: func(cpu *cpu) {
-
-	},
+	execute:      func(cpu *cpu) {},
 }
 
 var bit_1__h = instruction{
@@ -4778,9 +4166,7 @@ var bit_1__h = instruction{
 	n:            "0",
 	h:            "1",
 	c:            "-",
-	execute: func(cpu *cpu) {
-
-	},
+	execute:      func(cpu *cpu) {},
 }
 
 var bit_1__l = instruction{
@@ -4793,9 +4179,7 @@ var bit_1__l = instruction{
 	n:            "0",
 	h:            "1",
 	c:            "-",
-	execute: func(cpu *cpu) {
-
-	},
+	execute:      func(cpu *cpu) {},
 }
 
 var bit_1___hl_ = instruction{
@@ -4808,9 +4192,7 @@ var bit_1___hl_ = instruction{
 	n:            "0",
 	h:            "1",
 	c:            "-",
-	execute: func(cpu *cpu) {
-
-	},
+	execute:      func(cpu *cpu) {},
 }
 
 var bit_1__a = instruction{
@@ -4823,9 +4205,7 @@ var bit_1__a = instruction{
 	n:            "0",
 	h:            "1",
 	c:            "-",
-	execute: func(cpu *cpu) {
-
-	},
+	execute:      func(cpu *cpu) {},
 }
 
 var bit_2__b = instruction{
@@ -4838,9 +4218,7 @@ var bit_2__b = instruction{
 	n:            "0",
 	h:            "1",
 	c:            "-",
-	execute: func(cpu *cpu) {
-
-	},
+	execute:      func(cpu *cpu) {},
 }
 
 var bit_2__c = instruction{
@@ -4853,9 +4231,7 @@ var bit_2__c = instruction{
 	n:            "0",
 	h:            "1",
 	c:            "-",
-	execute: func(cpu *cpu) {
-
-	},
+	execute:      func(cpu *cpu) {},
 }
 
 var bit_2__d = instruction{
@@ -4868,9 +4244,7 @@ var bit_2__d = instruction{
 	n:            "0",
 	h:            "1",
 	c:            "-",
-	execute: func(cpu *cpu) {
-
-	},
+	execute:      func(cpu *cpu) {},
 }
 
 var bit_2__e = instruction{
@@ -4883,9 +4257,7 @@ var bit_2__e = instruction{
 	n:            "0",
 	h:            "1",
 	c:            "-",
-	execute: func(cpu *cpu) {
-
-	},
+	execute:      func(cpu *cpu) {},
 }
 
 var bit_2__h = instruction{
@@ -4898,9 +4270,7 @@ var bit_2__h = instruction{
 	n:            "0",
 	h:            "1",
 	c:            "-",
-	execute: func(cpu *cpu) {
-
-	},
+	execute:      func(cpu *cpu) {},
 }
 
 var bit_2__l = instruction{
@@ -4913,9 +4283,7 @@ var bit_2__l = instruction{
 	n:            "0",
 	h:            "1",
 	c:            "-",
-	execute: func(cpu *cpu) {
-
-	},
+	execute:      func(cpu *cpu) {},
 }
 
 var bit_2___hl_ = instruction{
@@ -4928,9 +4296,7 @@ var bit_2___hl_ = instruction{
 	n:            "0",
 	h:            "1",
 	c:            "-",
-	execute: func(cpu *cpu) {
-
-	},
+	execute:      func(cpu *cpu) {},
 }
 
 var bit_2__a = instruction{
@@ -4943,9 +4309,7 @@ var bit_2__a = instruction{
 	n:            "0",
 	h:            "1",
 	c:            "-",
-	execute: func(cpu *cpu) {
-
-	},
+	execute:      func(cpu *cpu) {},
 }
 
 var srl_d = instruction{
@@ -4958,9 +4322,7 @@ var srl_d = instruction{
 	n:            "0",
 	h:            "0",
 	c:            "D0",
-	execute: func(cpu *cpu) {
-
-	},
+	execute:      func(cpu *cpu) {},
 }
 
 var bit_3__c = instruction{
@@ -4973,9 +4335,7 @@ var bit_3__c = instruction{
 	n:            "0",
 	h:            "1",
 	c:            "-",
-	execute: func(cpu *cpu) {
-
-	},
+	execute:      func(cpu *cpu) {},
 }
 
 var bit_3__d = instruction{
@@ -4988,9 +4348,7 @@ var bit_3__d = instruction{
 	n:            "0",
 	h:            "1",
 	c:            "-",
-	execute: func(cpu *cpu) {
-
-	},
+	execute:      func(cpu *cpu) {},
 }
 
 var bit_3__e = instruction{
@@ -5003,9 +4361,7 @@ var bit_3__e = instruction{
 	n:            "0",
 	h:            "1",
 	c:            "-",
-	execute: func(cpu *cpu) {
-
-	},
+	execute:      func(cpu *cpu) {},
 }
 
 var bit_3__h = instruction{
@@ -5018,9 +4374,7 @@ var bit_3__h = instruction{
 	n:            "0",
 	h:            "1",
 	c:            "-",
-	execute: func(cpu *cpu) {
-
-	},
+	execute:      func(cpu *cpu) {},
 }
 
 var bit_3__l = instruction{
@@ -5033,9 +4387,7 @@ var bit_3__l = instruction{
 	n:            "0",
 	h:            "1",
 	c:            "-",
-	execute: func(cpu *cpu) {
-
-	},
+	execute:      func(cpu *cpu) {},
 }
 
 var bit_3___hl_ = instruction{
@@ -5048,9 +4400,7 @@ var bit_3___hl_ = instruction{
 	n:            "0",
 	h:            "1",
 	c:            "-",
-	execute: func(cpu *cpu) {
-
-	},
+	execute:      func(cpu *cpu) {},
 }
 
 var srl__hl_ = instruction{
@@ -5063,9 +4413,7 @@ var srl__hl_ = instruction{
 	n:            "0",
 	h:            "0",
 	c:            "(HL)0",
-	execute: func(cpu *cpu) {
-
-	},
+	execute:      func(cpu *cpu) {},
 }
 
 var bit_4__b = instruction{
@@ -5078,9 +4426,7 @@ var bit_4__b = instruction{
 	n:            "0",
 	h:            "1",
 	c:            "-",
-	execute: func(cpu *cpu) {
-
-	},
+	execute:      func(cpu *cpu) {},
 }
 
 var bit_4__c = instruction{
@@ -5093,9 +4439,7 @@ var bit_4__c = instruction{
 	n:            "0",
 	h:            "1",
 	c:            "-",
-	execute: func(cpu *cpu) {
-
-	},
+	execute:      func(cpu *cpu) {},
 }
 
 var bit_4__d = instruction{
@@ -5108,9 +4452,7 @@ var bit_4__d = instruction{
 	n:            "0",
 	h:            "1",
 	c:            "-",
-	execute: func(cpu *cpu) {
-
-	},
+	execute:      func(cpu *cpu) {},
 }
 
 var bit_4__e = instruction{
@@ -5123,9 +4465,7 @@ var bit_4__e = instruction{
 	n:            "0",
 	h:            "1",
 	c:            "-",
-	execute: func(cpu *cpu) {
-
-	},
+	execute:      func(cpu *cpu) {},
 }
 
 var bit_4__h = instruction{
@@ -5138,9 +4478,7 @@ var bit_4__h = instruction{
 	n:            "0",
 	h:            "1",
 	c:            "-",
-	execute: func(cpu *cpu) {
-
-	},
+	execute:      func(cpu *cpu) {},
 }
 
 var bit_4__l = instruction{
@@ -5153,9 +4491,7 @@ var bit_4__l = instruction{
 	n:            "0",
 	h:            "1",
 	c:            "-",
-	execute: func(cpu *cpu) {
-
-	},
+	execute:      func(cpu *cpu) {},
 }
 
 var srl_c = instruction{
@@ -5168,9 +4504,7 @@ var srl_c = instruction{
 	n:            "0",
 	h:            "0",
 	c:            "C0",
-	execute: func(cpu *cpu) {
-
-	},
+	execute:      func(cpu *cpu) {},
 }
 
 var bit_4__a = instruction{
@@ -5183,9 +4517,7 @@ var bit_4__a = instruction{
 	n:            "0",
 	h:            "1",
 	c:            "-",
-	execute: func(cpu *cpu) {
-
-	},
+	execute:      func(cpu *cpu) {},
 }
 
 var bit_5__b = instruction{
@@ -5198,9 +4530,7 @@ var bit_5__b = instruction{
 	n:            "0",
 	h:            "1",
 	c:            "-",
-	execute: func(cpu *cpu) {
-
-	},
+	execute:      func(cpu *cpu) {},
 }
 
 var bit_5__c = instruction{
@@ -5213,9 +4543,7 @@ var bit_5__c = instruction{
 	n:            "0",
 	h:            "1",
 	c:            "-",
-	execute: func(cpu *cpu) {
-
-	},
+	execute:      func(cpu *cpu) {},
 }
 
 var bit_5__d = instruction{
@@ -5228,9 +4556,7 @@ var bit_5__d = instruction{
 	n:            "0",
 	h:            "1",
 	c:            "-",
-	execute: func(cpu *cpu) {
-
-	},
+	execute:      func(cpu *cpu) {},
 }
 
 var bit_5__e = instruction{
@@ -5243,9 +4569,7 @@ var bit_5__e = instruction{
 	n:            "0",
 	h:            "1",
 	c:            "-",
-	execute: func(cpu *cpu) {
-
-	},
+	execute:      func(cpu *cpu) {},
 }
 
 var bit_5__h = instruction{
@@ -5258,9 +4582,7 @@ var bit_5__h = instruction{
 	n:            "0",
 	h:            "1",
 	c:            "-",
-	execute: func(cpu *cpu) {
-
-	},
+	execute:      func(cpu *cpu) {},
 }
 
 var bit_3__b = instruction{
@@ -5273,9 +4595,7 @@ var bit_3__b = instruction{
 	n:            "0",
 	h:            "1",
 	c:            "-",
-	execute: func(cpu *cpu) {
-
-	},
+	execute:      func(cpu *cpu) {},
 }
 
 var bit_3__a = instruction{
@@ -5288,9 +4608,7 @@ var bit_3__a = instruction{
 	n:            "0",
 	h:            "1",
 	c:            "-",
-	execute: func(cpu *cpu) {
-
-	},
+	execute:      func(cpu *cpu) {},
 }
 
 var bit_5__a = instruction{
@@ -5303,9 +4621,7 @@ var bit_5__a = instruction{
 	n:            "0",
 	h:            "1",
 	c:            "-",
-	execute: func(cpu *cpu) {
-
-	},
+	execute:      func(cpu *cpu) {},
 }
 
 var bit_6__b = instruction{
@@ -5318,9 +4634,7 @@ var bit_6__b = instruction{
 	n:            "0",
 	h:            "1",
 	c:            "-",
-	execute: func(cpu *cpu) {
-
-	},
+	execute:      func(cpu *cpu) {},
 }
 
 var bit_6__c = instruction{
@@ -5333,9 +4647,7 @@ var bit_6__c = instruction{
 	n:            "0",
 	h:            "1",
 	c:            "-",
-	execute: func(cpu *cpu) {
-
-	},
+	execute:      func(cpu *cpu) {},
 }
 
 var bit_6__d = instruction{
@@ -5348,9 +4660,7 @@ var bit_6__d = instruction{
 	n:            "0",
 	h:            "1",
 	c:            "-",
-	execute: func(cpu *cpu) {
-
-	},
+	execute:      func(cpu *cpu) {},
 }
 
 var bit_6__e = instruction{
@@ -5363,9 +4673,7 @@ var bit_6__e = instruction{
 	n:            "0",
 	h:            "1",
 	c:            "-",
-	execute: func(cpu *cpu) {
-
-	},
+	execute:      func(cpu *cpu) {},
 }
 
 var bit_6__h = instruction{
@@ -5378,9 +4686,7 @@ var bit_6__h = instruction{
 	n:            "0",
 	h:            "1",
 	c:            "-",
-	execute: func(cpu *cpu) {
-
-	},
+	execute:      func(cpu *cpu) {},
 }
 
 var bit_4___hl_ = instruction{
@@ -5393,9 +4699,7 @@ var bit_4___hl_ = instruction{
 	n:            "0",
 	h:            "1",
 	c:            "-",
-	execute: func(cpu *cpu) {
-
-	},
+	execute:      func(cpu *cpu) {},
 }
 
 var bit_5__l = instruction{
@@ -5408,9 +4712,7 @@ var bit_5__l = instruction{
 	n:            "0",
 	h:            "1",
 	c:            "-",
-	execute: func(cpu *cpu) {
-
-	},
+	execute:      func(cpu *cpu) {},
 }
 
 var bit_6__a = instruction{
@@ -5423,9 +4725,7 @@ var bit_6__a = instruction{
 	n:            "0",
 	h:            "1",
 	c:            "-",
-	execute: func(cpu *cpu) {
-
-	},
+	execute:      func(cpu *cpu) {},
 }
 
 var bit_5___hl_ = instruction{
@@ -5438,9 +4738,7 @@ var bit_5___hl_ = instruction{
 	n:            "0",
 	h:            "1",
 	c:            "-",
-	execute: func(cpu *cpu) {
-
-	},
+	execute:      func(cpu *cpu) {},
 }
 
 var bit_7__c = instruction{
@@ -5453,9 +4751,7 @@ var bit_7__c = instruction{
 	n:            "0",
 	h:            "1",
 	c:            "-",
-	execute: func(cpu *cpu) {
-
-	},
+	execute:      func(cpu *cpu) {},
 }
 
 var bit_7__d = instruction{
@@ -5468,9 +4764,7 @@ var bit_7__d = instruction{
 	n:            "0",
 	h:            "1",
 	c:            "-",
-	execute: func(cpu *cpu) {
-
-	},
+	execute:      func(cpu *cpu) {},
 }
 
 var bit_7__e = instruction{
@@ -5483,9 +4777,7 @@ var bit_7__e = instruction{
 	n:            "0",
 	h:            "1",
 	c:            "-",
-	execute: func(cpu *cpu) {
-
-	},
+	execute:      func(cpu *cpu) {},
 }
 
 var bit_6___hl_ = instruction{
@@ -5498,9 +4790,7 @@ var bit_6___hl_ = instruction{
 	n:            "0",
 	h:            "1",
 	c:            "-",
-	execute: func(cpu *cpu) {
-
-	},
+	execute:      func(cpu *cpu) {},
 }
 
 var bit_7__l = instruction{
@@ -5513,9 +4803,7 @@ var bit_7__l = instruction{
 	n:            "0",
 	h:            "1",
 	c:            "-",
-	execute: func(cpu *cpu) {
-
-	},
+	execute:      func(cpu *cpu) {},
 }
 
 var bit_7___hl_ = instruction{
@@ -5528,9 +4816,7 @@ var bit_7___hl_ = instruction{
 	n:            "0",
 	h:            "1",
 	c:            "-",
-	execute: func(cpu *cpu) {
-
-	},
+	execute:      func(cpu *cpu) {},
 }
 
 var bit_7__a = instruction{
@@ -5543,9 +4829,7 @@ var bit_7__a = instruction{
 	n:            "0",
 	h:            "1",
 	c:            "-",
-	execute: func(cpu *cpu) {
-
-	},
+	execute:      func(cpu *cpu) {},
 }
 
 var bit_6__l = instruction{
@@ -5558,9 +4842,7 @@ var bit_6__l = instruction{
 	n:            "0",
 	h:            "1",
 	c:            "-",
-	execute: func(cpu *cpu) {
-
-	},
+	execute:      func(cpu *cpu) {},
 }
 
 var res_0__c = instruction{
@@ -5573,9 +4855,7 @@ var res_0__c = instruction{
 	n:            "-",
 	h:            "-",
 	c:            "-",
-	execute: func(cpu *cpu) {
-
-	},
+	execute:      func(cpu *cpu) {},
 }
 
 var res_0__d = instruction{
@@ -5588,9 +4868,7 @@ var res_0__d = instruction{
 	n:            "-",
 	h:            "-",
 	c:            "-",
-	execute: func(cpu *cpu) {
-
-	},
+	execute:      func(cpu *cpu) {},
 }
 
 var res_0__e = instruction{
@@ -5603,9 +4881,7 @@ var res_0__e = instruction{
 	n:            "-",
 	h:            "-",
 	c:            "-",
-	execute: func(cpu *cpu) {
-
-	},
+	execute:      func(cpu *cpu) {},
 }
 
 var res_0__h = instruction{
@@ -5618,9 +4894,7 @@ var res_0__h = instruction{
 	n:            "-",
 	h:            "-",
 	c:            "-",
-	execute: func(cpu *cpu) {
-
-	},
+	execute:      func(cpu *cpu) {},
 }
 
 var res_0__l = instruction{
@@ -5633,9 +4907,7 @@ var res_0__l = instruction{
 	n:            "-",
 	h:            "-",
 	c:            "-",
-	execute: func(cpu *cpu) {
-
-	},
+	execute:      func(cpu *cpu) {},
 }
 
 var res_0___hl_ = instruction{
@@ -5648,9 +4920,7 @@ var res_0___hl_ = instruction{
 	n:            "-",
 	h:            "-",
 	c:            "-",
-	execute: func(cpu *cpu) {
-
-	},
+	execute:      func(cpu *cpu) {},
 }
 
 var res_0__a = instruction{
@@ -5663,9 +4933,7 @@ var res_0__a = instruction{
 	n:            "-",
 	h:            "-",
 	c:            "-",
-	execute: func(cpu *cpu) {
-
-	},
+	execute:      func(cpu *cpu) {},
 }
 
 var res_1__b = instruction{
@@ -5678,9 +4946,7 @@ var res_1__b = instruction{
 	n:            "-",
 	h:            "-",
 	c:            "-",
-	execute: func(cpu *cpu) {
-
-	},
+	execute:      func(cpu *cpu) {},
 }
 
 var res_1__c = instruction{
@@ -5693,9 +4959,7 @@ var res_1__c = instruction{
 	n:            "-",
 	h:            "-",
 	c:            "-",
-	execute: func(cpu *cpu) {
-
-	},
+	execute:      func(cpu *cpu) {},
 }
 
 var res_1__d = instruction{
@@ -5708,9 +4972,7 @@ var res_1__d = instruction{
 	n:            "-",
 	h:            "-",
 	c:            "-",
-	execute: func(cpu *cpu) {
-
-	},
+	execute:      func(cpu *cpu) {},
 }
 
 var res_1__e = instruction{
@@ -5723,9 +4985,7 @@ var res_1__e = instruction{
 	n:            "-",
 	h:            "-",
 	c:            "-",
-	execute: func(cpu *cpu) {
-
-	},
+	execute:      func(cpu *cpu) {},
 }
 
 var res_1__h = instruction{
@@ -5738,9 +4998,7 @@ var res_1__h = instruction{
 	n:            "-",
 	h:            "-",
 	c:            "-",
-	execute: func(cpu *cpu) {
-
-	},
+	execute:      func(cpu *cpu) {},
 }
 
 var res_1__l = instruction{
@@ -5753,9 +5011,7 @@ var res_1__l = instruction{
 	n:            "-",
 	h:            "-",
 	c:            "-",
-	execute: func(cpu *cpu) {
-
-	},
+	execute:      func(cpu *cpu) {},
 }
 
 var res_1___hl_ = instruction{
@@ -5768,9 +5024,7 @@ var res_1___hl_ = instruction{
 	n:            "-",
 	h:            "-",
 	c:            "-",
-	execute: func(cpu *cpu) {
-
-	},
+	execute:      func(cpu *cpu) {},
 }
 
 var res_1__a = instruction{
@@ -5783,9 +5037,7 @@ var res_1__a = instruction{
 	n:            "-",
 	h:            "-",
 	c:            "-",
-	execute: func(cpu *cpu) {
-
-	},
+	execute:      func(cpu *cpu) {},
 }
 
 var res_2__b = instruction{
@@ -5798,9 +5050,7 @@ var res_2__b = instruction{
 	n:            "-",
 	h:            "-",
 	c:            "-",
-	execute: func(cpu *cpu) {
-
-	},
+	execute:      func(cpu *cpu) {},
 }
 
 var res_2__c = instruction{
@@ -5813,9 +5063,7 @@ var res_2__c = instruction{
 	n:            "-",
 	h:            "-",
 	c:            "-",
-	execute: func(cpu *cpu) {
-
-	},
+	execute:      func(cpu *cpu) {},
 }
 
 var res_2__d = instruction{
@@ -5828,9 +5076,7 @@ var res_2__d = instruction{
 	n:            "-",
 	h:            "-",
 	c:            "-",
-	execute: func(cpu *cpu) {
-
-	},
+	execute:      func(cpu *cpu) {},
 }
 
 var res_2__e = instruction{
@@ -5843,9 +5089,7 @@ var res_2__e = instruction{
 	n:            "-",
 	h:            "-",
 	c:            "-",
-	execute: func(cpu *cpu) {
-
-	},
+	execute:      func(cpu *cpu) {},
 }
 
 var res_2__h = instruction{
@@ -5858,9 +5102,7 @@ var res_2__h = instruction{
 	n:            "-",
 	h:            "-",
 	c:            "-",
-	execute: func(cpu *cpu) {
-
-	},
+	execute:      func(cpu *cpu) {},
 }
 
 var res_2__l = instruction{
@@ -5873,9 +5115,7 @@ var res_2__l = instruction{
 	n:            "-",
 	h:            "-",
 	c:            "-",
-	execute: func(cpu *cpu) {
-
-	},
+	execute:      func(cpu *cpu) {},
 }
 
 var res_0__b = instruction{
@@ -5888,9 +5128,7 @@ var res_0__b = instruction{
 	n:            "-",
 	h:            "-",
 	c:            "-",
-	execute: func(cpu *cpu) {
-
-	},
+	execute:      func(cpu *cpu) {},
 }
 
 var bit_7__h = instruction{
@@ -5903,9 +5141,7 @@ var bit_7__h = instruction{
 	n:            "0",
 	h:            "1",
 	c:            "-",
-	execute: func(cpu *cpu) {
-
-	},
+	execute:      func(cpu *cpu) {},
 }
 
 var bit_7__b = instruction{
@@ -5918,9 +5154,7 @@ var bit_7__b = instruction{
 	n:            "0",
 	h:            "1",
 	c:            "-",
-	execute: func(cpu *cpu) {
-
-	},
+	execute:      func(cpu *cpu) {},
 }
 
 var res_3__c = instruction{
@@ -5933,9 +5167,7 @@ var res_3__c = instruction{
 	n:            "-",
 	h:            "-",
 	c:            "-",
-	execute: func(cpu *cpu) {
-
-	},
+	execute:      func(cpu *cpu) {},
 }
 
 var res_3__d = instruction{
@@ -5948,9 +5180,7 @@ var res_3__d = instruction{
 	n:            "-",
 	h:            "-",
 	c:            "-",
-	execute: func(cpu *cpu) {
-
-	},
+	execute:      func(cpu *cpu) {},
 }
 
 var res_3__e = instruction{
@@ -5963,9 +5193,7 @@ var res_3__e = instruction{
 	n:            "-",
 	h:            "-",
 	c:            "-",
-	execute: func(cpu *cpu) {
-
-	},
+	execute:      func(cpu *cpu) {},
 }
 
 var res_3__h = instruction{
@@ -5978,9 +5206,7 @@ var res_3__h = instruction{
 	n:            "-",
 	h:            "-",
 	c:            "-",
-	execute: func(cpu *cpu) {
-
-	},
+	execute:      func(cpu *cpu) {},
 }
 
 var res_3__l = instruction{
@@ -5993,9 +5219,7 @@ var res_3__l = instruction{
 	n:            "-",
 	h:            "-",
 	c:            "-",
-	execute: func(cpu *cpu) {
-
-	},
+	execute:      func(cpu *cpu) {},
 }
 
 var res_3___hl_ = instruction{
@@ -6008,9 +5232,7 @@ var res_3___hl_ = instruction{
 	n:            "-",
 	h:            "-",
 	c:            "-",
-	execute: func(cpu *cpu) {
-
-	},
+	execute:      func(cpu *cpu) {},
 }
 
 var res_3__b = instruction{
@@ -6023,9 +5245,7 @@ var res_3__b = instruction{
 	n:            "-",
 	h:            "-",
 	c:            "-",
-	execute: func(cpu *cpu) {
-
-	},
+	execute:      func(cpu *cpu) {},
 }
 
 var res_2__a = instruction{
@@ -6038,9 +5258,7 @@ var res_2__a = instruction{
 	n:            "-",
 	h:            "-",
 	c:            "-",
-	execute: func(cpu *cpu) {
-
-	},
+	execute:      func(cpu *cpu) {},
 }
 
 var res_4__c = instruction{
@@ -6053,9 +5271,7 @@ var res_4__c = instruction{
 	n:            "-",
 	h:            "-",
 	c:            "-",
-	execute: func(cpu *cpu) {
-
-	},
+	execute:      func(cpu *cpu) {},
 }
 
 var res_4__d = instruction{
@@ -6068,9 +5284,7 @@ var res_4__d = instruction{
 	n:            "-",
 	h:            "-",
 	c:            "-",
-	execute: func(cpu *cpu) {
-
-	},
+	execute:      func(cpu *cpu) {},
 }
 
 var res_4__b = instruction{
@@ -6083,9 +5297,7 @@ var res_4__b = instruction{
 	n:            "-",
 	h:            "-",
 	c:            "-",
-	execute: func(cpu *cpu) {
-
-	},
+	execute:      func(cpu *cpu) {},
 }
 
 var res_4__e = instruction{
@@ -6098,9 +5310,7 @@ var res_4__e = instruction{
 	n:            "-",
 	h:            "-",
 	c:            "-",
-	execute: func(cpu *cpu) {
-
-	},
+	execute:      func(cpu *cpu) {},
 }
 
 var res_4__l = instruction{
@@ -6113,9 +5323,7 @@ var res_4__l = instruction{
 	n:            "-",
 	h:            "-",
 	c:            "-",
-	execute: func(cpu *cpu) {
-
-	},
+	execute:      func(cpu *cpu) {},
 }
 
 var res_4___hl_ = instruction{
@@ -6128,9 +5336,7 @@ var res_4___hl_ = instruction{
 	n:            "-",
 	h:            "-",
 	c:            "-",
-	execute: func(cpu *cpu) {
-
-	},
+	execute:      func(cpu *cpu) {},
 }
 
 var res_4__h = instruction{
@@ -6143,9 +5349,7 @@ var res_4__h = instruction{
 	n:            "-",
 	h:            "-",
 	c:            "-",
-	execute: func(cpu *cpu) {
-
-	},
+	execute:      func(cpu *cpu) {},
 }
 
 var res_5__b = instruction{
@@ -6158,9 +5362,7 @@ var res_5__b = instruction{
 	n:            "-",
 	h:            "-",
 	c:            "-",
-	execute: func(cpu *cpu) {
-
-	},
+	execute:      func(cpu *cpu) {},
 }
 
 var res_5__c = instruction{
@@ -6173,9 +5375,7 @@ var res_5__c = instruction{
 	n:            "-",
 	h:            "-",
 	c:            "-",
-	execute: func(cpu *cpu) {
-
-	},
+	execute:      func(cpu *cpu) {},
 }
 
 var res_5__d = instruction{
@@ -6188,9 +5388,7 @@ var res_5__d = instruction{
 	n:            "-",
 	h:            "-",
 	c:            "-",
-	execute: func(cpu *cpu) {
-
-	},
+	execute:      func(cpu *cpu) {},
 }
 
 var res_5__e = instruction{
@@ -6203,9 +5401,7 @@ var res_5__e = instruction{
 	n:            "-",
 	h:            "-",
 	c:            "-",
-	execute: func(cpu *cpu) {
-
-	},
+	execute:      func(cpu *cpu) {},
 }
 
 var res_5__h = instruction{
@@ -6218,9 +5414,7 @@ var res_5__h = instruction{
 	n:            "-",
 	h:            "-",
 	c:            "-",
-	execute: func(cpu *cpu) {
-
-	},
+	execute:      func(cpu *cpu) {},
 }
 
 var res_5__l = instruction{
@@ -6233,9 +5427,7 @@ var res_5__l = instruction{
 	n:            "-",
 	h:            "-",
 	c:            "-",
-	execute: func(cpu *cpu) {
-
-	},
+	execute:      func(cpu *cpu) {},
 }
 
 var res_5___hl_ = instruction{
@@ -6248,9 +5440,7 @@ var res_5___hl_ = instruction{
 	n:            "-",
 	h:            "-",
 	c:            "-",
-	execute: func(cpu *cpu) {
-
-	},
+	execute:      func(cpu *cpu) {},
 }
 
 var res_5__a = instruction{
@@ -6263,9 +5453,7 @@ var res_5__a = instruction{
 	n:            "-",
 	h:            "-",
 	c:            "-",
-	execute: func(cpu *cpu) {
-
-	},
+	execute:      func(cpu *cpu) {},
 }
 
 var res_6__b = instruction{
@@ -6278,9 +5466,7 @@ var res_6__b = instruction{
 	n:            "-",
 	h:            "-",
 	c:            "-",
-	execute: func(cpu *cpu) {
-
-	},
+	execute:      func(cpu *cpu) {},
 }
 
 var res_6__c = instruction{
@@ -6293,9 +5479,7 @@ var res_6__c = instruction{
 	n:            "-",
 	h:            "-",
 	c:            "-",
-	execute: func(cpu *cpu) {
-
-	},
+	execute:      func(cpu *cpu) {},
 }
 
 var res_6__d = instruction{
@@ -6308,9 +5492,7 @@ var res_6__d = instruction{
 	n:            "-",
 	h:            "-",
 	c:            "-",
-	execute: func(cpu *cpu) {
-
-	},
+	execute:      func(cpu *cpu) {},
 }
 
 var res_6__e = instruction{
@@ -6323,9 +5505,7 @@ var res_6__e = instruction{
 	n:            "-",
 	h:            "-",
 	c:            "-",
-	execute: func(cpu *cpu) {
-
-	},
+	execute:      func(cpu *cpu) {},
 }
 
 var res_6__h = instruction{
@@ -6338,9 +5518,7 @@ var res_6__h = instruction{
 	n:            "-",
 	h:            "-",
 	c:            "-",
-	execute: func(cpu *cpu) {
-
-	},
+	execute:      func(cpu *cpu) {},
 }
 
 var res_2___hl_ = instruction{
@@ -6353,9 +5531,7 @@ var res_2___hl_ = instruction{
 	n:            "-",
 	h:            "-",
 	c:            "-",
-	execute: func(cpu *cpu) {
-
-	},
+	execute:      func(cpu *cpu) {},
 }
 
 var res_6___hl_ = instruction{
@@ -6368,9 +5544,7 @@ var res_6___hl_ = instruction{
 	n:            "-",
 	h:            "-",
 	c:            "-",
-	execute: func(cpu *cpu) {
-
-	},
+	execute:      func(cpu *cpu) {},
 }
 
 var res_6__a = instruction{
@@ -6383,9 +5557,7 @@ var res_6__a = instruction{
 	n:            "-",
 	h:            "-",
 	c:            "-",
-	execute: func(cpu *cpu) {
-
-	},
+	execute:      func(cpu *cpu) {},
 }
 
 var res_7__b = instruction{
@@ -6398,9 +5570,7 @@ var res_7__b = instruction{
 	n:            "-",
 	h:            "-",
 	c:            "-",
-	execute: func(cpu *cpu) {
-
-	},
+	execute:      func(cpu *cpu) {},
 }
 
 var res_7__c = instruction{
@@ -6413,9 +5583,7 @@ var res_7__c = instruction{
 	n:            "-",
 	h:            "-",
 	c:            "-",
-	execute: func(cpu *cpu) {
-
-	},
+	execute:      func(cpu *cpu) {},
 }
 
 var res_7__d = instruction{
@@ -6428,9 +5596,7 @@ var res_7__d = instruction{
 	n:            "-",
 	h:            "-",
 	c:            "-",
-	execute: func(cpu *cpu) {
-
-	},
+	execute:      func(cpu *cpu) {},
 }
 
 var res_7__e = instruction{
@@ -6443,9 +5609,7 @@ var res_7__e = instruction{
 	n:            "-",
 	h:            "-",
 	c:            "-",
-	execute: func(cpu *cpu) {
-
-	},
+	execute:      func(cpu *cpu) {},
 }
 
 var res_7__h = instruction{
@@ -6458,9 +5622,7 @@ var res_7__h = instruction{
 	n:            "-",
 	h:            "-",
 	c:            "-",
-	execute: func(cpu *cpu) {
-
-	},
+	execute:      func(cpu *cpu) {},
 }
 
 var res_7__l = instruction{
@@ -6473,9 +5635,7 @@ var res_7__l = instruction{
 	n:            "-",
 	h:            "-",
 	c:            "-",
-	execute: func(cpu *cpu) {
-
-	},
+	execute:      func(cpu *cpu) {},
 }
 
 var res_7___hl_ = instruction{
@@ -6488,9 +5648,7 @@ var res_7___hl_ = instruction{
 	n:            "-",
 	h:            "-",
 	c:            "-",
-	execute: func(cpu *cpu) {
-
-	},
+	execute:      func(cpu *cpu) {},
 }
 
 var res_4__a = instruction{
@@ -6503,9 +5661,7 @@ var res_4__a = instruction{
 	n:            "-",
 	h:            "-",
 	c:            "-",
-	execute: func(cpu *cpu) {
-
-	},
+	execute:      func(cpu *cpu) {},
 }
 
 var set_0__b = instruction{
@@ -6518,9 +5674,7 @@ var set_0__b = instruction{
 	n:            "-",
 	h:            "-",
 	c:            "-",
-	execute: func(cpu *cpu) {
-
-	},
+	execute:      func(cpu *cpu) {},
 }
 
 var set_0__c = instruction{
@@ -6533,9 +5687,7 @@ var set_0__c = instruction{
 	n:            "-",
 	h:            "-",
 	c:            "-",
-	execute: func(cpu *cpu) {
-
-	},
+	execute:      func(cpu *cpu) {},
 }
 
 var set_0__d = instruction{
@@ -6548,9 +5700,7 @@ var set_0__d = instruction{
 	n:            "-",
 	h:            "-",
 	c:            "-",
-	execute: func(cpu *cpu) {
-
-	},
+	execute:      func(cpu *cpu) {},
 }
 
 var set_0__e = instruction{
@@ -6563,9 +5713,7 @@ var set_0__e = instruction{
 	n:            "-",
 	h:            "-",
 	c:            "-",
-	execute: func(cpu *cpu) {
-
-	},
+	execute:      func(cpu *cpu) {},
 }
 
 var set_0__h = instruction{
@@ -6578,9 +5726,7 @@ var set_0__h = instruction{
 	n:            "-",
 	h:            "-",
 	c:            "-",
-	execute: func(cpu *cpu) {
-
-	},
+	execute:      func(cpu *cpu) {},
 }
 
 var set_0__l = instruction{
@@ -6593,9 +5739,7 @@ var set_0__l = instruction{
 	n:            "-",
 	h:            "-",
 	c:            "-",
-	execute: func(cpu *cpu) {
-
-	},
+	execute:      func(cpu *cpu) {},
 }
 
 var set_0___hl_ = instruction{
@@ -6608,9 +5752,7 @@ var set_0___hl_ = instruction{
 	n:            "-",
 	h:            "-",
 	c:            "-",
-	execute: func(cpu *cpu) {
-
-	},
+	execute:      func(cpu *cpu) {},
 }
 
 var set_0__a = instruction{
@@ -6623,9 +5765,7 @@ var set_0__a = instruction{
 	n:            "-",
 	h:            "-",
 	c:            "-",
-	execute: func(cpu *cpu) {
-
-	},
+	execute:      func(cpu *cpu) {},
 }
 
 var set_1__b = instruction{
@@ -6638,9 +5778,7 @@ var set_1__b = instruction{
 	n:            "-",
 	h:            "-",
 	c:            "-",
-	execute: func(cpu *cpu) {
-
-	},
+	execute:      func(cpu *cpu) {},
 }
 
 var set_1__c = instruction{
@@ -6653,9 +5791,7 @@ var set_1__c = instruction{
 	n:            "-",
 	h:            "-",
 	c:            "-",
-	execute: func(cpu *cpu) {
-
-	},
+	execute:      func(cpu *cpu) {},
 }
 
 var res_6__l = instruction{
@@ -6668,9 +5804,7 @@ var res_6__l = instruction{
 	n:            "-",
 	h:            "-",
 	c:            "-",
-	execute: func(cpu *cpu) {
-
-	},
+	execute:      func(cpu *cpu) {},
 }
 
 var res_3__a = instruction{
@@ -6683,9 +5817,7 @@ var res_3__a = instruction{
 	n:            "-",
 	h:            "-",
 	c:            "-",
-	execute: func(cpu *cpu) {
-
-	},
+	execute:      func(cpu *cpu) {},
 }
 
 var set_1__h = instruction{
@@ -6698,9 +5830,7 @@ var set_1__h = instruction{
 	n:            "-",
 	h:            "-",
 	c:            "-",
-	execute: func(cpu *cpu) {
-
-	},
+	execute:      func(cpu *cpu) {},
 }
 
 var set_1__l = instruction{
@@ -6713,9 +5843,7 @@ var set_1__l = instruction{
 	n:            "-",
 	h:            "-",
 	c:            "-",
-	execute: func(cpu *cpu) {
-
-	},
+	execute:      func(cpu *cpu) {},
 }
 
 var set_1___hl_ = instruction{
@@ -6728,9 +5856,7 @@ var set_1___hl_ = instruction{
 	n:            "-",
 	h:            "-",
 	c:            "-",
-	execute: func(cpu *cpu) {
-
-	},
+	execute:      func(cpu *cpu) {},
 }
 
 var set_1__a = instruction{
@@ -6743,9 +5869,7 @@ var set_1__a = instruction{
 	n:            "-",
 	h:            "-",
 	c:            "-",
-	execute: func(cpu *cpu) {
-
-	},
+	execute:      func(cpu *cpu) {},
 }
 
 var set_2__b = instruction{
@@ -6758,9 +5882,7 @@ var set_2__b = instruction{
 	n:            "-",
 	h:            "-",
 	c:            "-",
-	execute: func(cpu *cpu) {
-
-	},
+	execute:      func(cpu *cpu) {},
 }
 
 var set_2__c = instruction{
@@ -6773,9 +5895,7 @@ var set_2__c = instruction{
 	n:            "-",
 	h:            "-",
 	c:            "-",
-	execute: func(cpu *cpu) {
-
-	},
+	execute:      func(cpu *cpu) {},
 }
 
 var set_2__d = instruction{
@@ -6788,9 +5908,7 @@ var set_2__d = instruction{
 	n:            "-",
 	h:            "-",
 	c:            "-",
-	execute: func(cpu *cpu) {
-
-	},
+	execute:      func(cpu *cpu) {},
 }
 
 var set_1__d = instruction{
@@ -6803,9 +5921,7 @@ var set_1__d = instruction{
 	n:            "-",
 	h:            "-",
 	c:            "-",
-	execute: func(cpu *cpu) {
-
-	},
+	execute:      func(cpu *cpu) {},
 }
 
 var set_2__h = instruction{
@@ -6818,9 +5934,7 @@ var set_2__h = instruction{
 	n:            "-",
 	h:            "-",
 	c:            "-",
-	execute: func(cpu *cpu) {
-
-	},
+	execute:      func(cpu *cpu) {},
 }
 
 var set_2__l = instruction{
@@ -6833,9 +5947,7 @@ var set_2__l = instruction{
 	n:            "-",
 	h:            "-",
 	c:            "-",
-	execute: func(cpu *cpu) {
-
-	},
+	execute:      func(cpu *cpu) {},
 }
 
 var set_2___hl_ = instruction{
@@ -6848,9 +5960,7 @@ var set_2___hl_ = instruction{
 	n:            "-",
 	h:            "-",
 	c:            "-",
-	execute: func(cpu *cpu) {
-
-	},
+	execute:      func(cpu *cpu) {},
 }
 
 var set_2__a = instruction{
@@ -6863,9 +5973,7 @@ var set_2__a = instruction{
 	n:            "-",
 	h:            "-",
 	c:            "-",
-	execute: func(cpu *cpu) {
-
-	},
+	execute:      func(cpu *cpu) {},
 }
 
 var set_3__b = instruction{
@@ -6878,9 +5986,7 @@ var set_3__b = instruction{
 	n:            "-",
 	h:            "-",
 	c:            "-",
-	execute: func(cpu *cpu) {
-
-	},
+	execute:      func(cpu *cpu) {},
 }
 
 var set_3__c = instruction{
@@ -6893,9 +5999,7 @@ var set_3__c = instruction{
 	n:            "-",
 	h:            "-",
 	c:            "-",
-	execute: func(cpu *cpu) {
-
-	},
+	execute:      func(cpu *cpu) {},
 }
 
 var set_3__d = instruction{
@@ -6908,9 +6012,7 @@ var set_3__d = instruction{
 	n:            "-",
 	h:            "-",
 	c:            "-",
-	execute: func(cpu *cpu) {
-
-	},
+	execute:      func(cpu *cpu) {},
 }
 
 var set_3__e = instruction{
@@ -6923,9 +6025,7 @@ var set_3__e = instruction{
 	n:            "-",
 	h:            "-",
 	c:            "-",
-	execute: func(cpu *cpu) {
-
-	},
+	execute:      func(cpu *cpu) {},
 }
 
 var set_3__h = instruction{
@@ -6938,9 +6038,7 @@ var set_3__h = instruction{
 	n:            "-",
 	h:            "-",
 	c:            "-",
-	execute: func(cpu *cpu) {
-
-	},
+	execute:      func(cpu *cpu) {},
 }
 
 var set_1__e = instruction{
@@ -6953,9 +6051,7 @@ var set_1__e = instruction{
 	n:            "-",
 	h:            "-",
 	c:            "-",
-	execute: func(cpu *cpu) {
-
-	},
+	execute:      func(cpu *cpu) {},
 }
 
 var res_7__a = instruction{
@@ -6968,9 +6064,7 @@ var res_7__a = instruction{
 	n:            "-",
 	h:            "-",
 	c:            "-",
-	execute: func(cpu *cpu) {
-
-	},
+	execute:      func(cpu *cpu) {},
 }
 
 var set_2__e = instruction{
@@ -6983,9 +6077,7 @@ var set_2__e = instruction{
 	n:            "-",
 	h:            "-",
 	c:            "-",
-	execute: func(cpu *cpu) {
-
-	},
+	execute:      func(cpu *cpu) {},
 }
 
 var set_4__b = instruction{
@@ -6998,9 +6090,7 @@ var set_4__b = instruction{
 	n:            "-",
 	h:            "-",
 	c:            "-",
-	execute: func(cpu *cpu) {
-
-	},
+	execute:      func(cpu *cpu) {},
 }
 
 var set_4__c = instruction{
@@ -7013,9 +6103,7 @@ var set_4__c = instruction{
 	n:            "-",
 	h:            "-",
 	c:            "-",
-	execute: func(cpu *cpu) {
-
-	},
+	execute:      func(cpu *cpu) {},
 }
 
 var set_4__d = instruction{
@@ -7028,9 +6116,7 @@ var set_4__d = instruction{
 	n:            "-",
 	h:            "-",
 	c:            "-",
-	execute: func(cpu *cpu) {
-
-	},
+	execute:      func(cpu *cpu) {},
 }
 
 var set_4__e = instruction{
@@ -7043,9 +6129,7 @@ var set_4__e = instruction{
 	n:            "-",
 	h:            "-",
 	c:            "-",
-	execute: func(cpu *cpu) {
-
-	},
+	execute:      func(cpu *cpu) {},
 }
 
 var set_4__h = instruction{
@@ -7058,9 +6142,7 @@ var set_4__h = instruction{
 	n:            "-",
 	h:            "-",
 	c:            "-",
-	execute: func(cpu *cpu) {
-
-	},
+	execute:      func(cpu *cpu) {},
 }
 
 var set_4__l = instruction{
@@ -7073,9 +6155,7 @@ var set_4__l = instruction{
 	n:            "-",
 	h:            "-",
 	c:            "-",
-	execute: func(cpu *cpu) {
-
-	},
+	execute:      func(cpu *cpu) {},
 }
 
 var set_4___hl_ = instruction{
@@ -7088,9 +6168,7 @@ var set_4___hl_ = instruction{
 	n:            "-",
 	h:            "-",
 	c:            "-",
-	execute: func(cpu *cpu) {
-
-	},
+	execute:      func(cpu *cpu) {},
 }
 
 var set_4__a = instruction{
@@ -7103,9 +6181,7 @@ var set_4__a = instruction{
 	n:            "-",
 	h:            "-",
 	c:            "-",
-	execute: func(cpu *cpu) {
-
-	},
+	execute:      func(cpu *cpu) {},
 }
 
 var set_5__b = instruction{
@@ -7118,9 +6194,7 @@ var set_5__b = instruction{
 	n:            "-",
 	h:            "-",
 	c:            "-",
-	execute: func(cpu *cpu) {
-
-	},
+	execute:      func(cpu *cpu) {},
 }
 
 var set_5__c = instruction{
@@ -7133,9 +6207,7 @@ var set_5__c = instruction{
 	n:            "-",
 	h:            "-",
 	c:            "-",
-	execute: func(cpu *cpu) {
-
-	},
+	execute:      func(cpu *cpu) {},
 }
 
 var set_5__d = instruction{
@@ -7148,9 +6220,7 @@ var set_5__d = instruction{
 	n:            "-",
 	h:            "-",
 	c:            "-",
-	execute: func(cpu *cpu) {
-
-	},
+	execute:      func(cpu *cpu) {},
 }
 
 var set_5__e = instruction{
@@ -7163,9 +6233,7 @@ var set_5__e = instruction{
 	n:            "-",
 	h:            "-",
 	c:            "-",
-	execute: func(cpu *cpu) {
-
-	},
+	execute:      func(cpu *cpu) {},
 }
 
 var set_5__h = instruction{
@@ -7178,9 +6246,7 @@ var set_5__h = instruction{
 	n:            "-",
 	h:            "-",
 	c:            "-",
-	execute: func(cpu *cpu) {
-
-	},
+	execute:      func(cpu *cpu) {},
 }
 
 var set_5__l = instruction{
@@ -7193,9 +6259,7 @@ var set_5__l = instruction{
 	n:            "-",
 	h:            "-",
 	c:            "-",
-	execute: func(cpu *cpu) {
-
-	},
+	execute:      func(cpu *cpu) {},
 }
 
 var set_3__a = instruction{
@@ -7208,9 +6272,7 @@ var set_3__a = instruction{
 	n:            "-",
 	h:            "-",
 	c:            "-",
-	execute: func(cpu *cpu) {
-
-	},
+	execute:      func(cpu *cpu) {},
 }
 
 var set_3__l = instruction{
@@ -7223,9 +6285,7 @@ var set_3__l = instruction{
 	n:            "-",
 	h:            "-",
 	c:            "-",
-	execute: func(cpu *cpu) {
-
-	},
+	execute:      func(cpu *cpu) {},
 }
 
 var set_3___hl_ = instruction{
@@ -7238,9 +6298,7 @@ var set_3___hl_ = instruction{
 	n:            "-",
 	h:            "-",
 	c:            "-",
-	execute: func(cpu *cpu) {
-
-	},
+	execute:      func(cpu *cpu) {},
 }
 
 var set_6__c = instruction{
@@ -7253,9 +6311,7 @@ var set_6__c = instruction{
 	n:            "-",
 	h:            "-",
 	c:            "-",
-	execute: func(cpu *cpu) {
-
-	},
+	execute:      func(cpu *cpu) {},
 }
 
 var set_6__d = instruction{
@@ -7268,9 +6324,7 @@ var set_6__d = instruction{
 	n:            "-",
 	h:            "-",
 	c:            "-",
-	execute: func(cpu *cpu) {
-
-	},
+	execute:      func(cpu *cpu) {},
 }
 
 var set_6__e = instruction{
@@ -7283,9 +6337,7 @@ var set_6__e = instruction{
 	n:            "-",
 	h:            "-",
 	c:            "-",
-	execute: func(cpu *cpu) {
-
-	},
+	execute:      func(cpu *cpu) {},
 }
 
 var set_5___hl_ = instruction{
@@ -7298,9 +6350,7 @@ var set_5___hl_ = instruction{
 	n:            "-",
 	h:            "-",
 	c:            "-",
-	execute: func(cpu *cpu) {
-
-	},
+	execute:      func(cpu *cpu) {},
 }
 
 var set_6__l = instruction{
@@ -7313,9 +6363,7 @@ var set_6__l = instruction{
 	n:            "-",
 	h:            "-",
 	c:            "-",
-	execute: func(cpu *cpu) {
-
-	},
+	execute:      func(cpu *cpu) {},
 }
 
 var set_6___hl_ = instruction{
@@ -7328,9 +6376,7 @@ var set_6___hl_ = instruction{
 	n:            "-",
 	h:            "-",
 	c:            "-",
-	execute: func(cpu *cpu) {
-
-	},
+	execute:      func(cpu *cpu) {},
 }
 
 var set_6__h = instruction{
@@ -7343,9 +6389,7 @@ var set_6__h = instruction{
 	n:            "-",
 	h:            "-",
 	c:            "-",
-	execute: func(cpu *cpu) {
-
-	},
+	execute:      func(cpu *cpu) {},
 }
 
 var set_7__b = instruction{
@@ -7358,9 +6402,7 @@ var set_7__b = instruction{
 	n:            "-",
 	h:            "-",
 	c:            "-",
-	execute: func(cpu *cpu) {
-
-	},
+	execute:      func(cpu *cpu) {},
 }
 
 var set_6__b = instruction{
@@ -7373,9 +6415,7 @@ var set_6__b = instruction{
 	n:            "-",
 	h:            "-",
 	c:            "-",
-	execute: func(cpu *cpu) {
-
-	},
+	execute:      func(cpu *cpu) {},
 }
 
 var set_7__d = instruction{
@@ -7388,9 +6428,7 @@ var set_7__d = instruction{
 	n:            "-",
 	h:            "-",
 	c:            "-",
-	execute: func(cpu *cpu) {
-
-	},
+	execute:      func(cpu *cpu) {},
 }
 
 var set_7__e = instruction{
@@ -7403,9 +6441,7 @@ var set_7__e = instruction{
 	n:            "-",
 	h:            "-",
 	c:            "-",
-	execute: func(cpu *cpu) {
-
-	},
+	execute:      func(cpu *cpu) {},
 }
 
 var set_7__h = instruction{
@@ -7418,9 +6454,7 @@ var set_7__h = instruction{
 	n:            "-",
 	h:            "-",
 	c:            "-",
-	execute: func(cpu *cpu) {
-
-	},
+	execute:      func(cpu *cpu) {},
 }
 
 var set_6__a = instruction{
@@ -7433,9 +6467,7 @@ var set_6__a = instruction{
 	n:            "-",
 	h:            "-",
 	c:            "-",
-	execute: func(cpu *cpu) {
-
-	},
+	execute:      func(cpu *cpu) {},
 }
 
 var set_5__a = instruction{
@@ -7448,9 +6480,7 @@ var set_5__a = instruction{
 	n:            "-",
 	h:            "-",
 	c:            "-",
-	execute: func(cpu *cpu) {
-
-	},
+	execute:      func(cpu *cpu) {},
 }
 
 var set_7__c = instruction{
@@ -7463,9 +6493,7 @@ var set_7__c = instruction{
 	n:            "-",
 	h:            "-",
 	c:            "-",
-	execute: func(cpu *cpu) {
-
-	},
+	execute:      func(cpu *cpu) {},
 }
 
 var set_7__l = instruction{
@@ -7478,9 +6506,7 @@ var set_7__l = instruction{
 	n:            "-",
 	h:            "-",
 	c:            "-",
-	execute: func(cpu *cpu) {
-
-	},
+	execute:      func(cpu *cpu) {},
 }
 
 var set_7___hl_ = instruction{
@@ -7493,9 +6519,7 @@ var set_7___hl_ = instruction{
 	n:            "-",
 	h:            "-",
 	c:            "-",
-	execute: func(cpu *cpu) {
-
-	},
+	execute:      func(cpu *cpu) {},
 }
 
 var set_7__a = instruction{
@@ -7508,7 +6532,5 @@ var set_7__a = instruction{
 	n:            "-",
 	h:            "-",
 	c:            "-",
-	execute: func(cpu *cpu) {
-
-	},
+	execute:      func(cpu *cpu) {},
 }
