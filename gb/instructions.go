@@ -1,5 +1,7 @@
 package gb
 
+// TODO: maybe trim this down, binary is pretty big holding
+// all of this memory
 type instruction struct {
 	mnemonic                 string
 	encoding                 string
