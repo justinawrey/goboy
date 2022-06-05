@@ -4,8 +4,6 @@ type instruction struct {
 	mnemonic                     string
 	encoding                     string
 	size                         uint16
-	hasJump                      bool
-	fixedCycles                  bool
 	actionCycles, noActionCycles int
 	z, n, h, c                   string
 	execute                      func(*cpu) (actionTaken bool)
