@@ -1,8 +1,9 @@
 package gb
 
 const (
-	cpuHz          = 4194304
-	cyclesPerFrame = 70224
+	cpuHz             = 4194304
+	cyclesPerFrame    = 70224
+	cyclesPerScanline = 456
 )
 
 type cpu struct {
@@ -58,31 +59,37 @@ func (cpu *cpu) decode() instruction {
 // invoked at 60Hz
 func (cpu *cpu) tick() {
 	elapsedCycles := 0
+	scanCycles := 0
 
 	for elapsedCycles < cyclesPerFrame {
-		instruction := cpu.decode()
-
-		currPc := cpu.pc
-		instruction.execute(cpu)
-
-		jumped := currPc != cpu.pc
-		if !jumped {
-			cpu.pc += instruction.size
-		}
-
-		var cycles int
-		if jumped {
-			cycles = instruction.jumpCycles
-		} else {
-			cycles = instruction.noJumpCycles
-		}
+		cycles := cpu.cpuCycle()
 
 		elapsedCycles += cycles
-		cpu.ppu.scanCycles += cycles
+		scanCycles += cycles
 
-		if cpu.ppu.scanCycles >= 456 {
+		if scanCycles >= cyclesPerScanline {
 			cpu.ppu.tick()
-			cpu.ppu.scanCycles = 0
+			scanCycles = 0
 		}
 	}
+}
+
+// does a decode, execute, move pc cycle
+// returns number of cycles elapsed
+func (cpu *cpu) cpuCycle() (cycles int) {
+	instruction := cpu.decode()
+
+	currPc := cpu.pc
+	instruction.execute(cpu)
+
+	jumped := currPc != cpu.pc
+	if !jumped {
+		cpu.pc += instruction.size
+	}
+
+	if jumped {
+		return instruction.jumpCycles
+	}
+
+	return instruction.noJumpCycles
 }

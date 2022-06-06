@@ -9,8 +9,7 @@ const (
 type Pixel = int
 type ppu struct {
 	*memory
-	scanCycles int
-	pixels     []Pixel
+	pixels []Pixel
 }
 
 func newPpu() *ppu {
@@ -27,4 +26,5 @@ func newPpu() *ppu {
 // Sleep -- do nothing
 // Push -- get em into the fifos
 // Render -- RENDER!
+// needs to populate pixels
 func (ppu *ppu) tick() {}
