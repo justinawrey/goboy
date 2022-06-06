@@ -43,34 +43,16 @@ func (r *cpu) setHl(word uint16) {
 }
 
 func (cpu *cpu) decode() instruction {
-	opcode := cpu.memory.readByte(cpu.pc)
+	b1 := cpu.readByte(cpu.pc)
 
-	switch opcode {
-	case 0x00:
-		return nop
-	case 0xC3:
-		return jp_a16
-	case 0xAF:
-		return xor_a
-	case 0xA8:
-		return xor_b
-	case 0xA9:
-		return xor_c
-	case 0xAA:
-		return xor_d
-	case 0xAB:
-		return xor_e
-	case 0xAC:
-		return xor_h
-	case 0xAD:
-		return xor_l
-	case 0xAE:
-		return xor__hl_
-	case 0xEE:
-		return xor_d8
-	default:
-		return nop
+	// 16-bit instructions
+	if b1 == 0x10 || b1 == 0xCB {
+		b2 := cpu.readByte(cpu.pc + 1)
+		return instructionTable16[makeWord(b1, b2)]
 	}
+
+	// 8-bit instruction
+	return instructionTable8[b1]
 }
 
 // invoked at 60Hz
