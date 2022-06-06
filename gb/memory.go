@@ -18,8 +18,9 @@ func (m *memory) readByte(n uint16) byte {
 }
 
 func (m *memory) readWord(n uint16) uint16 {
-	buf := m.Bytes()
-	return makeWord(buf[n+1], buf[n])
+	upper := m.readByte(n + 1)
+	lower := m.readByte(n)
+	return makeWord(upper, lower)
 }
 
 func (m *memory) writeByte(pos uint16, b byte) {
