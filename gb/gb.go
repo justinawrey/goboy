@@ -8,16 +8,8 @@ import (
 	"time"
 )
 
-const (
-	refreshHz = float64(cpuHz) / float64(cyclesPerFrame)
-	lcdHeight = 144
-	lcdWidth  = 160
-	numPixels = lcdHeight * lcdWidth
-)
+const refreshHz = float64(cpuHz) / float64(cyclesPerFrame)
 
-type Pixel = int
-
-// Renderer renders 23040 (160x144) pixels
 type Renderer interface {
 	Render([]Pixel)
 }
@@ -26,18 +18,21 @@ type Gb struct {
 	renderer Renderer
 	*memory
 	*ppu
-	cpu
+	*cpu
 }
 
 func NewGb() *Gb {
 	gb := new(Gb)
 	mem := newMemory()
-	ppu := new(ppu)
+	ppu := newPpu()
+	cpu := new(cpu)
 
 	gb.memory = mem
 	gb.ppu = ppu
-	gb.cpu.memory = mem
-	gb.cpu.ppu = ppu
+	gb.cpu = cpu
+
+	cpu.memory = mem
+	cpu.ppu = ppu
 	ppu.memory = mem
 
 	return gb
@@ -71,15 +66,9 @@ func (gb *Gb) mainLoop() {
 	timePerFrame := time.Duration(math.Round(float64(time.Second) / refreshHz))
 	c := time.Tick(timePerFrame)
 
-	// for testing only -
-	pixels := make([]Pixel, numPixels)
-	for i := 0; i < len(pixels); i++ {
-		pixels[i] = 1
-	}
-
 	for range c {
 		gb.cpu.tick()
-		gb.renderer.Render(pixels)
+		gb.renderer.Render(gb.ppu.pixels)
 	}
 }
 

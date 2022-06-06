@@ -1,8 +1,21 @@
 package gb
 
+const (
+	lcdHeight = 144
+	lcdWidth  = 160
+	numPixels = lcdHeight * lcdWidth
+)
+
+type Pixel = int
 type ppu struct {
 	*memory
 	scanCycles int
+	pixels     []Pixel
+}
+
+func newPpu() *ppu {
+	pixels := make([]Pixel, numPixels)
+	return &ppu{pixels: pixels}
 }
 
 // invoked every 456 cycles (every scanline)
