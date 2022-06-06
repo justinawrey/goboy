@@ -39,7 +39,9 @@ var ld__bc___a = instruction{
 	n:            "-",
 	h:            "-",
 	c:            "-",
-	execute:      func(cpu *cpu) {},
+	execute: func(cpu *cpu) {
+		cpu.writeByte(cpu.bc(), cpu.a)
+	},
 }
 
 var inc_bc = instruction{
@@ -145,7 +147,9 @@ var ld_a___bc_ = instruction{
 	n:            "-",
 	h:            "-",
 	c:            "-",
-	execute:      func(cpu *cpu) {},
+	execute: func(cpu *cpu) {
+		cpu.a = cpu.readByte(cpu.bc())
+	},
 }
 
 var add_hl__bc = instruction{
@@ -238,7 +242,9 @@ var ld__de___a = instruction{
 	n:            "-",
 	h:            "-",
 	c:            "-",
-	execute:      func(cpu *cpu) {},
+	execute: func(cpu *cpu) {
+		cpu.writeByte(cpu.de(), cpu.a)
+	},
 }
 
 var rrca = instruction{
@@ -383,7 +389,9 @@ var ld_a___de_ = instruction{
 	n:            "-",
 	h:            "-",
 	c:            "-",
-	execute:      func(cpu *cpu) {},
+	execute: func(cpu *cpu) {
+		cpu.a = cpu.readByte(cpu.de())
+	},
 }
 
 var ld_e__d8 = instruction{
@@ -463,7 +471,10 @@ var ld__hlp___a = instruction{
 	n:            "-",
 	h:            "-",
 	c:            "-",
-	execute:      func(cpu *cpu) {},
+	execute: func(cpu *cpu) {
+		cpu.writeByte(cpu.hl(), cpu.a)
+		cpu.setHl(cpu.hl() + 1)
+	},
 }
 
 var inc_hl = instruction{
@@ -649,7 +660,10 @@ var ld__hlm____a = instruction{
 	n:            "-",
 	h:            "-",
 	c:            "-",
-	execute:      func(cpu *cpu) {},
+	execute: func(cpu *cpu) {
+		cpu.writeByte(cpu.hl(), cpu.a)
+		cpu.setHl(cpu.hl() - 1)
+	},
 }
 
 var inc_sp = instruction{
@@ -701,7 +715,9 @@ var ld__hl___d8 = instruction{
 	n:            "-",
 	h:            "-",
 	c:            "-",
-	execute:      func(cpu *cpu) {},
+	execute: func(cpu *cpu) {
+		cpu.writeByte(cpu.hl(), cpu.readByte(cpu.pc+1))
+	},
 }
 
 var dec__hl_ = instruction{
@@ -727,7 +743,10 @@ var ld_a___hlp_ = instruction{
 	n:            "-",
 	h:            "-",
 	c:            "-",
-	execute:      func(cpu *cpu) {},
+	execute: func(cpu *cpu) {
+		cpu.a = cpu.readByte(cpu.hl())
+		cpu.setHl(cpu.hl() + 1)
+	},
 }
 
 var inc__hl_ = instruction{
@@ -779,7 +798,10 @@ var ld_a___hlm_ = instruction{
 	n:            "-",
 	h:            "-",
 	c:            "-",
-	execute:      func(cpu *cpu) {},
+	execute: func(cpu *cpu) {
+		cpu.a = cpu.readByte(cpu.hl())
+		cpu.setHl(cpu.hl() - 1)
+	},
 }
 
 var ld_a__d8 = instruction{
@@ -833,7 +855,9 @@ var ld_b__c = instruction{
 	n:            "-",
 	h:            "-",
 	c:            "-",
-	execute:      func(cpu *cpu) {},
+	execute: func(cpu *cpu) {
+		cpu.b = cpu.c
+	},
 }
 
 var ld_b__d = instruction{
@@ -846,7 +870,9 @@ var ld_b__d = instruction{
 	n:            "-",
 	h:            "-",
 	c:            "-",
-	execute:      func(cpu *cpu) {},
+	execute: func(cpu *cpu) {
+		cpu.b = cpu.d
+	},
 }
 
 var scf = instruction{
@@ -872,7 +898,9 @@ var ld_b__h = instruction{
 	n:            "-",
 	h:            "-",
 	c:            "-",
-	execute:      func(cpu *cpu) {},
+	execute: func(cpu *cpu) {
+		cpu.b = cpu.h
+	},
 }
 
 var ld_b__l = instruction{
@@ -885,7 +913,9 @@ var ld_b__l = instruction{
 	n:            "-",
 	h:            "-",
 	c:            "-",
-	execute:      func(cpu *cpu) {},
+	execute: func(cpu *cpu) {
+		cpu.b = cpu.l
+	},
 }
 
 var ld_b__b = instruction{
@@ -941,7 +971,9 @@ var ld_b___hl_ = instruction{
 	n:            "-",
 	h:            "-",
 	c:            "-",
-	execute:      func(cpu *cpu) {},
+	execute: func(cpu *cpu) {
+		cpu.b = cpu.readByte(cpu.hl())
+	},
 }
 
 var jr_c__s8 = instruction{
@@ -1042,7 +1074,9 @@ var ld_c___hl_ = instruction{
 	n:            "-",
 	h:            "-",
 	c:            "-",
-	execute:      func(cpu *cpu) {},
+	execute: func(cpu *cpu) {
+		cpu.c = cpu.readByte(cpu.hl())
+	},
 }
 
 var ld_d__d = instruction{
@@ -1175,7 +1209,9 @@ var ld_d___hl_ = instruction{
 	n:            "-",
 	h:            "-",
 	c:            "-",
-	execute:      func(cpu *cpu) {},
+	execute: func(cpu *cpu) {
+		cpu.d = cpu.readByte(cpu.hl())
+	},
 }
 
 var ld_e__d = instruction{
@@ -1278,7 +1314,9 @@ var ld_e___hl_ = instruction{
 	n:            "-",
 	h:            "-",
 	c:            "-",
-	execute:      func(cpu *cpu) {},
+	execute: func(cpu *cpu) {
+		cpu.e = cpu.readByte(cpu.hl())
+	},
 }
 
 var ld_h__d = instruction{
@@ -1396,7 +1434,9 @@ var ld_h___hl_ = instruction{
 	n:            "-",
 	h:            "-",
 	c:            "-",
-	execute:      func(cpu *cpu) {},
+	execute: func(cpu *cpu) {
+		cpu.h = cpu.readByte(cpu.hl())
+	},
 }
 
 var ld_l__c = instruction{
@@ -1514,7 +1554,9 @@ var ld_l___hl_ = instruction{
 	n:            "-",
 	h:            "-",
 	c:            "-",
-	execute:      func(cpu *cpu) {},
+	execute: func(cpu *cpu) {
+		cpu.l = cpu.readByte(cpu.hl())
+	},
 }
 
 var ld__hl___b = instruction{
@@ -1527,7 +1569,9 @@ var ld__hl___b = instruction{
 	n:            "-",
 	h:            "-",
 	c:            "-",
-	execute:      func(cpu *cpu) {},
+	execute: func(cpu *cpu) {
+		cpu.writeByte(cpu.hl(), cpu.b)
+	},
 }
 
 var ld_d__b = instruction{
@@ -1555,7 +1599,9 @@ var ld__hl___c = instruction{
 	n:            "-",
 	h:            "-",
 	c:            "-",
-	execute:      func(cpu *cpu) {},
+	execute: func(cpu *cpu) {
+		cpu.writeByte(cpu.hl(), cpu.c)
+	},
 }
 
 var ld__hl___h = instruction{
@@ -1568,7 +1614,9 @@ var ld__hl___h = instruction{
 	n:            "-",
 	h:            "-",
 	c:            "-",
-	execute:      func(cpu *cpu) {},
+	execute: func(cpu *cpu) {
+		cpu.writeByte(cpu.hl(), cpu.h)
+	},
 }
 
 var ld__hl___l = instruction{
@@ -1581,7 +1629,9 @@ var ld__hl___l = instruction{
 	n:            "-",
 	h:            "-",
 	c:            "-",
-	execute:      func(cpu *cpu) {},
+	execute: func(cpu *cpu) {
+		cpu.writeByte(cpu.hl(), cpu.l)
+	},
 }
 
 var ld__hl___e = instruction{
@@ -1594,7 +1644,9 @@ var ld__hl___e = instruction{
 	n:            "-",
 	h:            "-",
 	c:            "-",
-	execute:      func(cpu *cpu) {},
+	execute: func(cpu *cpu) {
+		cpu.writeByte(cpu.hl(), cpu.e)
+	},
 }
 
 var ld_l__e = instruction{
@@ -1712,7 +1764,9 @@ var ld_a___hl_ = instruction{
 	n:            "-",
 	h:            "-",
 	c:            "-",
-	execute:      func(cpu *cpu) {},
+	execute: func(cpu *cpu) {
+		cpu.a = cpu.readByte(cpu.hl())
+	},
 }
 
 var ld_a__h = instruction{
@@ -2015,7 +2069,9 @@ var ld__hl___a = instruction{
 	n:            "-",
 	h:            "-",
 	c:            "-",
-	execute:      func(cpu *cpu) {},
+	execute: func(cpu *cpu) {
+		cpu.writeByte(cpu.hl(), cpu.a)
+	},
 }
 
 var sub__hl_ = instruction{
@@ -2787,7 +2843,9 @@ var ld__hl___d = instruction{
 	n:            "-",
 	h:            "-",
 	c:            "-",
-	execute:      func(cpu *cpu) {},
+	execute: func(cpu *cpu) {
+		cpu.writeByte(cpu.hl(), cpu.d)
+	},
 }
 
 var pop_de = instruction{
