@@ -91,7 +91,9 @@ var ld_b__d8 = instruction{
 	n:            "-",
 	h:            "-",
 	c:            "-",
-	execute:      func(cpu *cpu) {},
+	execute: func(cpu *cpu) {
+		cpu.b = cpu.readByte(cpu.pc + 1)
+	},
 }
 
 var dec_b = instruction{
@@ -221,7 +223,9 @@ var ld_c__d8 = instruction{
 	n:            "-",
 	h:            "-",
 	c:            "-",
-	execute:      func(cpu *cpu) {},
+	execute: func(cpu *cpu) {
+		cpu.c = cpu.readByte(cpu.pc + 1)
+	},
 }
 
 var ld__de___a = instruction{
@@ -338,7 +342,9 @@ var ld_d__d8 = instruction{
 	n:            "-",
 	h:            "-",
 	c:            "-",
-	execute:      func(cpu *cpu) {},
+	execute: func(cpu *cpu) {
+		cpu.d = cpu.readByte(cpu.pc + 1)
+	},
 }
 
 var jr_s8 = instruction{
@@ -390,7 +396,9 @@ var ld_e__d8 = instruction{
 	n:            "-",
 	h:            "-",
 	c:            "-",
-	execute:      func(cpu *cpu) {},
+	execute: func(cpu *cpu) {
+		cpu.e = cpu.readByte(cpu.pc + 1)
+	},
 }
 
 var dec_e = instruction{
@@ -546,7 +554,9 @@ var ld_h__d8 = instruction{
 	n:            "-",
 	h:            "-",
 	c:            "-",
-	execute:      func(cpu *cpu) {},
+	execute: func(cpu *cpu) {
+		cpu.h = cpu.readByte(cpu.pc + 1)
+	},
 }
 
 var add_hl__hl = instruction{
@@ -598,7 +608,9 @@ var ld_l__d8 = instruction{
 	n:            "-",
 	h:            "-",
 	c:            "-",
-	execute:      func(cpu *cpu) {},
+	execute: func(cpu *cpu) {
+		cpu.l = cpu.readByte(cpu.pc + 1)
+	},
 }
 
 var jr_nc__s8 = instruction{
@@ -780,7 +792,9 @@ var ld_a__d8 = instruction{
 	n:            "-",
 	h:            "-",
 	c:            "-",
-	execute:      func(cpu *cpu) {},
+	execute: func(cpu *cpu) {
+		cpu.a = cpu.readByte(cpu.pc + 1)
+	},
 }
 
 var ccf = instruction{
@@ -884,7 +898,9 @@ var ld_b__b = instruction{
 	n:            "-",
 	h:            "-",
 	c:            "-",
-	execute:      func(cpu *cpu) {},
+	execute: func(cpu *cpu) {
+		cpu.b = cpu.b
+	},
 }
 
 var ld_b__a = instruction{
@@ -897,7 +913,9 @@ var ld_b__a = instruction{
 	n:            "-",
 	h:            "-",
 	c:            "-",
-	execute:      func(cpu *cpu) {},
+	execute: func(cpu *cpu) {
+		cpu.b = cpu.a
+	},
 }
 
 var add_hl__sp = instruction{
@@ -949,7 +967,9 @@ var ld_c__c = instruction{
 	n:            "-",
 	h:            "-",
 	c:            "-",
-	execute:      func(cpu *cpu) {},
+	execute: func(cpu *cpu) {
+		cpu.c = cpu.c
+	},
 }
 
 var ld_c__l = instruction{
@@ -962,7 +982,9 @@ var ld_c__l = instruction{
 	n:            "-",
 	h:            "-",
 	c:            "-",
-	execute:      func(cpu *cpu) {},
+	execute: func(cpu *cpu) {
+		cpu.c = cpu.l
+	},
 }
 
 var ld_c__e = instruction{
@@ -975,7 +997,9 @@ var ld_c__e = instruction{
 	n:            "-",
 	h:            "-",
 	c:            "-",
-	execute:      func(cpu *cpu) {},
+	execute: func(cpu *cpu) {
+		cpu.c = cpu.e
+	},
 }
 
 var ld_c__b = instruction{
@@ -988,7 +1012,9 @@ var ld_c__b = instruction{
 	n:            "-",
 	h:            "-",
 	c:            "-",
-	execute:      func(cpu *cpu) {},
+	execute: func(cpu *cpu) {
+		cpu.c = cpu.b
+	},
 }
 
 var ld_c__a = instruction{
@@ -1001,7 +1027,9 @@ var ld_c__a = instruction{
 	n:            "-",
 	h:            "-",
 	c:            "-",
-	execute:      func(cpu *cpu) {},
+	execute: func(cpu *cpu) {
+		cpu.c = cpu.a
+	},
 }
 
 var ld_c___hl_ = instruction{
@@ -1027,7 +1055,9 @@ var ld_d__d = instruction{
 	n:            "-",
 	h:            "-",
 	c:            "-",
-	execute:      func(cpu *cpu) {},
+	execute: func(cpu *cpu) {
+		cpu.d = cpu.d
+	},
 }
 
 var ld_d__c = instruction{
@@ -1040,7 +1070,9 @@ var ld_d__c = instruction{
 	n:            "-",
 	h:            "-",
 	c:            "-",
-	execute:      func(cpu *cpu) {},
+	execute: func(cpu *cpu) {
+		cpu.d = cpu.c
+	},
 }
 
 var ld_d__e = instruction{
@@ -1053,7 +1085,9 @@ var ld_d__e = instruction{
 	n:            "-",
 	h:            "-",
 	c:            "-",
-	execute:      func(cpu *cpu) {},
+	execute: func(cpu *cpu) {
+		cpu.d = cpu.e
+	},
 }
 
 var ld_c__h = instruction{
@@ -1066,7 +1100,9 @@ var ld_c__h = instruction{
 	n:            "-",
 	h:            "-",
 	c:            "-",
-	execute:      func(cpu *cpu) {},
+	execute: func(cpu *cpu) {
+		cpu.c = cpu.h
+	},
 }
 
 var ld_d__h = instruction{
@@ -1079,7 +1115,9 @@ var ld_d__h = instruction{
 	n:            "-",
 	h:            "-",
 	c:            "-",
-	execute:      func(cpu *cpu) {},
+	execute: func(cpu *cpu) {
+		cpu.d = cpu.h
+	},
 }
 
 var ld_d__l = instruction{
@@ -1092,7 +1130,9 @@ var ld_d__l = instruction{
 	n:            "-",
 	h:            "-",
 	c:            "-",
-	execute:      func(cpu *cpu) {},
+	execute: func(cpu *cpu) {
+		cpu.d = cpu.l
+	},
 }
 
 var ld_d__a = instruction{
@@ -1105,7 +1145,9 @@ var ld_d__a = instruction{
 	n:            "-",
 	h:            "-",
 	c:            "-",
-	execute:      func(cpu *cpu) {},
+	execute: func(cpu *cpu) {
+		cpu.d = cpu.a
+	},
 }
 
 var ld_e__b = instruction{
@@ -1118,7 +1160,9 @@ var ld_e__b = instruction{
 	n:            "-",
 	h:            "-",
 	c:            "-",
-	execute:      func(cpu *cpu) {},
+	execute: func(cpu *cpu) {
+		cpu.e = cpu.b
+	},
 }
 
 var ld_d___hl_ = instruction{
@@ -1144,7 +1188,9 @@ var ld_e__d = instruction{
 	n:            "-",
 	h:            "-",
 	c:            "-",
-	execute:      func(cpu *cpu) {},
+	execute: func(cpu *cpu) {
+		cpu.e = cpu.d
+	},
 }
 
 var ld_e__e = instruction{
@@ -1157,7 +1203,9 @@ var ld_e__e = instruction{
 	n:            "-",
 	h:            "-",
 	c:            "-",
-	execute:      func(cpu *cpu) {},
+	execute: func(cpu *cpu) {
+		cpu.e = cpu.e
+	},
 }
 
 var ld_c__d = instruction{
@@ -1170,7 +1218,9 @@ var ld_c__d = instruction{
 	n:            "-",
 	h:            "-",
 	c:            "-",
-	execute:      func(cpu *cpu) {},
+	execute: func(cpu *cpu) {
+		cpu.c = cpu.d
+	},
 }
 
 var ld_e__l = instruction{
@@ -1183,7 +1233,9 @@ var ld_e__l = instruction{
 	n:            "-",
 	h:            "-",
 	c:            "-",
-	execute:      func(cpu *cpu) {},
+	execute: func(cpu *cpu) {
+		cpu.e = cpu.l
+	},
 }
 
 var ld_b__e = instruction{
@@ -1196,7 +1248,9 @@ var ld_b__e = instruction{
 	n:            "-",
 	h:            "-",
 	c:            "-",
-	execute:      func(cpu *cpu) {},
+	execute: func(cpu *cpu) {
+		cpu.b = cpu.e
+	},
 }
 
 var ld_h__b = instruction{
@@ -1209,7 +1263,9 @@ var ld_h__b = instruction{
 	n:            "-",
 	h:            "-",
 	c:            "-",
-	execute:      func(cpu *cpu) {},
+	execute: func(cpu *cpu) {
+		cpu.h = cpu.b
+	},
 }
 
 var ld_e___hl_ = instruction{
@@ -1235,7 +1291,9 @@ var ld_h__d = instruction{
 	n:            "-",
 	h:            "-",
 	c:            "-",
-	execute:      func(cpu *cpu) {},
+	execute: func(cpu *cpu) {
+		cpu.h = cpu.d
+	},
 }
 
 var ld_e__a = instruction{
@@ -1248,7 +1306,9 @@ var ld_e__a = instruction{
 	n:            "-",
 	h:            "-",
 	c:            "-",
-	execute:      func(cpu *cpu) {},
+	execute: func(cpu *cpu) {
+		cpu.e = cpu.a
+	},
 }
 
 var ld_h__c = instruction{
@@ -1261,7 +1321,9 @@ var ld_h__c = instruction{
 	n:            "-",
 	h:            "-",
 	c:            "-",
-	execute:      func(cpu *cpu) {},
+	execute: func(cpu *cpu) {
+		cpu.h = cpu.c
+	},
 }
 
 var ld_h__h = instruction{
@@ -1274,7 +1336,9 @@ var ld_h__h = instruction{
 	n:            "-",
 	h:            "-",
 	c:            "-",
-	execute:      func(cpu *cpu) {},
+	execute: func(cpu *cpu) {
+		cpu.h = cpu.h
+	},
 }
 
 var ld_h__e = instruction{
@@ -1287,7 +1351,9 @@ var ld_h__e = instruction{
 	n:            "-",
 	h:            "-",
 	c:            "-",
-	execute:      func(cpu *cpu) {},
+	execute: func(cpu *cpu) {
+		cpu.h = cpu.e
+	},
 }
 
 var ld_h__a = instruction{
@@ -1300,7 +1366,9 @@ var ld_h__a = instruction{
 	n:            "-",
 	h:            "-",
 	c:            "-",
-	execute:      func(cpu *cpu) {},
+	execute: func(cpu *cpu) {
+		cpu.h = cpu.a
+	},
 }
 
 var ld_h__l = instruction{
@@ -1313,7 +1381,9 @@ var ld_h__l = instruction{
 	n:            "-",
 	h:            "-",
 	c:            "-",
-	execute:      func(cpu *cpu) {},
+	execute: func(cpu *cpu) {
+		cpu.h = cpu.l
+	},
 }
 
 var ld_h___hl_ = instruction{
@@ -1339,7 +1409,9 @@ var ld_l__c = instruction{
 	n:            "-",
 	h:            "-",
 	c:            "-",
-	execute:      func(cpu *cpu) {},
+	execute: func(cpu *cpu) {
+		cpu.l = cpu.c
+	},
 }
 
 var ld_l__d = instruction{
@@ -1352,7 +1424,9 @@ var ld_l__d = instruction{
 	n:            "-",
 	h:            "-",
 	c:            "-",
-	execute:      func(cpu *cpu) {},
+	execute: func(cpu *cpu) {
+		cpu.l = cpu.d
+	},
 }
 
 var ld_l__b = instruction{
@@ -1365,7 +1439,9 @@ var ld_l__b = instruction{
 	n:            "-",
 	h:            "-",
 	c:            "-",
-	execute:      func(cpu *cpu) {},
+	execute: func(cpu *cpu) {
+		cpu.l = cpu.b
+	},
 }
 
 var ld_l__h = instruction{
@@ -1378,7 +1454,9 @@ var ld_l__h = instruction{
 	n:            "-",
 	h:            "-",
 	c:            "-",
-	execute:      func(cpu *cpu) {},
+	execute: func(cpu *cpu) {
+		cpu.l = cpu.h
+	},
 }
 
 var ld_l__l = instruction{
@@ -1391,7 +1469,9 @@ var ld_l__l = instruction{
 	n:            "-",
 	h:            "-",
 	c:            "-",
-	execute:      func(cpu *cpu) {},
+	execute: func(cpu *cpu) {
+		cpu.l = cpu.l
+	},
 }
 
 var ld_e__c = instruction{
@@ -1404,7 +1484,9 @@ var ld_e__c = instruction{
 	n:            "-",
 	h:            "-",
 	c:            "-",
-	execute:      func(cpu *cpu) {},
+	execute: func(cpu *cpu) {
+		cpu.e = cpu.c
+	},
 }
 
 var ld_l__a = instruction{
@@ -1417,7 +1499,9 @@ var ld_l__a = instruction{
 	n:            "-",
 	h:            "-",
 	c:            "-",
-	execute:      func(cpu *cpu) {},
+	execute: func(cpu *cpu) {
+		cpu.l = cpu.a
+	},
 }
 
 var ld_l___hl_ = instruction{
@@ -1456,7 +1540,9 @@ var ld_d__b = instruction{
 	n:            "-",
 	h:            "-",
 	c:            "-",
-	execute:      func(cpu *cpu) {},
+	execute: func(cpu *cpu) {
+		cpu.d = cpu.b
+	},
 }
 
 var ld__hl___c = instruction{
@@ -1521,7 +1607,9 @@ var ld_l__e = instruction{
 	n:            "-",
 	h:            "-",
 	c:            "-",
-	execute:      func(cpu *cpu) {},
+	execute: func(cpu *cpu) {
+		cpu.l = cpu.e
+	},
 }
 
 var ld_a__b = instruction{
@@ -1534,7 +1622,9 @@ var ld_a__b = instruction{
 	n:            "-",
 	h:            "-",
 	c:            "-",
-	execute:      func(cpu *cpu) {},
+	execute: func(cpu *cpu) {
+		cpu.a = cpu.b
+	},
 }
 
 var ld_e__h = instruction{
@@ -1547,7 +1637,9 @@ var ld_e__h = instruction{
 	n:            "-",
 	h:            "-",
 	c:            "-",
-	execute:      func(cpu *cpu) {},
+	execute: func(cpu *cpu) {
+		cpu.e = cpu.h
+	},
 }
 
 var ld_a__d = instruction{
@@ -1560,7 +1652,9 @@ var ld_a__d = instruction{
 	n:            "-",
 	h:            "-",
 	c:            "-",
-	execute:      func(cpu *cpu) {},
+	execute: func(cpu *cpu) {
+		cpu.a = cpu.d
+	},
 }
 
 var ld_a__e = instruction{
@@ -1573,7 +1667,9 @@ var ld_a__e = instruction{
 	n:            "-",
 	h:            "-",
 	c:            "-",
-	execute:      func(cpu *cpu) {},
+	execute: func(cpu *cpu) {
+		cpu.a = cpu.e
+	},
 }
 
 var ld_a__c = instruction{
@@ -1586,7 +1682,9 @@ var ld_a__c = instruction{
 	n:            "-",
 	h:            "-",
 	c:            "-",
-	execute:      func(cpu *cpu) {},
+	execute: func(cpu *cpu) {
+		cpu.a = cpu.c
+	},
 }
 
 var ld_a__l = instruction{
@@ -1599,7 +1697,9 @@ var ld_a__l = instruction{
 	n:            "-",
 	h:            "-",
 	c:            "-",
-	execute:      func(cpu *cpu) {},
+	execute: func(cpu *cpu) {
+		cpu.a = cpu.l
+	},
 }
 
 var ld_a___hl_ = instruction{
@@ -1625,7 +1725,9 @@ var ld_a__h = instruction{
 	n:            "-",
 	h:            "-",
 	c:            "-",
-	execute:      func(cpu *cpu) {},
+	execute: func(cpu *cpu) {
+		cpu.a = cpu.h
+	},
 }
 
 var add_a__b = instruction{
@@ -1664,7 +1766,9 @@ var ld_a__a = instruction{
 	n:            "-",
 	h:            "-",
 	c:            "-",
-	execute:      func(cpu *cpu) {},
+	execute: func(cpu *cpu) {
+		cpu.a = cpu.a
+	},
 }
 
 var add_a__e = instruction{
@@ -2526,7 +2630,7 @@ var jp_a16 = instruction{
 	h:            "-",
 	c:            "-",
 	execute: func(cpu *cpu) {
-		cpu.pc = cpu.memory.readWord(cpu.pc + 1)
+		cpu.pc = cpu.readWord(cpu.pc + 1)
 	},
 }
 
@@ -6535,4 +6639,510 @@ var set_7__a = instruction{
 	h:            "-",
 	c:            "-",
 	execute:      func(cpu *cpu) {},
+}
+
+var instructionTable8 = map[uint8]instruction{
+	0x00: nop,
+	0x01: ld_bc__d16,
+	0x02: ld__bc___a,
+	0x03: inc_bc,
+	0x04: inc_b,
+	0x05: dec_b,
+	0x06: ld_b__d8,
+	0x07: rlca,
+	0x08: ld__a16___sp,
+	0x09: add_hl__bc,
+	0x0A: ld_a___bc_,
+	0x0B: dec_bc,
+	0x0C: inc_c,
+	0x0D: dec_c,
+	0x0E: ld_c__d8,
+	0x0F: rrca,
+	0x11: ld_de__d16,
+	0x12: ld__de___a,
+	0x13: inc_de,
+	0x14: inc_d,
+	0x15: dec_d,
+	0x16: ld_d__d8,
+	0x17: rla,
+	0x18: jr_s8,
+	0x19: add_hl__de,
+	0x1A: ld_a___de_,
+	0x1B: dec_de,
+	0x1C: inc_e,
+	0x1D: dec_e,
+	0x1E: ld_e__d8,
+	0x1F: rra,
+	0x20: jr_nz__s8,
+	0x21: ld_hl__d16,
+	0x22: ld__hlp___a,
+	0x23: inc_hl,
+	0x24: inc_h,
+	0x25: dec_h,
+	0x26: ld_h__d8,
+	0x27: daa,
+	0x28: jr_z__s8,
+	0x29: add_hl__hl,
+	0x2A: ld_a___hlp_,
+	0x2B: dec_hl,
+	0x2C: inc_l,
+	0x2D: dec_l,
+	0x2E: ld_l__d8,
+	0x2F: cpl,
+	0x30: jr_nc__s8,
+	0x31: ld_sp__d16,
+	0x32: ld__hlm____a,
+	0x33: inc_sp,
+	0x34: inc__hl_,
+	0x35: dec__hl_,
+	0x36: ld__hl___d8,
+	0x37: scf,
+	0x38: jr_c__s8,
+	0x39: add_hl__sp,
+	0x3A: ld_a___hlm_,
+	0x3B: dec_sp,
+	0x3C: inc_a,
+	0x3D: dec_a,
+	0x3E: ld_a__d8,
+	0x3F: ccf,
+	0x40: ld_b__b,
+	0x41: ld_b__c,
+	0x42: ld_b__d,
+	0x43: ld_b__e,
+	0x44: ld_b__h,
+	0x45: ld_b__l,
+	0x46: ld_b___hl_,
+	0x47: ld_b__a,
+	0x48: ld_c__b,
+	0x49: ld_c__c,
+	0x4A: ld_c__d,
+	0x4B: ld_c__e,
+	0x4C: ld_c__h,
+	0x4D: ld_c__l,
+	0x4E: ld_c___hl_,
+	0x4F: ld_c__a,
+	0x50: ld_d__b,
+	0x51: ld_d__c,
+	0x52: ld_d__d,
+	0x53: ld_d__e,
+	0x54: ld_d__h,
+	0x55: ld_d__l,
+	0x56: ld_d___hl_,
+	0x57: ld_d__a,
+	0x58: ld_e__b,
+	0x59: ld_e__c,
+	0x5A: ld_e__d,
+	0x5B: ld_e__e,
+	0x5C: ld_e__h,
+	0x5D: ld_e__l,
+	0x5E: ld_e___hl_,
+	0x5F: ld_e__a,
+	0x60: ld_h__b,
+	0x61: ld_h__c,
+	0x62: ld_h__d,
+	0x63: ld_h__e,
+	0x64: ld_h__h,
+	0x65: ld_h__l,
+	0x66: ld_h___hl_,
+	0x67: ld_h__a,
+	0x68: ld_l__b,
+	0x69: ld_l__c,
+	0x6A: ld_l__d,
+	0x6B: ld_l__e,
+	0x6C: ld_l__h,
+	0x6D: ld_l__l,
+	0x6E: ld_l___hl_,
+	0x6F: ld_l__a,
+	0x70: ld__hl___b,
+	0x71: ld__hl___c,
+	0x72: ld__hl___d,
+	0x73: ld__hl___e,
+	0x74: ld__hl___h,
+	0x75: ld__hl___l,
+	0x76: halt,
+	0x77: ld__hl___a,
+	0x78: ld_a__b,
+	0x79: ld_a__c,
+	0x7A: ld_a__d,
+	0x7B: ld_a__e,
+	0x7C: ld_a__h,
+	0x7D: ld_a__l,
+	0x7E: ld_a___hl_,
+	0x7F: ld_a__a,
+	0x80: add_a__b,
+	0x81: add_a__c,
+	0x82: add_a__d,
+	0x83: add_a__e,
+	0x84: add_a__h,
+	0x85: add_a__l,
+	0x86: add_a___hl_,
+	0x87: add_a__a,
+	0x88: adc_a__b,
+	0x89: adc_a__c,
+	0x8A: adc_a__d,
+	0x8B: adc_a__e,
+	0x8C: adc_a__h,
+	0x8D: adc_a__l,
+	0x8E: adc_a___hl_,
+	0x8F: adc_a__a,
+	0x90: sub_b,
+	0x91: sub_c,
+	0x92: sub_d,
+	0x93: sub_e,
+	0x94: sub_h,
+	0x95: sub_l,
+	0x96: sub__hl_,
+	0x97: sub_a,
+	0x98: sbc_a__b,
+	0x99: sbc_a__c,
+	0x9A: sbc_a__d,
+	0x9B: sbc_a__e,
+	0x9C: sbc_a__h,
+	0x9D: sbc_a__l,
+	0x9E: sbc_a___hl_,
+	0x9F: sbc_a__a,
+	0xA0: and_b,
+	0xA1: and_c,
+	0xA2: and_d,
+	0xA3: and_e,
+	0xA4: and_h,
+	0xA5: and_l,
+	0xA6: and__hl_,
+	0xA7: and_a,
+	0xA8: xor_b,
+	0xA9: xor_c,
+	0xAA: xor_d,
+	0xAB: xor_e,
+	0xAC: xor_h,
+	0xAD: xor_l,
+	0xAE: xor__hl_,
+	0xAF: xor_a,
+	0xB0: or_b,
+	0xB1: or_c,
+	0xB2: or_d,
+	0xB3: or_e,
+	0xB4: or_h,
+	0xB5: or_l,
+	0xB6: or__hl_,
+	0xB7: or_a,
+	0xB8: cp_b,
+	0xB9: cp_c,
+	0xBA: cp_d,
+	0xBB: cp_e,
+	0xBC: cp_h,
+	0xBD: cp_l,
+	0xBE: cp__hl_,
+	0xBF: cp_a,
+	0xC0: ret_nz,
+	0xC1: pop_bc,
+	0xC2: jp_nz__a16,
+	0xC3: jp_a16,
+	0xC4: call_nz__a16,
+	0xC5: push_bc,
+	0xC6: add_a__d8,
+	0xC7: rst_0,
+	0xC8: ret_z,
+	0xC9: ret,
+	0xCA: jp_z__a16,
+	0xCC: call_z__a16,
+	0xCD: call_a16,
+	0xCE: adc_a__d8,
+	0xCF: rst_1,
+	0xD0: ret_nc,
+	0xD1: pop_de,
+	0xD2: jp_nc__a16,
+	0xD4: call_nc__a16,
+	0xD5: push_de,
+	0xD6: sub_d8,
+	0xD7: rst_2,
+	0xD8: ret_c,
+	0xD9: reti,
+	0xDA: jp_c__a16,
+	0xDC: call_c__a16,
+	0xDE: sbc_a__d8,
+	0xDF: rst_3,
+	0xE0: ld__a8___a,
+	0xE1: pop_hl,
+	0xE2: ld__c___a,
+	0xE5: push_hl,
+	0xE6: and_d8,
+	0xE7: rst_4,
+	0xE8: add_sp__s8,
+	0xE9: jp_hl,
+	0xEA: ld__a16___a,
+	0xEE: xor_d8,
+	0xEF: rst_5,
+	0xF0: ld_a___a8_,
+	0xF1: pop_af,
+	0xF2: ld_a___c_,
+	0xF3: di,
+	0xF5: push_af,
+	0xF6: or_d8,
+	0xF7: rst_6,
+	0xF8: ld_hl__sp_s8,
+	0xF9: ld_sp__hl,
+	0xFA: ld_a___a16_,
+	0xFB: ei,
+	0xFE: cp_d8,
+	0xFF: rst_7,
+}
+
+var instructionTable16 = map[uint16]instruction{
+	0x1000: stop,
+	0xCB00: rlc_b,
+	0xCB01: rlc_c,
+	0xCB02: rlc_d,
+	0xCB03: rlc_e,
+	0xCB04: rlc_h,
+	0xCB05: rlc_l,
+	0xCB06: rlc__hl_,
+	0xCB07: rlc_a,
+	0xCB08: rrc_b,
+	0xCB09: rrc_c,
+	0xCB0A: rrc_d,
+	0xCB0B: rrc_e,
+	0xCB0C: rrc_h,
+	0xCB0D: rrc_l,
+	0xCB0E: rrc__hl_,
+	0xCB0F: rrc_a,
+	0xCB10: rl_b,
+	0xCB11: rl_c,
+	0xCB12: rl_d,
+	0xCB13: rl_e,
+	0xCB14: rl_h,
+	0xCB15: rl_l,
+	0xCB16: rl__hl_,
+	0xCB17: rl_a,
+	0xCB18: rr_b,
+	0xCB19: rr_c,
+	0xCB1A: rr_d,
+	0xCB1B: rr_e,
+	0xCB1C: rr_h,
+	0xCB1D: rr_l,
+	0xCB1E: rr__hl_,
+	0xCB1F: rr_a,
+	0xCB20: sla_b,
+	0xCB21: sla_c,
+	0xCB22: sla_d,
+	0xCB23: sla_e,
+	0xCB24: sla_h,
+	0xCB25: sla_l,
+	0xCB26: sla__hl_,
+	0xCB27: sla_a,
+	0xCB28: sra_b,
+	0xCB29: sra_c,
+	0xCB2A: sra_d,
+	0xCB2B: sra_e,
+	0xCB2C: sra_h,
+	0xCB2D: sra_l,
+	0xCB2E: sra__hl_,
+	0xCB2F: sra_a,
+	0xCB30: swap_b,
+	0xCB31: swap_c,
+	0xCB32: swap_d,
+	0xCB33: swap_e,
+	0xCB34: swap_h,
+	0xCB35: swap_l,
+	0xCB36: swap__hl_,
+	0xCB37: swap_a,
+	0xCB38: srl_b,
+	0xCB39: srl_c,
+	0xCB3A: srl_d,
+	0xCB3B: srl_e,
+	0xCB3C: srl_h,
+	0xCB3D: srl_l,
+	0xCB3E: srl__hl_,
+	0xCB3F: srl_a,
+	0xCB40: bit_0__b,
+	0xCB41: bit_0__c,
+	0xCB42: bit_0__d,
+	0xCB43: bit_0__e,
+	0xCB44: bit_0__h,
+	0xCB45: bit_0__l,
+	0xCB46: bit_0___hl_,
+	0xCB47: bit_0__a,
+	0xCB48: bit_1__b,
+	0xCB49: bit_1__c,
+	0xCB4A: bit_1__d,
+	0xCB4B: bit_1__e,
+	0xCB4C: bit_1__h,
+	0xCB4D: bit_1__l,
+	0xCB4E: bit_1___hl_,
+	0xCB4F: bit_1__a,
+	0xCB50: bit_2__b,
+	0xCB51: bit_2__c,
+	0xCB52: bit_2__d,
+	0xCB53: bit_2__e,
+	0xCB54: bit_2__h,
+	0xCB55: bit_2__l,
+	0xCB56: bit_2___hl_,
+	0xCB57: bit_2__a,
+	0xCB58: bit_3__b,
+	0xCB59: bit_3__c,
+	0xCB5A: bit_3__d,
+	0xCB5B: bit_3__e,
+	0xCB5C: bit_3__h,
+	0xCB5D: bit_3__l,
+	0xCB5E: bit_3___hl_,
+	0xCB5F: bit_3__a,
+	0xCB60: bit_4__b,
+	0xCB61: bit_4__c,
+	0xCB62: bit_4__d,
+	0xCB63: bit_4__e,
+	0xCB64: bit_4__h,
+	0xCB65: bit_4__l,
+	0xCB66: bit_4___hl_,
+	0xCB67: bit_4__a,
+	0xCB68: bit_5__b,
+	0xCB69: bit_5__c,
+	0xCB6A: bit_5__d,
+	0xCB6B: bit_5__e,
+	0xCB6C: bit_5__h,
+	0xCB6D: bit_5__l,
+	0xCB6E: bit_5___hl_,
+	0xCB6F: bit_5__a,
+	0xCB70: bit_6__b,
+	0xCB71: bit_6__c,
+	0xCB72: bit_6__d,
+	0xCB73: bit_6__e,
+	0xCB74: bit_6__h,
+	0xCB75: bit_6__l,
+	0xCB76: bit_6___hl_,
+	0xCB77: bit_6__a,
+	0xCB78: bit_7__b,
+	0xCB79: bit_7__c,
+	0xCB7A: bit_7__d,
+	0xCB7B: bit_7__e,
+	0xCB7C: bit_7__h,
+	0xCB7D: bit_7__l,
+	0xCB7E: bit_7___hl_,
+	0xCB7F: bit_7__a,
+	0xCB80: res_0__b,
+	0xCB81: res_0__c,
+	0xCB82: res_0__d,
+	0xCB83: res_0__e,
+	0xCB84: res_0__h,
+	0xCB85: res_0__l,
+	0xCB86: res_0___hl_,
+	0xCB87: res_0__a,
+	0xCB88: res_1__b,
+	0xCB89: res_1__c,
+	0xCB8A: res_1__d,
+	0xCB8B: res_1__e,
+	0xCB8C: res_1__h,
+	0xCB8D: res_1__l,
+	0xCB8E: res_1___hl_,
+	0xCB8F: res_1__a,
+	0xCB90: res_2__b,
+	0xCB91: res_2__c,
+	0xCB92: res_2__d,
+	0xCB93: res_2__e,
+	0xCB94: res_2__h,
+	0xCB95: res_2__l,
+	0xCB96: res_2___hl_,
+	0xCB97: res_2__a,
+	0xCB98: res_3__b,
+	0xCB99: res_3__c,
+	0xCB9A: res_3__d,
+	0xCB9B: res_3__e,
+	0xCB9C: res_3__h,
+	0xCB9D: res_3__l,
+	0xCB9E: res_3___hl_,
+	0xCB9F: res_3__a,
+	0xCBA0: res_4__b,
+	0xCBA1: res_4__c,
+	0xCBA2: res_4__d,
+	0xCBA3: res_4__e,
+	0xCBA4: res_4__h,
+	0xCBA5: res_4__l,
+	0xCBA6: res_4___hl_,
+	0xCBA7: res_4__a,
+	0xCBA8: res_5__b,
+	0xCBA9: res_5__c,
+	0xCBAA: res_5__d,
+	0xCBAB: res_5__e,
+	0xCBAC: res_5__h,
+	0xCBAD: res_5__l,
+	0xCBAE: res_5___hl_,
+	0xCBAF: res_5__a,
+	0xCBB0: res_6__b,
+	0xCBB1: res_6__c,
+	0xCBB2: res_6__d,
+	0xCBB3: res_6__e,
+	0xCBB4: res_6__h,
+	0xCBB5: res_6__l,
+	0xCBB6: res_6___hl_,
+	0xCBB7: res_6__a,
+	0xCBB8: res_7__b,
+	0xCBB9: res_7__c,
+	0xCBBA: res_7__d,
+	0xCBBB: res_7__e,
+	0xCBBC: res_7__h,
+	0xCBBD: res_7__l,
+	0xCBBE: res_7___hl_,
+	0xCBBF: res_7__a,
+	0xCBC0: set_0__b,
+	0xCBC1: set_0__c,
+	0xCBC2: set_0__d,
+	0xCBC3: set_0__e,
+	0xCBC4: set_0__h,
+	0xCBC5: set_0__l,
+	0xCBC6: set_0___hl_,
+	0xCBC7: set_0__a,
+	0xCBC8: set_1__b,
+	0xCBC9: set_1__c,
+	0xCBCA: set_1__d,
+	0xCBCB: set_1__e,
+	0xCBCC: set_1__h,
+	0xCBCD: set_1__l,
+	0xCBCE: set_1___hl_,
+	0xCBCF: set_1__a,
+	0xCBD0: set_2__b,
+	0xCBD1: set_2__c,
+	0xCBD2: set_2__d,
+	0xCBD3: set_2__e,
+	0xCBD4: set_2__h,
+	0xCBD5: set_2__l,
+	0xCBD6: set_2___hl_,
+	0xCBD7: set_2__a,
+	0xCBD8: set_3__b,
+	0xCBD9: set_3__c,
+	0xCBDA: set_3__d,
+	0xCBDB: set_3__e,
+	0xCBDC: set_3__h,
+	0xCBDD: set_3__l,
+	0xCBDE: set_3___hl_,
+	0xCBDF: set_3__a,
+	0xCBE0: set_4__b,
+	0xCBE1: set_4__c,
+	0xCBE2: set_4__d,
+	0xCBE3: set_4__e,
+	0xCBE4: set_4__h,
+	0xCBE5: set_4__l,
+	0xCBE6: set_4___hl_,
+	0xCBE7: set_4__a,
+	0xCBE8: set_5__b,
+	0xCBE9: set_5__c,
+	0xCBEA: set_5__d,
+	0xCBEB: set_5__e,
+	0xCBEC: set_5__h,
+	0xCBED: set_5__l,
+	0xCBEE: set_5___hl_,
+	0xCBEF: set_5__a,
+	0xCBF0: set_6__b,
+	0xCBF1: set_6__c,
+	0xCBF2: set_6__d,
+	0xCBF3: set_6__e,
+	0xCBF4: set_6__h,
+	0xCBF5: set_6__l,
+	0xCBF6: set_6___hl_,
+	0xCBF7: set_6__a,
+	0xCBF8: set_7__b,
+	0xCBF9: set_7__c,
+	0xCBFA: set_7__d,
+	0xCBFB: set_7__e,
+	0xCBFC: set_7__h,
+	0xCBFD: set_7__l,
+	0xCBFE: set_7___hl_,
+	0xCBFF: set_7__a,
 }
