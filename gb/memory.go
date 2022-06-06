@@ -21,3 +21,13 @@ func (m *memory) readWord(n uint16) uint16 {
 	buf := m.Bytes()
 	return makeWord(buf[n+1], buf[n])
 }
+
+func (m *memory) writeByte(pos uint16, b byte) {
+	m.Bytes()[pos] = b
+}
+
+func (m *memory) writeWord(pos uint16, word uint16) {
+	upper, lower := splitWord(word)
+	m.writeByte(pos, lower)
+	m.writeByte(pos+1, upper)
+}
