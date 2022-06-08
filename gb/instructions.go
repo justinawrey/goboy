@@ -69,7 +69,9 @@ var ld_bc__d16 = instruction{
 	n:            "-",
 	h:            "-",
 	c:            "-",
-	execute:      func(cpu *cpu) {},
+	execute: func(cpu *cpu) {
+		cpu.setBc(cpu.readWord(cpu.pc + 1))
+	},
 }
 
 var inc_b = instruction{
@@ -83,7 +85,10 @@ var inc_b = instruction{
 	h:            "H",
 	c:            "-",
 	execute: func(cpu *cpu) {
+		cpu.setH8Add(cpu.b, 1)
 		cpu.b += 1
+		cpu.setZ(cpu.b)
+		cpu.n = false
 	},
 }
 
@@ -112,7 +117,12 @@ var dec_b = instruction{
 	n:            "1",
 	h:            "H",
 	c:            "-",
-	execute:      func(cpu *cpu) {},
+	execute: func(cpu *cpu) {
+		cpu.setH8Sub(cpu.b, 1)
+		cpu.b -= 1
+		cpu.setZ(cpu.b)
+		cpu.n = true
+	},
 }
 
 var rlca = instruction{

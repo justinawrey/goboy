@@ -43,8 +43,17 @@ func (cpu *cpu) setHl(word uint16) {
 	cpu.h, cpu.l = splitWord(word)
 }
 
-func (cpu *cpu) setZ(test byte) {
-	cpu.z = test == 0
+// TODO: half carry logic maybe could be streamlined?
+func (f *flags) setH8Add(b1 byte, b2 byte) {
+	f.h = (((b1 & 0x0f) + (b2 & 0x0f)) & 0x10) == 0x10
+}
+
+func (f *flags) setH8Sub(b1 byte, b2 byte) {
+	f.h = (((b1 & 0x0f) - (b2 & 0x0f)) & 0x10) == 0x10
+}
+
+func (f *flags) setZ(test byte) {
+	f.z = test == 0
 }
 
 func (cpu *cpu) decode() instruction {
