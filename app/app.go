@@ -1,4 +1,4 @@
-package display
+package app
 
 import (
 	"log"
@@ -39,7 +39,7 @@ func Run(run func()) {
 	pixelgl.Run(run)
 }
 
-func New() *Display {
+func NewDisplay() *Display {
 	cfg := pixelgl.WindowConfig{
 		Title:  "goboy",
 		Bounds: pixel.R(0, 0, width*pxSize, height*pxSize),

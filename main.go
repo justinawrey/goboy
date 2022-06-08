@@ -4,8 +4,8 @@ import (
 	"log"
 	"os"
 
+	"github.com/justinawrey/goboy/app"
 	"github.com/justinawrey/goboy/audit"
-	"github.com/justinawrey/goboy/display"
 	"github.com/justinawrey/goboy/gb"
 )
 
@@ -20,7 +20,7 @@ func main() {
 
 	switch cmd := args[0]; cmd {
 	case "run":
-		display.Run(run)
+		app.Run(run)
 	case "audit":
 		audit.Generate()
 	default:
@@ -30,7 +30,7 @@ func main() {
 
 func run() {
 	gb := gb.NewGb()
-	display := display.New()
+	display := app.NewDisplay()
 	defer display.Destroy()
 
 	gb.ConnectDisplay(display)
