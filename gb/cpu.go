@@ -19,28 +19,32 @@ type flags struct {
 	z, n, h, c bool
 }
 
-func (r *cpu) bc() uint16 {
-	return makeWord(r.b, r.c)
+func (cpu *cpu) bc() uint16 {
+	return makeWord(cpu.b, cpu.c)
 }
 
-func (r *cpu) de() uint16 {
-	return makeWord(r.d, r.e)
+func (cpu *cpu) de() uint16 {
+	return makeWord(cpu.d, cpu.e)
 }
 
-func (r *cpu) hl() uint16 {
-	return makeWord(r.h, r.l)
+func (cpu *cpu) hl() uint16 {
+	return makeWord(cpu.h, cpu.l)
 }
 
-func (r *cpu) setBc(word uint16) {
-	r.b, r.c = splitWord(word)
+func (cpu *cpu) setBc(word uint16) {
+	cpu.b, cpu.c = splitWord(word)
 }
 
-func (r *cpu) setDe(word uint16) {
-	r.d, r.e = splitWord(word)
+func (cpu *cpu) setDe(word uint16) {
+	cpu.d, cpu.e = splitWord(word)
 }
 
-func (r *cpu) setHl(word uint16) {
-	r.h, r.l = splitWord(word)
+func (cpu *cpu) setHl(word uint16) {
+	cpu.h, cpu.l = splitWord(word)
+}
+
+func (cpu *cpu) setZ(test byte) {
+	cpu.z = test == 0
 }
 
 func (cpu *cpu) decode() instruction {

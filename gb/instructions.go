@@ -54,7 +54,9 @@ var inc_bc = instruction{
 	n:            "-",
 	h:            "-",
 	c:            "-",
-	execute:      func(cpu *cpu) {},
+	execute: func(cpu *cpu) {
+		cpu.setBc(cpu.bc() + 1)
+	},
 }
 
 var ld_bc__d16 = instruction{
@@ -80,7 +82,9 @@ var inc_b = instruction{
 	n:            "0",
 	h:            "H",
 	c:            "-",
-	execute:      func(cpu *cpu) {},
+	execute: func(cpu *cpu) {
+		cpu.b += 1
+	},
 }
 
 var ld_b__d8 = instruction{
@@ -296,7 +300,9 @@ var inc_de = instruction{
 	n:            "-",
 	h:            "-",
 	c:            "-",
-	execute:      func(cpu *cpu) {},
+	execute: func(cpu *cpu) {
+		cpu.setDe(cpu.de() + 1)
+	},
 }
 
 var rla = instruction{
@@ -487,7 +493,9 @@ var inc_hl = instruction{
 	n:            "-",
 	h:            "-",
 	c:            "-",
-	execute:      func(cpu *cpu) {},
+	execute: func(cpu *cpu) {
+		cpu.setHl(cpu.hl() + 1)
+	},
 }
 
 var dec_h = instruction{
@@ -676,7 +684,9 @@ var inc_sp = instruction{
 	n:            "-",
 	h:            "-",
 	c:            "-",
-	execute:      func(cpu *cpu) {},
+	execute: func(cpu *cpu) {
+		cpu.sp += 1
+	},
 }
 
 var ld_sp__d16 = instruction{
