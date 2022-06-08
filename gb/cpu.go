@@ -70,17 +70,17 @@ func (f *flags) setZ(test byte) {
 	f.z = test == 0
 }
 
-func (cpu *cpu) decode() instruction {
+func (cpu *cpu) decode() Instruction {
 	b1 := cpu.readByte(cpu.pc)
 
 	// 16-bit instructions
 	if b1 == 0x10 || b1 == 0xCB {
 		b2 := cpu.readByte(cpu.pc + 1)
-		return instructionTable16[makeWord(b1, b2)]
+		return InstructionTable16[makeWord(b1, b2)]
 	}
 
 	// 8-bit instruction
-	return instructionTable8[b1]
+	return InstructionTable8[b1]
 }
 
 // invoked at 60Hz
