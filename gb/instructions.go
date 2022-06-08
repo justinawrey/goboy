@@ -1,5 +1,7 @@
 package gb
 
+import "math/bits"
+
 // TODO: maybe trim this down, binary is pretty big holding
 // all of this memory
 type instruction struct {
@@ -85,10 +87,10 @@ var inc_b = instruction{
 	h:            "H",
 	c:            "-",
 	execute: func(cpu *cpu) {
-		cpu.setH8Add(cpu.b, 1)
+		cpu.n = false
+		cpu.setH3Add(cpu.b, 1)
 		cpu.b += 1
 		cpu.setZ(cpu.b)
-		cpu.n = false
 	},
 }
 
@@ -118,10 +120,10 @@ var dec_b = instruction{
 	h:            "H",
 	c:            "-",
 	execute: func(cpu *cpu) {
-		cpu.setH8Sub(cpu.b, 1)
+		cpu.flags.n = true
+		cpu.setH3Sub(cpu.b, 1)
 		cpu.b -= 1
 		cpu.setZ(cpu.b)
-		cpu.n = true
 	},
 }
 
@@ -135,7 +137,13 @@ var rlca = instruction{
 	n:            "0",
 	h:            "0",
 	c:            "A7",
-	execute:      func(cpu *cpu) {},
+	execute: func(cpu *cpu) {
+		cpu.flags.c = (cpu.a & 0x80) == 0x80
+		cpu.flags.z = false
+		cpu.flags.n = false
+		cpu.flags.h = false
+		cpu.a = bits.RotateLeft8(cpu.a, 1)
+	},
 }
 
 var ld__a16___sp = instruction{
@@ -148,7 +156,12 @@ var ld__a16___sp = instruction{
 	n:            "-",
 	h:            "-",
 	c:            "-",
-	execute:      func(cpu *cpu) {},
+	execute: func(cpu *cpu) {
+		upper, lower := splitWord(cpu.sp)
+		address := makeWord(cpu.readByte(cpu.pc+1), cpu.readByte(cpu.pc+2))
+		cpu.writeByte(address, lower)
+		cpu.writeByte(address+1, upper)
+	},
 }
 
 var ld_a___bc_ = instruction{
@@ -176,7 +189,12 @@ var add_hl__bc = instruction{
 	n:            "0",
 	h:            "H",
 	c:            "CY",
-	execute:      func(cpu *cpu) {},
+	execute: func(cpu *cpu) {
+		cpu.flags.n = false
+		cpu.setH11Add(cpu.hl(), cpu.bc())
+		cpu.setC15Add(cpu.hl(), cpu.bc())
+		cpu.setHl(cpu.hl() + cpu.bc())
+	},
 }
 
 var inc_c = instruction{
@@ -189,7 +207,12 @@ var inc_c = instruction{
 	n:            "0",
 	h:            "H",
 	c:            "-",
-	execute:      func(cpu *cpu) {},
+	execute: func(cpu *cpu) {
+		cpu.n = false
+		cpu.setH3Add(cpu.c, 1)
+		cpu.c += 1
+		cpu.setZ(cpu.c)
+	},
 }
 
 var dec_bc = instruction{
@@ -202,7 +225,9 @@ var dec_bc = instruction{
 	n:            "-",
 	h:            "-",
 	c:            "-",
-	execute:      func(cpu *cpu) {},
+	execute: func(cpu *cpu) {
+		cpu.setBc(cpu.bc() - 1)
+	},
 }
 
 var dec_c = instruction{
@@ -215,9 +240,15 @@ var dec_c = instruction{
 	n:            "1",
 	h:            "H",
 	c:            "-",
-	execute:      func(cpu *cpu) {},
+	execute: func(cpu *cpu) {
+		cpu.n = true
+		cpu.setH3Sub(cpu.c, 1)
+		cpu.c -= 1
+		cpu.setZ(cpu.c)
+	},
 }
 
+// TODO: what is this?
 var stop = instruction{
 	mnemonic:     "STOP",
 	encoding:     "0x1000",

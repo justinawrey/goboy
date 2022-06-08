@@ -44,11 +44,11 @@ func (cpu *cpu) setHl(word uint16) {
 }
 
 // TODO: half carry logic maybe could be streamlined?
-func (f *flags) setH8Add(b1 byte, b2 byte) {
+func (f *flags) setH3Add(b1 byte, b2 byte) {
 	f.h = (((b1 & 0x0f) + (b2 & 0x0f)) & 0x10) == 0x10
 }
 
-func (f *flags) setH8Sub(b1 byte, b2 byte) {
+func (f *flags) setH3Sub(b1 byte, b2 byte) {
 	f.h = (((b1 & 0x0f) - (b2 & 0x0f)) & 0x10) == 0x10
 }
 
@@ -60,10 +60,10 @@ func (f *flags) setH11Sub(w1 uint16, w2 uint16) {
 	f.h = (((w1 & 0x0fff) - (w2 & 0x0fff)) & 0x1000) == 0x1000
 }
 
-func (f *flags) setH15Add(w1 uint16, w2 uint16) {
+func (f *flags) setC15Add(w1 uint16, w2 uint16) {
 	wA := uint32(w1)
 	wB := uint32(w1)
-	f.h = (((wA & 0xffff) + (wB & 0xffff)) & 0x10000) == 0x10000
+	f.c = (((wA & 0xffff) + (wB & 0xffff)) & 0x10000) == 0x10000
 }
 
 func (f *flags) setZ(test byte) {
