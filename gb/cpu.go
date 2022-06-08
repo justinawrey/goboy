@@ -111,7 +111,7 @@ func (cpu *cpu) cpuCycle() (cycles int) {
 
 	jumped := currPc != cpu.pc
 	if !jumped {
-		cpu.pc += instruction.size
+		cpu.pc += uint16(instruction.size)
 	}
 
 	if jumped {
