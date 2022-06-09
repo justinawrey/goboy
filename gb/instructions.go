@@ -124,10 +124,10 @@ var rlca = Instruction{
 	flags:        "0 0 0 A7",
 	Implemented:  true,
 	execute: func(cpu *cpu) {
-		cpu.flags.c = (cpu.a & 0x80) == 0x80
 		cpu.flags.z = false
 		cpu.flags.n = false
 		cpu.flags.h = false
+		cpu.flags.c = (cpu.a & 0x80) == 0x80
 		cpu.a = bits.RotateLeft8(cpu.a, 1)
 	},
 }
@@ -184,7 +184,7 @@ var dec_bc = Instruction{
 	jumpCycles:   8,
 	noJumpCycles: 8,
 	flags:        "- - - -",
-	Implemented:  false,
+	Implemented:  true,
 	execute: func(cpu *cpu) {
 		cpu.setBc(cpu.bc() - 1)
 	},
@@ -199,7 +199,7 @@ var inc_c = Instruction{
 	flags:        "Z 0 H -",
 	Implemented:  true,
 	execute: func(cpu *cpu) {
-		cpu.n = false
+		cpu.flags.n = false
 		cpu.setH3Add(cpu.c, 1)
 		cpu.c += 1
 		cpu.setZ(cpu.c)
@@ -215,7 +215,7 @@ var dec_c = Instruction{
 	flags:        "Z 1 H -",
 	Implemented:  true,
 	execute: func(cpu *cpu) {
-		cpu.n = true
+		cpu.flags.n = true
 		cpu.setH3Sub(cpu.c, 1)
 		cpu.c -= 1
 		cpu.setZ(cpu.c)
@@ -309,8 +309,13 @@ var inc_d = Instruction{
 	jumpCycles:   4,
 	noJumpCycles: 4,
 	flags:        "Z 0 H -",
-	Implemented:  false,
-	execute:      func(cpu *cpu) {},
+	Implemented:  true,
+	execute: func(cpu *cpu) {
+		cpu.flags.n = false
+		cpu.setH3Add(cpu.d, 1)
+		cpu.d += 1
+		cpu.setZ(cpu.d)
+	},
 }
 
 var dec_d = Instruction{
@@ -320,8 +325,13 @@ var dec_d = Instruction{
 	jumpCycles:   4,
 	noJumpCycles: 4,
 	flags:        "Z 1 H -",
-	Implemented:  false,
-	execute:      func(cpu *cpu) {},
+	Implemented:  true,
+	execute: func(cpu *cpu) {
+		cpu.flags.n = true
+		cpu.setH3Sub(cpu.d, 1)
+		cpu.d -= 1
+		cpu.setZ(cpu.d)
+	},
 }
 
 var ld_d__d8 = Instruction{
@@ -390,8 +400,10 @@ var dec_de = Instruction{
 	jumpCycles:   8,
 	noJumpCycles: 8,
 	flags:        "- - - -",
-	Implemented:  false,
-	execute:      func(cpu *cpu) {},
+	Implemented:  true,
+	execute: func(cpu *cpu) {
+		cpu.setDe(cpu.de() - 1)
+	},
 }
 
 var inc_e = Instruction{
@@ -497,7 +509,12 @@ var inc_h = Instruction{
 	noJumpCycles: 4,
 	flags:        "Z 0 H -",
 	Implemented:  false,
-	execute:      func(cpu *cpu) {},
+	execute: func(cpu *cpu) {
+		cpu.flags.n = false
+		cpu.setH3Add(cpu.h, 1)
+		cpu.h += 1
+		cpu.setZ(cpu.h)
+	},
 }
 
 var dec_h = Instruction{
@@ -507,8 +524,13 @@ var dec_h = Instruction{
 	jumpCycles:   4,
 	noJumpCycles: 4,
 	flags:        "Z 1 H -",
-	Implemented:  false,
-	execute:      func(cpu *cpu) {},
+	Implemented:  true,
+	execute: func(cpu *cpu) {
+		cpu.flags.n = true
+		cpu.setH3Sub(cpu.h, 1)
+		cpu.h -= 1
+		cpu.setZ(cpu.h)
+	},
 }
 
 var ld_h__d8 = Instruction{
@@ -578,8 +600,10 @@ var dec_hl = Instruction{
 	jumpCycles:   8,
 	noJumpCycles: 8,
 	flags:        "- - - -",
-	Implemented:  false,
-	execute:      func(cpu *cpu) {},
+	Implemented:  true,
+	execute: func(cpu *cpu) {
+		cpu.setHl(cpu.hl() - 1)
+	},
 }
 
 var inc_l = Instruction{
@@ -686,8 +710,15 @@ var inc__hl_ = Instruction{
 	jumpCycles:   12,
 	noJumpCycles: 12,
 	flags:        "Z 0 H -",
-	Implemented:  false,
-	execute:      func(cpu *cpu) {},
+	Implemented:  true,
+	execute: func(cpu *cpu) {
+		cpu.flags.n = false
+		address := cpu.hl()
+		b := cpu.readByte(address)
+		cpu.setH3Add(b, 1)
+		cpu.writeByte(address, b+1)
+		cpu.setZ(cpu.readByte(cpu.hl()))
+	},
 }
 
 var dec__hl_ = Instruction{
@@ -697,8 +728,15 @@ var dec__hl_ = Instruction{
 	jumpCycles:   12,
 	noJumpCycles: 12,
 	flags:        "Z 1 H -",
-	Implemented:  false,
-	execute:      func(cpu *cpu) {},
+	Implemented:  true,
+	execute: func(cpu *cpu) {
+		cpu.flags.n = true
+		address := cpu.hl()
+		b := cpu.readByte(address)
+		cpu.setH3Sub(b, 1)
+		cpu.writeByte(address, b-1)
+		cpu.setZ(cpu.readByte(cpu.hl()))
+	},
 }
 
 var ld__hl___d8 = Instruction{
@@ -721,8 +759,12 @@ var scf = Instruction{
 	jumpCycles:   4,
 	noJumpCycles: 4,
 	flags:        "- 0 0 1",
-	Implemented:  false,
-	execute:      func(cpu *cpu) {},
+	Implemented:  true,
+	execute: func(cpu *cpu) {
+		cpu.flags.n = false
+		cpu.flags.h = false
+		cpu.flags.c = true
+	},
 }
 
 var jr_c__s8 = Instruction{
@@ -768,8 +810,10 @@ var dec_sp = Instruction{
 	jumpCycles:   8,
 	noJumpCycles: 8,
 	flags:        "- - - -",
-	Implemented:  false,
-	execute:      func(cpu *cpu) {},
+	Implemented:  true,
+	execute: func(cpu *cpu) {
+		cpu.sp = cpu.hl() - 1
+	},
 }
 
 var inc_a = Instruction{
