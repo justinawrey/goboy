@@ -109,8 +109,10 @@ var ld_b__d8 = Instruction{
 	jumpCycles:   8,
 	noJumpCycles: 8,
 	flags:        "- - - -",
-	Implemented:  false,
-	execute:      func(cpu *cpu) {},
+	Implemented:  true,
+	execute: func(cpu *cpu) {
+		cpu.b = cpu.readByte(cpu.pc + 1)
+	},
 }
 
 var rlca = Instruction{
@@ -240,8 +242,14 @@ var rrca = Instruction{
 	jumpCycles:   4,
 	noJumpCycles: 4,
 	flags:        "0 0 0 A0",
-	Implemented:  false,
-	execute:      func(cpu *cpu) {},
+	Implemented:  true,
+	execute: func(cpu *cpu) {
+		cpu.flags.z = false
+		cpu.flags.n = false
+		cpu.flags.h = false
+		cpu.flags.c = (cpu.a & 0x01) == 0x01
+		cpu.a = bits.RotateLeft8(cpu.a, -1)
+	},
 }
 
 var stop = Instruction{
@@ -262,8 +270,10 @@ var ld_de__d16 = Instruction{
 	jumpCycles:   12,
 	noJumpCycles: 12,
 	flags:        "- - - -",
-	Implemented:  false,
-	execute:      func(cpu *cpu) {},
+	Implemented:  true,
+	execute: func(cpu *cpu) {
+		cpu.setDe(cpu.readWord(cpu.pc + 1))
+	},
 }
 
 var ld__de___a = Instruction{
@@ -446,8 +456,10 @@ var ld_hl__d16 = Instruction{
 	jumpCycles:   12,
 	noJumpCycles: 12,
 	flags:        "- - - -",
-	Implemented:  false,
-	execute:      func(cpu *cpu) {},
+	Implemented:  true,
+	execute: func(cpu *cpu) {
+		cpu.setHl(cpu.readWord(cpu.pc + 1))
+	},
 }
 
 var ld__hlp___a = Instruction{
@@ -634,8 +646,10 @@ var ld_sp__d16 = Instruction{
 	jumpCycles:   12,
 	noJumpCycles: 12,
 	flags:        "- - - -",
-	Implemented:  false,
-	execute:      func(cpu *cpu) {},
+	Implemented:  true,
+	execute: func(cpu *cpu) {
+		cpu.sp = cpu.readWord(cpu.pc + 1)
+	},
 }
 
 var ld__hlm___a = Instruction{
