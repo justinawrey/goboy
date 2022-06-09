@@ -508,7 +508,7 @@ var inc_h = Instruction{
 	jumpCycles:   4,
 	noJumpCycles: 4,
 	flags:        "Z 0 H -",
-	Implemented:  false,
+	Implemented:  true,
 	execute: func(cpu *cpu) {
 		cpu.flags.n = false
 		cpu.setH3Add(cpu.h, 1)
