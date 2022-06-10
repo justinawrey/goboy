@@ -43,7 +43,7 @@ func (cpu *cpu) setHl(word uint16) {
 	cpu.h, cpu.l = splitWord(word)
 }
 
-// TODO: half carry logic maybe could be streamlined?
+// TODO: this half carry logic could be streamlined
 func (f *flags) setH3Add(b1 byte, b2 byte) {
 	f.h = (((b1 & 0x0f) + (b2 & 0x0f)) & 0x10) == 0x10
 }
@@ -60,10 +60,28 @@ func (f *flags) setH11Sub(w1 uint16, w2 uint16) {
 	f.h = (((w1 & 0x0fff) - (w2 & 0x0fff)) & 0x1000) == 0x1000
 }
 
+func (f *flags) setC7Add(b1 byte, b2 byte) {
+	bA := uint16(b1)
+	bB := uint16(b2)
+	f.c = (((bA & 0xff) + (bB & 0xff)) & 0x100) == 0x100
+}
+
+func (f *flags) setC7Sub(b1 byte, b2 byte) {
+	bA := uint16(b1)
+	bB := uint16(b2)
+	f.c = (((bA & 0xff) - (bB & 0xff)) & 0x100) == 0x100
+}
+
 func (f *flags) setC15Add(w1 uint16, w2 uint16) {
 	wA := uint32(w1)
 	wB := uint32(w1)
 	f.c = (((wA & 0xffff) + (wB & 0xffff)) & 0x10000) == 0x10000
+}
+
+func (f *flags) setC15Sub(w1 uint16, w2 uint16) {
+	wA := uint32(w1)
+	wB := uint32(w1)
+	f.c = (((wA & 0xffff) - (wB & 0xffff)) & 0x10000) == 0x10000
 }
 
 func (f *flags) setZ(test byte) {
