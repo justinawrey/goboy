@@ -2175,8 +2175,14 @@ var and_b = Instruction{
 	jumpCycles:   4,
 	noJumpCycles: 4,
 	flags:        "Z 0 1 0",
-	Implemented:  false,
-	execute:      func(cpu *cpu) {},
+	Implemented:  true,
+	execute: func(cpu *cpu) {
+		cpu.flags.n = false
+		cpu.flags.h = true
+		cpu.flags.c = false
+		cpu.a &= cpu.b
+		cpu.setZ(cpu.a)
+	},
 }
 
 var and_c = Instruction{
@@ -2186,8 +2192,14 @@ var and_c = Instruction{
 	jumpCycles:   4,
 	noJumpCycles: 4,
 	flags:        "Z 0 1 0",
-	Implemented:  false,
-	execute:      func(cpu *cpu) {},
+	Implemented:  true,
+	execute: func(cpu *cpu) {
+		cpu.flags.n = false
+		cpu.flags.h = true
+		cpu.flags.c = false
+		cpu.a &= cpu.c
+		cpu.setZ(cpu.a)
+	},
 }
 
 var and_d = Instruction{
@@ -2197,8 +2209,14 @@ var and_d = Instruction{
 	jumpCycles:   4,
 	noJumpCycles: 4,
 	flags:        "Z 0 1 0",
-	Implemented:  false,
-	execute:      func(cpu *cpu) {},
+	Implemented:  true,
+	execute: func(cpu *cpu) {
+		cpu.flags.n = false
+		cpu.flags.h = true
+		cpu.flags.c = false
+		cpu.a &= cpu.d
+		cpu.setZ(cpu.a)
+	},
 }
 
 var and_e = Instruction{
@@ -2208,8 +2226,14 @@ var and_e = Instruction{
 	jumpCycles:   4,
 	noJumpCycles: 4,
 	flags:        "Z 0 1 0",
-	Implemented:  false,
-	execute:      func(cpu *cpu) {},
+	Implemented:  true,
+	execute: func(cpu *cpu) {
+		cpu.flags.n = false
+		cpu.flags.h = true
+		cpu.flags.c = false
+		cpu.a &= cpu.e
+		cpu.setZ(cpu.a)
+	},
 }
 
 var and_h = Instruction{
@@ -2219,8 +2243,14 @@ var and_h = Instruction{
 	jumpCycles:   4,
 	noJumpCycles: 4,
 	flags:        "Z 0 1 0",
-	Implemented:  false,
-	execute:      func(cpu *cpu) {},
+	Implemented:  true,
+	execute: func(cpu *cpu) {
+		cpu.flags.n = false
+		cpu.flags.h = true
+		cpu.flags.c = false
+		cpu.a &= cpu.h
+		cpu.setZ(cpu.a)
+	},
 }
 
 var and_l = Instruction{
@@ -2230,8 +2260,14 @@ var and_l = Instruction{
 	jumpCycles:   4,
 	noJumpCycles: 4,
 	flags:        "Z 0 1 0",
-	Implemented:  false,
-	execute:      func(cpu *cpu) {},
+	Implemented:  true,
+	execute: func(cpu *cpu) {
+		cpu.flags.n = false
+		cpu.flags.h = true
+		cpu.flags.c = false
+		cpu.a &= cpu.l
+		cpu.setZ(cpu.a)
+	},
 }
 
 var and__hl_ = Instruction{
@@ -2252,8 +2288,14 @@ var and_a = Instruction{
 	jumpCycles:   4,
 	noJumpCycles: 4,
 	flags:        "Z 0 1 0",
-	Implemented:  false,
-	execute:      func(cpu *cpu) {},
+	Implemented:  true,
+	execute: func(cpu *cpu) {
+		cpu.flags.n = false
+		cpu.flags.h = true
+		cpu.flags.c = false
+		cpu.a &= cpu.a
+		cpu.setZ(cpu.a)
+	},
 }
 
 var xor_b = Instruction{
