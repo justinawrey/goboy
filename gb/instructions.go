@@ -1739,8 +1739,14 @@ var add_a__b = Instruction{
 	jumpCycles:   4,
 	noJumpCycles: 4,
 	flags:        "Z 0 H CY",
-	Implemented:  false,
-	execute:      func(cpu *cpu) {},
+	Implemented:  true,
+	execute: func(cpu *cpu) {
+		cpu.flags.n = false
+		cpu.setH3Add(cpu.a, cpu.b)
+		cpu.setC7Add(cpu.a, cpu.b)
+		cpu.a += cpu.b
+		cpu.setZ(cpu.a)
+	},
 }
 
 var add_a__c = Instruction{
@@ -1750,8 +1756,14 @@ var add_a__c = Instruction{
 	jumpCycles:   4,
 	noJumpCycles: 4,
 	flags:        "Z 0 H CY",
-	Implemented:  false,
-	execute:      func(cpu *cpu) {},
+	Implemented:  true,
+	execute: func(cpu *cpu) {
+		cpu.flags.n = false
+		cpu.setH3Add(cpu.a, cpu.c)
+		cpu.setC7Add(cpu.a, cpu.c)
+		cpu.a += cpu.c
+		cpu.setZ(cpu.a)
+	},
 }
 
 var add_a__d = Instruction{
@@ -1761,8 +1773,14 @@ var add_a__d = Instruction{
 	jumpCycles:   4,
 	noJumpCycles: 4,
 	flags:        "Z 0 H CY",
-	Implemented:  false,
-	execute:      func(cpu *cpu) {},
+	Implemented:  true,
+	execute: func(cpu *cpu) {
+		cpu.flags.n = false
+		cpu.setH3Add(cpu.a, cpu.d)
+		cpu.setC7Add(cpu.a, cpu.d)
+		cpu.a += cpu.d
+		cpu.setZ(cpu.a)
+	},
 }
 
 var add_a__e = Instruction{
@@ -1772,8 +1790,14 @@ var add_a__e = Instruction{
 	jumpCycles:   4,
 	noJumpCycles: 4,
 	flags:        "Z 0 H CY",
-	Implemented:  false,
-	execute:      func(cpu *cpu) {},
+	Implemented:  true,
+	execute: func(cpu *cpu) {
+		cpu.flags.n = false
+		cpu.setH3Add(cpu.a, cpu.e)
+		cpu.setC7Add(cpu.a, cpu.e)
+		cpu.a += cpu.e
+		cpu.setZ(cpu.a)
+	},
 }
 
 var add_a__h = Instruction{
@@ -1783,8 +1807,14 @@ var add_a__h = Instruction{
 	jumpCycles:   4,
 	noJumpCycles: 4,
 	flags:        "Z 0 H CY",
-	Implemented:  false,
-	execute:      func(cpu *cpu) {},
+	Implemented:  true,
+	execute: func(cpu *cpu) {
+		cpu.flags.n = false
+		cpu.setH3Add(cpu.a, cpu.h)
+		cpu.setC7Add(cpu.a, cpu.h)
+		cpu.a += cpu.h
+		cpu.setZ(cpu.a)
+	},
 }
 
 var add_a__l = Instruction{
@@ -1794,8 +1824,14 @@ var add_a__l = Instruction{
 	jumpCycles:   4,
 	noJumpCycles: 4,
 	flags:        "Z 0 H CY",
-	Implemented:  false,
-	execute:      func(cpu *cpu) {},
+	Implemented:  true,
+	execute: func(cpu *cpu) {
+		cpu.flags.n = false
+		cpu.setH3Add(cpu.a, cpu.l)
+		cpu.setC7Add(cpu.a, cpu.l)
+		cpu.a += cpu.l
+		cpu.setZ(cpu.a)
+	},
 }
 
 var add_a___hl_ = Instruction{
@@ -1816,8 +1852,14 @@ var add_a__a = Instruction{
 	jumpCycles:   4,
 	noJumpCycles: 4,
 	flags:        "Z 0 H CY",
-	Implemented:  false,
-	execute:      func(cpu *cpu) {},
+	Implemented:  true,
+	execute: func(cpu *cpu) {
+		cpu.flags.n = false
+		cpu.setH3Add(cpu.a, cpu.a)
+		cpu.setC7Add(cpu.a, cpu.a)
+		cpu.a += cpu.a
+		cpu.setZ(cpu.a)
+	},
 }
 
 var adc_a__b = Instruction{
@@ -1915,8 +1957,14 @@ var sub_b = Instruction{
 	jumpCycles:   4,
 	noJumpCycles: 4,
 	flags:        "Z 1 H CY",
-	Implemented:  false,
-	execute:      func(cpu *cpu) {},
+	Implemented:  true,
+	execute: func(cpu *cpu) {
+		cpu.flags.n = true
+		cpu.setH3Sub(cpu.a, cpu.b)
+		cpu.setC7Sub(cpu.a, cpu.b)
+		cpu.a -= cpu.b
+		cpu.setZ(cpu.a)
+	},
 }
 
 var sub_c = Instruction{
@@ -1926,8 +1974,14 @@ var sub_c = Instruction{
 	jumpCycles:   4,
 	noJumpCycles: 4,
 	flags:        "Z 1 H CY",
-	Implemented:  false,
-	execute:      func(cpu *cpu) {},
+	Implemented:  true,
+	execute: func(cpu *cpu) {
+		cpu.flags.n = true
+		cpu.setH3Sub(cpu.a, cpu.c)
+		cpu.setC7Sub(cpu.a, cpu.c)
+		cpu.a -= cpu.c
+		cpu.setZ(cpu.a)
+	},
 }
 
 var sub_d = Instruction{
@@ -1937,8 +1991,14 @@ var sub_d = Instruction{
 	jumpCycles:   4,
 	noJumpCycles: 4,
 	flags:        "Z 1 H CY",
-	Implemented:  false,
-	execute:      func(cpu *cpu) {},
+	Implemented:  true,
+	execute: func(cpu *cpu) {
+		cpu.flags.n = true
+		cpu.setH3Sub(cpu.a, cpu.d)
+		cpu.setC7Sub(cpu.a, cpu.d)
+		cpu.a -= cpu.d
+		cpu.setZ(cpu.a)
+	},
 }
 
 var sub_e = Instruction{
@@ -1948,8 +2008,14 @@ var sub_e = Instruction{
 	jumpCycles:   4,
 	noJumpCycles: 4,
 	flags:        "Z 1 H CY",
-	Implemented:  false,
-	execute:      func(cpu *cpu) {},
+	Implemented:  true,
+	execute: func(cpu *cpu) {
+		cpu.flags.n = true
+		cpu.setH3Sub(cpu.a, cpu.e)
+		cpu.setC7Sub(cpu.a, cpu.e)
+		cpu.a -= cpu.e
+		cpu.setZ(cpu.a)
+	},
 }
 
 var sub_h = Instruction{
@@ -1959,8 +2025,14 @@ var sub_h = Instruction{
 	jumpCycles:   4,
 	noJumpCycles: 4,
 	flags:        "Z 1 H CY",
-	Implemented:  false,
-	execute:      func(cpu *cpu) {},
+	Implemented:  true,
+	execute: func(cpu *cpu) {
+		cpu.flags.n = true
+		cpu.setH3Sub(cpu.a, cpu.h)
+		cpu.setC7Sub(cpu.a, cpu.h)
+		cpu.a -= cpu.h
+		cpu.setZ(cpu.a)
+	},
 }
 
 var sub_l = Instruction{
@@ -1970,8 +2042,14 @@ var sub_l = Instruction{
 	jumpCycles:   4,
 	noJumpCycles: 4,
 	flags:        "Z 1 H CY",
-	Implemented:  false,
-	execute:      func(cpu *cpu) {},
+	Implemented:  true,
+	execute: func(cpu *cpu) {
+		cpu.flags.n = true
+		cpu.setH3Sub(cpu.a, cpu.l)
+		cpu.setC7Sub(cpu.a, cpu.l)
+		cpu.a -= cpu.l
+		cpu.setZ(cpu.a)
+	},
 }
 
 var sub__hl_ = Instruction{
@@ -1992,8 +2070,14 @@ var sub_a = Instruction{
 	jumpCycles:   4,
 	noJumpCycles: 4,
 	flags:        "Z 1 H CY",
-	Implemented:  false,
-	execute:      func(cpu *cpu) {},
+	Implemented:  true,
+	execute: func(cpu *cpu) {
+		cpu.flags.n = true
+		cpu.setH3Sub(cpu.a, cpu.a)
+		cpu.setC7Sub(cpu.a, cpu.a)
+		cpu.a -= cpu.a
+		cpu.setZ(cpu.a)
+	},
 }
 
 var sbc_a__b = Instruction{
@@ -2559,8 +2643,15 @@ var add_a__d8 = Instruction{
 	jumpCycles:   8,
 	noJumpCycles: 8,
 	flags:        "Z 0 H CY",
-	Implemented:  false,
-	execute:      func(cpu *cpu) {},
+	Implemented:  true,
+	execute: func(cpu *cpu) {
+		d8 := cpu.readByte(cpu.pc + 1)
+		cpu.flags.n = false
+		cpu.setH3Add(cpu.a, d8)
+		cpu.setC7Add(cpu.a, d8)
+		cpu.a += d8
+		cpu.setZ(cpu.a)
+	},
 }
 
 var rst_0 = Instruction{
@@ -2713,8 +2804,15 @@ var sub_d8 = Instruction{
 	jumpCycles:   8,
 	noJumpCycles: 8,
 	flags:        "Z 1 H CY",
-	Implemented:  false,
-	execute:      func(cpu *cpu) {},
+	Implemented:  true,
+	execute: func(cpu *cpu) {
+		d8 := cpu.readByte(cpu.pc + 1)
+		cpu.flags.n = true
+		cpu.setH3Add(cpu.a, d8)
+		cpu.setC7Add(cpu.a, d8)
+		cpu.a -= d8
+		cpu.setZ(cpu.a)
+	},
 }
 
 var rst_2 = Instruction{
