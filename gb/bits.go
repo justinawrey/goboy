@@ -10,3 +10,10 @@ func splitWord(word uint16) (byte, byte) {
 
 	return upper, lower
 }
+
+func toUint8(flag bool) uint8 {
+	if flag {
+		return 1
+	}
+	return 0
+}

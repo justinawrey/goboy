@@ -1869,8 +1869,15 @@ var adc_a__b = Instruction{
 	jumpCycles:   4,
 	noJumpCycles: 4,
 	flags:        "Z 0 H CY",
-	Implemented:  false,
-	execute:      func(cpu *cpu) {},
+	Implemented:  true,
+	execute: func(cpu *cpu) {
+		cpu.flags.n = false
+		carry := toUint8(cpu.flags.c)
+		cpu.setH3Add(cpu.a, cpu.b+carry)
+		cpu.setC7Add(cpu.a, cpu.b+carry)
+		cpu.a += cpu.b + carry
+		cpu.setZ(cpu.a)
+	},
 }
 
 var adc_a__c = Instruction{
@@ -1880,8 +1887,15 @@ var adc_a__c = Instruction{
 	jumpCycles:   4,
 	noJumpCycles: 4,
 	flags:        "Z 0 H CY",
-	Implemented:  false,
-	execute:      func(cpu *cpu) {},
+	Implemented:  true,
+	execute: func(cpu *cpu) {
+		cpu.flags.n = false
+		carry := toUint8(cpu.flags.c)
+		cpu.setH3Add(cpu.a, cpu.c+carry)
+		cpu.setC7Add(cpu.a, cpu.c+carry)
+		cpu.a += cpu.c + carry
+		cpu.setZ(cpu.a)
+	},
 }
 
 var adc_a__d = Instruction{
@@ -1891,8 +1905,15 @@ var adc_a__d = Instruction{
 	jumpCycles:   4,
 	noJumpCycles: 4,
 	flags:        "Z 0 H CY",
-	Implemented:  false,
-	execute:      func(cpu *cpu) {},
+	Implemented:  true,
+	execute: func(cpu *cpu) {
+		cpu.flags.n = false
+		carry := toUint8(cpu.flags.c)
+		cpu.setH3Add(cpu.a, cpu.d+carry)
+		cpu.setC7Add(cpu.a, cpu.d+carry)
+		cpu.a += cpu.d + carry
+		cpu.setZ(cpu.a)
+	},
 }
 
 var adc_a__e = Instruction{
@@ -1902,8 +1923,15 @@ var adc_a__e = Instruction{
 	jumpCycles:   4,
 	noJumpCycles: 4,
 	flags:        "Z 0 H CY",
-	Implemented:  false,
-	execute:      func(cpu *cpu) {},
+	Implemented:  true,
+	execute: func(cpu *cpu) {
+		cpu.flags.n = false
+		carry := toUint8(cpu.flags.c)
+		cpu.setH3Add(cpu.a, cpu.e+carry)
+		cpu.setC7Add(cpu.a, cpu.e+carry)
+		cpu.a += cpu.e + carry
+		cpu.setZ(cpu.a)
+	},
 }
 
 var adc_a__h = Instruction{
@@ -1913,8 +1941,15 @@ var adc_a__h = Instruction{
 	jumpCycles:   4,
 	noJumpCycles: 4,
 	flags:        "Z 0 H CY",
-	Implemented:  false,
-	execute:      func(cpu *cpu) {},
+	Implemented:  true,
+	execute: func(cpu *cpu) {
+		cpu.flags.n = false
+		carry := toUint8(cpu.flags.c)
+		cpu.setH3Add(cpu.a, cpu.h+carry)
+		cpu.setC7Add(cpu.a, cpu.h+carry)
+		cpu.a += cpu.h + carry
+		cpu.setZ(cpu.a)
+	},
 }
 
 var adc_a__l = Instruction{
@@ -1924,8 +1959,15 @@ var adc_a__l = Instruction{
 	jumpCycles:   4,
 	noJumpCycles: 4,
 	flags:        "Z 0 H CY",
-	Implemented:  false,
-	execute:      func(cpu *cpu) {},
+	Implemented:  true,
+	execute: func(cpu *cpu) {
+		cpu.flags.n = false
+		carry := toUint8(cpu.flags.c)
+		cpu.setH3Add(cpu.a, cpu.l+carry)
+		cpu.setC7Add(cpu.a, cpu.l+carry)
+		cpu.a += cpu.l + carry
+		cpu.setZ(cpu.a)
+	},
 }
 
 var adc_a___hl_ = Instruction{
@@ -1946,8 +1988,15 @@ var adc_a__a = Instruction{
 	jumpCycles:   4,
 	noJumpCycles: 4,
 	flags:        "Z 0 H CY",
-	Implemented:  false,
-	execute:      func(cpu *cpu) {},
+	Implemented:  true,
+	execute: func(cpu *cpu) {
+		cpu.flags.n = false
+		carry := toUint8(cpu.flags.c)
+		cpu.setH3Add(cpu.a, cpu.a+carry)
+		cpu.setC7Add(cpu.a, cpu.a+carry)
+		cpu.a += cpu.a + carry
+		cpu.setZ(cpu.a)
+	},
 }
 
 var sub_b = Instruction{
@@ -2087,8 +2136,15 @@ var sbc_a__b = Instruction{
 	jumpCycles:   4,
 	noJumpCycles: 4,
 	flags:        "Z 1 H CY",
-	Implemented:  false,
-	execute:      func(cpu *cpu) {},
+	Implemented:  true,
+	execute: func(cpu *cpu) {
+		cpu.flags.n = true
+		carry := toUint8(cpu.flags.c)
+		cpu.setH3Sub(cpu.a, cpu.b-carry)
+		cpu.setC7Sub(cpu.a, cpu.b-carry)
+		cpu.a -= cpu.b - carry
+		cpu.setZ(cpu.a)
+	},
 }
 
 var sbc_a__c = Instruction{
@@ -2098,8 +2154,15 @@ var sbc_a__c = Instruction{
 	jumpCycles:   4,
 	noJumpCycles: 4,
 	flags:        "Z 1 H CY",
-	Implemented:  false,
-	execute:      func(cpu *cpu) {},
+	Implemented:  true,
+	execute: func(cpu *cpu) {
+		cpu.flags.n = true
+		carry := toUint8(cpu.flags.c)
+		cpu.setH3Sub(cpu.a, cpu.c-carry)
+		cpu.setC7Sub(cpu.a, cpu.c-carry)
+		cpu.a -= cpu.c - carry
+		cpu.setZ(cpu.a)
+	},
 }
 
 var sbc_a__d = Instruction{
@@ -2109,8 +2172,15 @@ var sbc_a__d = Instruction{
 	jumpCycles:   4,
 	noJumpCycles: 4,
 	flags:        "Z 1 H CY",
-	Implemented:  false,
-	execute:      func(cpu *cpu) {},
+	Implemented:  true,
+	execute: func(cpu *cpu) {
+		cpu.flags.n = true
+		carry := toUint8(cpu.flags.c)
+		cpu.setH3Sub(cpu.a, cpu.d-carry)
+		cpu.setC7Sub(cpu.a, cpu.d-carry)
+		cpu.a -= cpu.d - carry
+		cpu.setZ(cpu.a)
+	},
 }
 
 var sbc_a__e = Instruction{
@@ -2120,8 +2190,15 @@ var sbc_a__e = Instruction{
 	jumpCycles:   4,
 	noJumpCycles: 4,
 	flags:        "Z 1 H CY",
-	Implemented:  false,
-	execute:      func(cpu *cpu) {},
+	Implemented:  true,
+	execute: func(cpu *cpu) {
+		cpu.flags.n = true
+		carry := toUint8(cpu.flags.c)
+		cpu.setH3Sub(cpu.a, cpu.e-carry)
+		cpu.setC7Sub(cpu.a, cpu.e-carry)
+		cpu.a -= cpu.e - carry
+		cpu.setZ(cpu.a)
+	},
 }
 
 var sbc_a__h = Instruction{
@@ -2131,8 +2208,15 @@ var sbc_a__h = Instruction{
 	jumpCycles:   4,
 	noJumpCycles: 4,
 	flags:        "Z 1 H CY",
-	Implemented:  false,
-	execute:      func(cpu *cpu) {},
+	Implemented:  true,
+	execute: func(cpu *cpu) {
+		cpu.flags.n = true
+		carry := toUint8(cpu.flags.c)
+		cpu.setH3Sub(cpu.a, cpu.h-carry)
+		cpu.setC7Sub(cpu.a, cpu.h-carry)
+		cpu.a -= cpu.h - carry
+		cpu.setZ(cpu.a)
+	},
 }
 
 var sbc_a__l = Instruction{
@@ -2142,8 +2226,15 @@ var sbc_a__l = Instruction{
 	jumpCycles:   4,
 	noJumpCycles: 4,
 	flags:        "Z 1 H CY",
-	Implemented:  false,
-	execute:      func(cpu *cpu) {},
+	Implemented:  true,
+	execute: func(cpu *cpu) {
+		cpu.flags.n = true
+		carry := toUint8(cpu.flags.c)
+		cpu.setH3Sub(cpu.a, cpu.l-carry)
+		cpu.setC7Sub(cpu.a, cpu.l-carry)
+		cpu.a -= cpu.l - carry
+		cpu.setZ(cpu.a)
+	},
 }
 
 var sbc_a___hl_ = Instruction{
@@ -2164,8 +2255,15 @@ var sbc_a__a = Instruction{
 	jumpCycles:   4,
 	noJumpCycles: 4,
 	flags:        "Z 1 H CY",
-	Implemented:  false,
-	execute:      func(cpu *cpu) {},
+	Implemented:  true,
+	execute: func(cpu *cpu) {
+		cpu.flags.n = true
+		carry := toUint8(cpu.flags.c)
+		cpu.setH3Sub(cpu.a, cpu.a-carry)
+		cpu.setC7Sub(cpu.a, cpu.a-carry)
+		cpu.a -= cpu.a - carry
+		cpu.setZ(cpu.a)
+	},
 }
 
 var and_b = Instruction{
@@ -2571,8 +2669,13 @@ var cp_b = Instruction{
 	jumpCycles:   4,
 	noJumpCycles: 4,
 	flags:        "Z 1 H CY",
-	Implemented:  false,
-	execute:      func(cpu *cpu) {},
+	Implemented:  true,
+	execute: func(cpu *cpu) {
+		cpu.flags.n = true
+		cpu.setH3Sub(cpu.a, cpu.b)
+		cpu.setC7Sub(cpu.a, cpu.b)
+		cpu.setZ(cpu.a - cpu.b)
+	},
 }
 
 var cp_c = Instruction{
@@ -2582,8 +2685,13 @@ var cp_c = Instruction{
 	jumpCycles:   4,
 	noJumpCycles: 4,
 	flags:        "Z 1 H CY",
-	Implemented:  false,
-	execute:      func(cpu *cpu) {},
+	Implemented:  true,
+	execute: func(cpu *cpu) {
+		cpu.flags.n = true
+		cpu.setH3Sub(cpu.a, cpu.c)
+		cpu.setC7Sub(cpu.a, cpu.c)
+		cpu.setZ(cpu.a - cpu.c)
+	},
 }
 
 var cp_d = Instruction{
@@ -2593,8 +2701,13 @@ var cp_d = Instruction{
 	jumpCycles:   4,
 	noJumpCycles: 4,
 	flags:        "Z 1 H CY",
-	Implemented:  false,
-	execute:      func(cpu *cpu) {},
+	Implemented:  true,
+	execute: func(cpu *cpu) {
+		cpu.flags.n = true
+		cpu.setH3Sub(cpu.a, cpu.d)
+		cpu.setC7Sub(cpu.a, cpu.d)
+		cpu.setZ(cpu.a - cpu.d)
+	},
 }
 
 var cp_e = Instruction{
@@ -2604,8 +2717,13 @@ var cp_e = Instruction{
 	jumpCycles:   4,
 	noJumpCycles: 4,
 	flags:        "Z 1 H CY",
-	Implemented:  false,
-	execute:      func(cpu *cpu) {},
+	Implemented:  true,
+	execute: func(cpu *cpu) {
+		cpu.flags.n = true
+		cpu.setH3Sub(cpu.a, cpu.e)
+		cpu.setC7Sub(cpu.a, cpu.e)
+		cpu.setZ(cpu.a - cpu.e)
+	},
 }
 
 var cp_h = Instruction{
@@ -2615,8 +2733,13 @@ var cp_h = Instruction{
 	jumpCycles:   4,
 	noJumpCycles: 4,
 	flags:        "Z 1 H CY",
-	Implemented:  false,
-	execute:      func(cpu *cpu) {},
+	Implemented:  true,
+	execute: func(cpu *cpu) {
+		cpu.flags.n = true
+		cpu.setH3Sub(cpu.a, cpu.h)
+		cpu.setC7Sub(cpu.a, cpu.h)
+		cpu.setZ(cpu.a - cpu.h)
+	},
 }
 
 var cp_l = Instruction{
@@ -2626,8 +2749,13 @@ var cp_l = Instruction{
 	jumpCycles:   4,
 	noJumpCycles: 4,
 	flags:        "Z 1 H CY",
-	Implemented:  false,
-	execute:      func(cpu *cpu) {},
+	Implemented:  true,
+	execute: func(cpu *cpu) {
+		cpu.flags.n = true
+		cpu.setH3Sub(cpu.a, cpu.l)
+		cpu.setC7Sub(cpu.a, cpu.l)
+		cpu.setZ(cpu.a - cpu.l)
+	},
 }
 
 var cp__hl_ = Instruction{
@@ -2648,8 +2776,13 @@ var cp_a = Instruction{
 	jumpCycles:   4,
 	noJumpCycles: 4,
 	flags:        "Z 1 H CY",
-	Implemented:  false,
-	execute:      func(cpu *cpu) {},
+	Implemented:  true,
+	execute: func(cpu *cpu) {
+		cpu.flags.n = true
+		cpu.setH3Sub(cpu.a, cpu.a)
+		cpu.setC7Sub(cpu.a, cpu.a)
+		cpu.setZ(cpu.a - cpu.a)
+	},
 }
 
 var ret_nz = Instruction{
