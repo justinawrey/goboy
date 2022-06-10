@@ -2307,11 +2307,11 @@ var xor_b = Instruction{
 	flags:        "Z 0 0 0",
 	Implemented:  true,
 	execute: func(cpu *cpu) {
-		cpu.a ^= cpu.b
-		cpu.setZ(cpu.a)
 		cpu.flags.n = false
 		cpu.flags.h = false
 		cpu.flags.c = false
+		cpu.a ^= cpu.b
+		cpu.setZ(cpu.a)
 	},
 }
 
@@ -2324,11 +2324,11 @@ var xor_c = Instruction{
 	flags:        "Z 0 0 0",
 	Implemented:  true,
 	execute: func(cpu *cpu) {
-		cpu.a ^= cpu.c
-		cpu.setZ(cpu.a)
 		cpu.flags.n = false
 		cpu.flags.h = false
 		cpu.flags.c = false
+		cpu.a ^= cpu.c
+		cpu.setZ(cpu.a)
 	},
 }
 
@@ -2341,11 +2341,11 @@ var xor_d = Instruction{
 	flags:        "Z 0 0 0",
 	Implemented:  true,
 	execute: func(cpu *cpu) {
-		cpu.a ^= cpu.d
-		cpu.setZ(cpu.a)
 		cpu.flags.n = false
 		cpu.flags.h = false
 		cpu.flags.c = false
+		cpu.a ^= cpu.d
+		cpu.setZ(cpu.a)
 	},
 }
 
@@ -2358,11 +2358,11 @@ var xor_e = Instruction{
 	flags:        "Z 0 0 0",
 	Implemented:  true,
 	execute: func(cpu *cpu) {
-		cpu.a ^= cpu.e
-		cpu.setZ(cpu.a)
 		cpu.flags.n = false
 		cpu.flags.h = false
 		cpu.flags.c = false
+		cpu.a ^= cpu.e
+		cpu.setZ(cpu.a)
 	},
 }
 
@@ -2375,11 +2375,11 @@ var xor_h = Instruction{
 	flags:        "Z 0 0 0",
 	Implemented:  true,
 	execute: func(cpu *cpu) {
-		cpu.a ^= cpu.h
-		cpu.setZ(cpu.a)
 		cpu.flags.n = false
 		cpu.flags.h = false
 		cpu.flags.c = false
+		cpu.a ^= cpu.h
+		cpu.setZ(cpu.a)
 	},
 }
 
@@ -2392,11 +2392,11 @@ var xor_l = Instruction{
 	flags:        "Z 0 0 0",
 	Implemented:  true,
 	execute: func(cpu *cpu) {
-		cpu.a ^= cpu.l
-		cpu.setZ(cpu.a)
 		cpu.flags.n = false
 		cpu.flags.h = false
 		cpu.flags.c = false
+		cpu.a ^= cpu.l
+		cpu.setZ(cpu.a)
 	},
 }
 
@@ -2409,11 +2409,11 @@ var xor__hl_ = Instruction{
 	flags:        "Z 0 0 0",
 	Implemented:  true,
 	execute: func(cpu *cpu) {
-		cpu.a = byte(uint16(cpu.a) ^ cpu.hl())
-		cpu.setZ(cpu.a)
 		cpu.flags.n = false
 		cpu.flags.h = false
 		cpu.flags.c = false
+		cpu.a = byte(uint16(cpu.a) ^ cpu.hl())
+		cpu.setZ(cpu.a)
 	},
 }
 
@@ -2426,11 +2426,11 @@ var xor_a = Instruction{
 	flags:        "Z 0 0 0",
 	Implemented:  true,
 	execute: func(cpu *cpu) {
-		cpu.a ^= cpu.a
-		cpu.setZ(cpu.a)
 		cpu.flags.n = false
 		cpu.flags.h = false
 		cpu.flags.c = false
+		cpu.a ^= cpu.a
+		cpu.setZ(cpu.a)
 	},
 }
 
@@ -2441,8 +2441,14 @@ var or_b = Instruction{
 	jumpCycles:   4,
 	noJumpCycles: 4,
 	flags:        "Z 0 0 0",
-	Implemented:  false,
-	execute:      func(cpu *cpu) {},
+	Implemented:  true,
+	execute: func(cpu *cpu) {
+		cpu.flags.n = false
+		cpu.flags.h = false
+		cpu.flags.c = false
+		cpu.a |= cpu.b
+		cpu.setZ(cpu.a)
+	},
 }
 
 var or_c = Instruction{
@@ -2452,8 +2458,14 @@ var or_c = Instruction{
 	jumpCycles:   4,
 	noJumpCycles: 4,
 	flags:        "Z 0 0 0",
-	Implemented:  false,
-	execute:      func(cpu *cpu) {},
+	Implemented:  true,
+	execute: func(cpu *cpu) {
+		cpu.flags.n = false
+		cpu.flags.h = false
+		cpu.flags.c = false
+		cpu.a |= cpu.c
+		cpu.setZ(cpu.a)
+	},
 }
 
 var or_d = Instruction{
@@ -2463,8 +2475,14 @@ var or_d = Instruction{
 	jumpCycles:   4,
 	noJumpCycles: 4,
 	flags:        "Z 0 0 0",
-	Implemented:  false,
-	execute:      func(cpu *cpu) {},
+	Implemented:  true,
+	execute: func(cpu *cpu) {
+		cpu.flags.n = false
+		cpu.flags.h = false
+		cpu.flags.c = false
+		cpu.a |= cpu.d
+		cpu.setZ(cpu.a)
+	},
 }
 
 var or_e = Instruction{
@@ -2474,8 +2492,14 @@ var or_e = Instruction{
 	jumpCycles:   4,
 	noJumpCycles: 4,
 	flags:        "Z 0 0 0",
-	Implemented:  false,
-	execute:      func(cpu *cpu) {},
+	Implemented:  true,
+	execute: func(cpu *cpu) {
+		cpu.flags.n = false
+		cpu.flags.h = false
+		cpu.flags.c = false
+		cpu.a |= cpu.e
+		cpu.setZ(cpu.a)
+	},
 }
 
 var or_h = Instruction{
@@ -2485,8 +2509,14 @@ var or_h = Instruction{
 	jumpCycles:   4,
 	noJumpCycles: 4,
 	flags:        "Z 0 0 0",
-	Implemented:  false,
-	execute:      func(cpu *cpu) {},
+	Implemented:  true,
+	execute: func(cpu *cpu) {
+		cpu.flags.n = false
+		cpu.flags.h = false
+		cpu.flags.c = false
+		cpu.a |= cpu.h
+		cpu.setZ(cpu.a)
+	},
 }
 
 var or_l = Instruction{
@@ -2496,8 +2526,14 @@ var or_l = Instruction{
 	jumpCycles:   4,
 	noJumpCycles: 4,
 	flags:        "Z 0 0 0",
-	Implemented:  false,
-	execute:      func(cpu *cpu) {},
+	Implemented:  true,
+	execute: func(cpu *cpu) {
+		cpu.flags.n = false
+		cpu.flags.h = false
+		cpu.flags.c = false
+		cpu.a |= cpu.l
+		cpu.setZ(cpu.a)
+	},
 }
 
 var or__hl_ = Instruction{
@@ -2518,8 +2554,14 @@ var or_a = Instruction{
 	jumpCycles:   4,
 	noJumpCycles: 4,
 	flags:        "Z 0 0 0",
-	Implemented:  false,
-	execute:      func(cpu *cpu) {},
+	Implemented:  true,
+	execute: func(cpu *cpu) {
+		cpu.flags.n = false
+		cpu.flags.h = false
+		cpu.flags.c = false
+		cpu.a |= cpu.a
+		cpu.setZ(cpu.a)
+	},
 }
 
 var cp_b = Instruction{
@@ -2986,7 +3028,14 @@ var and_d8 = Instruction{
 	noJumpCycles: 8,
 	flags:        "Z 0 1 0",
 	Implemented:  false,
-	execute:      func(cpu *cpu) {},
+	execute: func(cpu *cpu) {
+		d8 := cpu.readByte(cpu.pc + 1)
+		cpu.flags.n = false
+		cpu.flags.h = true
+		cpu.flags.c = false
+		cpu.a &= d8
+		cpu.setZ(cpu.a)
+	},
 }
 
 var rst_4 = Instruction{
@@ -3123,8 +3172,15 @@ var or_d8 = Instruction{
 	jumpCycles:   8,
 	noJumpCycles: 8,
 	flags:        "Z 0 0 0",
-	Implemented:  false,
-	execute:      func(cpu *cpu) {},
+	Implemented:  true,
+	execute: func(cpu *cpu) {
+		d8 := cpu.readByte(cpu.pc + 1)
+		cpu.flags.n = false
+		cpu.flags.h = false
+		cpu.flags.c = false
+		cpu.a |= d8
+		cpu.setZ(cpu.a)
+	},
 }
 
 var rst_6 = Instruction{
