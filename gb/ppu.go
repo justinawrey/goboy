@@ -17,6 +17,7 @@ type tile struct {
 	pixels []Pixel
 }
 
+// constructs a well-formed 'tile' from 16 bytes
 func newTile(bytes []byte) tile {
 	pixels := make([]Pixel, 64)
 
