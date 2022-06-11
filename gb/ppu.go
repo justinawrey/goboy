@@ -12,6 +12,53 @@ type ppu struct {
 	pixels []Pixel
 }
 
+// an 8x8 grouping of pixels
+type tile struct {
+	pixels []Pixel
+}
+
+func newTile(bytes []byte) tile {
+	pixels := make([]Pixel, 64)
+
+	for i := 0; i < 16; i += 2 {
+		b1 := bytes[i]
+		b2 := bytes[i+1]
+		pixels = append(pixels, newPixelRow(b1, b2)...)
+	}
+
+	return tile{pixels}
+}
+
+func newPixelRow(b1 byte, b2 byte) []Pixel {
+	pixels := make([]Pixel, 8)
+
+	for i := 7; i >= 0; i-- {
+		bit1 := getBit(b1, i)
+		bit2 := getBit(b2, i)
+		pixels = append(pixels, newPixel(bit1, bit2))
+	}
+
+	return pixels
+}
+
+func newPixel(bit1 bool, bit2 bool) (pixel Pixel) {
+	if !bit1 && !bit2 {
+		// 00
+		pixel = 0
+	} else if bit1 && !bit2 {
+		// 10 (01 flipped)
+		pixel = 1
+	} else if !bit1 && bit2 {
+		// 01 (10 flipped)
+		pixel = 2
+	} else {
+		// 11
+		pixel = 3
+	}
+
+	return pixel
+}
+
 func newPpu() *ppu {
 	pixels := make([]Pixel, numPixels)
 	return &ppu{pixels: pixels}

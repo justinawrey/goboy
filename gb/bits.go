@@ -1,5 +1,10 @@
 package gb
 
+func getBit(b byte, i int) bool {
+	mask := uint8(2 ^ i)
+	return (b & mask) == mask
+}
+
 func makeWord(upper byte, lower byte) uint16 {
 	return (uint16(upper) << 8) | uint16(lower)
 }
