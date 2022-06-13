@@ -75,4 +75,4 @@ func newPpu() *ppu {
 // Push -- get em into the fifos
 // Render -- RENDER!
 // needs to populate pixels
-func (ppu *ppu) tick() {}
+func (ppu *ppu) drawScanline() {}

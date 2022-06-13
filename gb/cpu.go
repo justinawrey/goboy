@@ -107,13 +107,13 @@ func (cpu *cpu) tick() {
 	scanCycles := 0
 
 	for elapsedCycles < cyclesPerFrame {
-		cycles := cpu.cpuCycle()
+		cycles := cpu.executeInstruction()
 
 		elapsedCycles += cycles
 		scanCycles += cycles
 
 		if scanCycles >= cyclesPerScanline {
-			cpu.ppu.tick()
+			cpu.ppu.drawScanline()
 			scanCycles = 0
 		}
 	}
@@ -121,7 +121,7 @@ func (cpu *cpu) tick() {
 
 // does a decode, execute, move pc cycle
 // returns number of cycles elapsed
-func (cpu *cpu) cpuCycle() (cycles int) {
+func (cpu *cpu) executeInstruction() (cycles int) {
 	instruction := cpu.decode()
 
 	currPc := cpu.pc
