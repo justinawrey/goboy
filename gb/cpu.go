@@ -109,8 +109,10 @@ func (cpu *cpu) tick() {
 	for elapsedCycles < cyclesPerFrame {
 		cycles := cpu.executeInstruction()
 
+		// TODO: LCD disabled consideration
 		elapsedCycles += cycles
 		scanCycles += cycles
+		cpu.ppu.updateLcdStatus(scanCycles)
 
 		if scanCycles >= cyclesPerScanline {
 			cpu.ppu.drawScanline()

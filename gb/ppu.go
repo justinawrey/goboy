@@ -132,6 +132,16 @@ func newPpu() *ppu {
 	return &ppu{pixels: pixels}
 }
 
+// cycles is 0 - 456 (cycles elapsed in given scanline)
+func (ppu *ppu) updateLcdStatus(cycles int) {
+
+	// TODO: set mode
+
+	// TODO: lyc==ly
+
+	// TODO: set STAT interrupt source
+}
+
 // invoked every 456 cycles (every scanline)
 // do this 57 times
 //
