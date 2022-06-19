@@ -12,6 +12,73 @@ type ppu struct {
 	pixels []Pixel
 }
 
+// lcd control
+func (ppu *ppu) lcdc() byte {
+	return ppu.memory.readByte(0xff40)
+}
+
+func (ppu *ppu) lcdEnable() bool {
+	return getBit(ppu.lcdc(), 7)
+}
+
+func (ppu *ppu) windowTileMapControl() bool {
+	return getBit(ppu.lcdc(), 6)
+}
+
+func (ppu *ppu) windowEnable() bool {
+	return getBit(ppu.lcdc(), 5)
+}
+
+func (ppu *ppu) bgAndWindowTileData() bool {
+	return getBit(ppu.lcdc(), 4)
+}
+
+func (ppu *ppu) bgTileMapControl() bool {
+	return getBit(ppu.lcdc(), 3)
+}
+
+func (ppu *ppu) objSize() bool {
+	return getBit(ppu.lcdc(), 2)
+}
+
+func (ppu *ppu) objEnable() bool {
+	return getBit(ppu.lcdc(), 1)
+}
+
+func (ppu *ppu) bgAndWindowPriority() bool {
+	return getBit(ppu.lcdc(), 0)
+}
+
+// lcd status
+func (ppu *ppu) lcds() byte {
+	return ppu.memory.readByte(0xff41)
+}
+
+// scrolling related memory locations
+func (ppu *ppu) scy() byte {
+	return ppu.memory.readByte(0xff42)
+}
+
+func (ppu *ppu) scx() byte {
+	return ppu.memory.readByte(0xff43)
+}
+
+func (ppu *ppu) ly() byte {
+	return ppu.memory.readByte(0xff44)
+}
+
+func (ppu *ppu) lyc() byte {
+	return ppu.memory.readByte(0xff45)
+}
+
+func (ppu *ppu) wy() byte {
+	return ppu.memory.readByte(0xff4a)
+}
+
+func (ppu *ppu) wx() byte {
+	return ppu.memory.readByte(0xff4b)
+}
+
 // an 8x8 grouping of pixels
 type tile struct {
 	pixels []Pixel
@@ -75,4 +142,6 @@ func newPpu() *ppu {
 // Push -- get em into the fifos
 // Render -- RENDER!
 // needs to populate pixels
-func (ppu *ppu) drawScanline() {}
+func (ppu *ppu) drawScanline() {
+
+}
