@@ -109,9 +109,20 @@ func (cpu *cpu) tick() {
 	for elapsedCycles < cyclesPerFrame {
 		cycles := cpu.executeInstruction()
 
-		// TODO: LCD disabled consideration
 		elapsedCycles += cycles
 		scanCycles += cycles
+
+		// while the lcd is disabled,
+		// 1. scanline is set at 0
+		// 2. mode is set to v-blank
+		if !cpu.ppu.lcdEnable() {
+			// TODO: hardcoded mem locations
+			cpu.ppu.memory.writeByte(0xff44, 0)
+			cpu.ppu.memory.writeByte(0xff41, (cpu.ppu.lcds()&0b11111100)|1)
+			scanCycles = 0
+			continue
+		}
+
 		cpu.ppu.updateLcdStatus(scanCycles)
 
 		if scanCycles >= cyclesPerScanline {
