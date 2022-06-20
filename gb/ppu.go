@@ -21,7 +21,7 @@ func (ppu *ppu) lcdEnable() bool {
 	return getBit(ppu.lcdc(), 7)
 }
 
-func (ppu *ppu) windowTileMapControl() bool {
+func (ppu *ppu) windowTileMapSelect() bool {
 	return getBit(ppu.lcdc(), 6)
 }
 
@@ -29,11 +29,11 @@ func (ppu *ppu) windowEnable() bool {
 	return getBit(ppu.lcdc(), 5)
 }
 
-func (ppu *ppu) bgAndWindowTileData() bool {
+func (ppu *ppu) bgAndWindowTileDataSelect() bool {
 	return getBit(ppu.lcdc(), 4)
 }
 
-func (ppu *ppu) bgTileMapControl() bool {
+func (ppu *ppu) bgTileMapSelect() bool {
 	return getBit(ppu.lcdc(), 3)
 }
 
@@ -132,19 +132,48 @@ func newPpu() *ppu {
 	return &ppu{pixels: pixels}
 }
 
-// cycles is 0 - 456 (cycles elapsed in given scanline)
-func (ppu *ppu) updateLcdStatus(cycles int) {
+func (ppu *ppu) getMode(scanline byte, cycles int) (mode byte) {
+	// v-blank
+	if scanline >= 144 {
+		return 1
+	}
 
-	// TODO: set mode
+	// oam scan
+	if cycles <= 80 {
+		return 2
+	}
 
-	// TODO: lyc==ly
+	// drawing pixels
+	// TODO: does this need to be more precise?
+	if cycles <= 172 {
+		return 3
+	}
 
-	// TODO: set STAT interrupt source
+	// h-blank
+	return 0
 }
 
-// invoked every 456 cycles (every scanline)
-// do this 57 times
-//
+// cycles is 0 - 456 (cycles elapsed in given scanline)
+func (ppu *ppu) updateLcdStatus(cycles int) {
+	scanline := ppu.ly()
+	status := ppu.lcds()
+	mode := ppu.getMode(scanline, cycles)
+
+	// bits 0, 1: set mode
+	status = (status & 0b11111100) | mode
+
+	// bit 2: lyc == ly flag
+	if scanline == ppu.lyc() {
+		status |= 0b00000100
+	} else {
+		status &= 0b11111011
+	}
+
+	// TODO: set STAT interrupt source
+	// TODO: 0xff41 is hardcoded in two spots
+	ppu.memory.writeByte(0xff41, status)
+}
+
 // Get tile -- calculate pointer to correct tile
 // Get tile data low -- get actual tile data low
 // Get tile data high -- get actual tile data high
