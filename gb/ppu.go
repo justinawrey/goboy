@@ -217,11 +217,12 @@ func (ppu *ppu) drawScanline(scanline byte) {
 		return
 	}
 
-	bgPixels := ppu.getBgPixels(scanline)
-	windowPixels := ppu.getWindowPixels(scanline)
-	objPixels := ppu.getObjPixels(scanline)
+	mixed := ppu.mixPixels(
+		ppu.getBgPixels(scanline),
+		ppu.getWindowPixels(scanline),
+		ppu.getObjPixels(scanline),
+	)
 
-	mixed := ppu.mixPixels(bgPixels, windowPixels, objPixels)
 	cropped := ppu.cropPixels(mixed)
 
 	// save to ppu.pixels
