@@ -92,7 +92,7 @@ func (cpu *cpu) decode() Instruction {
 	b1 := cpu.readByte(cpu.pc)
 
 	// 16-bit instructions
-	if b1 == 0x10 || b1 == 0xCB {
+	if b1 == 0x10 || b1 == 0xcb {
 		b2 := cpu.readByte(cpu.pc + 1)
 		return InstructionTable16[makeWord(b1, b2)]
 	}

@@ -1,5 +1,7 @@
 package gb
 
+import "fmt"
+
 const (
 	lcdHeight = 144
 	lcdWidth  = 160
@@ -10,7 +12,7 @@ type Pixel = int
 type ppu struct {
 	*memory
 
-	// the full 256 x 256 screen -- not entirely visible
+	// visible area only
 	pixels []Pixel
 
 	lcdc memReg
@@ -211,38 +213,23 @@ func (ppu *ppu) incrementScanline() {
 
 // TODO: this is terribly optimized.  does it matter?
 func (ppu *ppu) drawScanline(scanline byte) {
-	// TODO: these needs to default to full white
-	bgTiles := []tile{}
-	windowTiles := []tile{}
-
-	// 1. Get current bg and window tiles
-	if ppu.bgAndWindowEnable() {
-		bgTiles = ppu.getBgTiles()
-
-		if ppu.windowEnable() {
-			windowTiles = ppu.getWindowTiles()
-		}
+	if scanline >= 144 {
+		return
 	}
 
-	// TODO: whut do here
-	// 2. Get obj tiles
-	if ppu.objEnable() {
-		objTiles := ppu.getObjTiles()
-	}
+	bgPixels := ppu.getBgPixels(scanline)
+	windowPixels := ppu.getWindowPixels(scanline)
+	objPixels := ppu.getObjPixels(scanline)
 
-	// 3. Mix them together
-	mixed := ppu.mixTiles(bgTiles, windowTiles, objTiles)
+	mixed := ppu.mixPixels(bgPixels, windowPixels, objPixels)
+	cropped := ppu.cropPixels(mixed)
 
-	// 4. Extract pixels pertaining to this scanline
-	scanlinePixels := ppu.extractScanlinePixels(mixed, scanline)
-
-	// 5. Update our screen representation
-	ppu.setScanlinePixels(scanlinePixels, scanline)
+	// save to ppu.pixels
+	fmt.Println(cropped)
 }
 
-// sets ppu.bgTiles
 // TODO: this seems like it could be factored better too
-func (ppu *ppu) getBgTiles() []tile {
+func (ppu *ppu) getBgPixels(scanline byte) []Pixel {
 	// 1. Choose tile map
 	var tileMap []byte
 	if ppu.bgTileMapSelect() {
@@ -276,15 +263,11 @@ func (ppu *ppu) getBgTiles() []tile {
 		tiles = append(tiles, newTile(tileData))
 	}
 
-	return tiles
+	// TODO~ finish this!
+	return nil
 }
 
-func (ppu *ppu) getWindowTiles() []tile { return nil }
-func (ppu *ppu) getObjTiles() []tile    { return nil }
-
-// mixes bg, window, and objs together
-func (ppu *ppu) mixTiles(bgTiles, windowTiles, objTiles []tile) []tile     { return nil }
-func (ppu *ppu) extractScanlinePixels(mixed []tile, scanline byte) []Pixel { return nil }
-func (ppu *ppu) setScanlinePixels(pixels []Pixel, scanline byte)           {}
-
-func (ppu *ppu) visiblePixels() []Pixel { return nil }
+func (ppu *ppu) getWindowPixels(scanline byte) []Pixel                       { return nil }
+func (ppu *ppu) getObjPixels(scanline byte) []Pixel                          { return nil }
+func (ppu *ppu) mixPixels(bgPixels, windowPixels, objPixels []Pixel) []Pixel { return nil }
+func (ppu *ppu) cropPixels(pixels []Pixel) []Pixel                           { return nil }
