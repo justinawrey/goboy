@@ -5,6 +5,17 @@ func getBit(b byte, i int) bool {
 	return (b & mask) == mask
 }
 
+func setBit(b byte, i int, to bool) byte {
+	mask := uint8(2 ^ i)
+	inverted := ^mask
+
+	if to {
+		return b | mask
+	}
+
+	return b & inverted
+}
+
 func makeWord(upper byte, lower byte) uint16 {
 	return (uint16(upper) << 8) | uint16(lower)
 }

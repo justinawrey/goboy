@@ -164,9 +164,9 @@ func (ppu *ppu) updateLcdStatus(cycles int) {
 
 	// bit 2: lyc == ly flag
 	if scanline == ppu.lyc() {
-		status |= 0b00000100
+		status = setBit(status, 2, true)
 	} else {
-		status &= 0b11111011
+		status = setBit(status, 2, false)
 	}
 
 	// TODO: set STAT interrupt source
