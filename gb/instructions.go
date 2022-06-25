@@ -674,7 +674,7 @@ var cpl = Instruction{
 	execute: func(cpu *cpu) {
 		cpu.flags.n = true
 		cpu.flags.h = true
-		cpu.a = cpu.a ^ 0xff
+		cpu.a = ^cpu.a
 	},
 }
 
