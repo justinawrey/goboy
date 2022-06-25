@@ -10,9 +10,8 @@ type Pixel = int
 type ppu struct {
 	*memory
 
-	// 32 x 32 tiles - 1024 tiles each
-	bgTiles     []tile
-	windowTiles []tile
+	// the full 256 x 256 screen -- not entirely visible
+	pixels []Pixel
 
 	lcdc memReg
 	lcds memReg
@@ -212,24 +211,38 @@ func (ppu *ppu) incrementScanline() {
 
 // TODO: this is terribly optimized.  does it matter?
 func (ppu *ppu) drawScanline(scanline byte) {
+	// TODO: these needs to default to full white
+	bgTiles := []tile{}
+	windowTiles := []tile{}
+
+	// 1. Get current bg and window tiles
 	if ppu.bgAndWindowEnable() {
-		ppu.drawBG(scanline)
+		bgTiles = ppu.getBgTiles()
 
 		if ppu.windowEnable() {
-			ppu.drawWindow(scanline)
+			windowTiles = ppu.getWindowTiles()
 		}
-	} else {
-		ppu.drawWhiteBgAndWindow(scanline)
 	}
 
+	// TODO: whut do here
+	// 2. Get obj tiles
 	if ppu.objEnable() {
-		ppu.drawObjs(scanline)
+		objTiles := ppu.getObjTiles()
 	}
+
+	// 3. Mix them together
+	mixed := ppu.mixTiles(bgTiles, windowTiles, objTiles)
+
+	// 4. Extract pixels pertaining to this scanline
+	scanlinePixels := ppu.extractScanlinePixels(mixed, scanline)
+
+	// 5. Update our screen representation
+	ppu.setScanlinePixels(scanlinePixels, scanline)
 }
 
 // sets ppu.bgTiles
 // TODO: this seems like it could be factored better too
-func (ppu *ppu) drawBG(scanline byte) {
+func (ppu *ppu) getBgTiles() []tile {
 	// 1. Choose tile map
 	var tileMap []byte
 	if ppu.bgTileMapSelect() {
@@ -263,12 +276,15 @@ func (ppu *ppu) drawBG(scanline byte) {
 		tiles = append(tiles, newTile(tileData))
 	}
 
-	ppu.bgTiles = tiles
+	return tiles
 }
 
-func (ppu *ppu) drawWindow(scanline byte) {}
-func (ppu *ppu) drawObjs(scanline byte)   {}
+func (ppu *ppu) getWindowTiles() []tile { return nil }
+func (ppu *ppu) getObjTiles() []tile    { return nil }
 
-// TODO: this is a terrible name
-func (ppu *ppu) drawWhiteBgAndWindow(scanline byte) {}
-func (ppu *ppu) visiblePixels() []Pixel             { return nil }
+// mixes bg, window, and objs together
+func (ppu *ppu) mixTiles(bgTiles, windowTiles, objTiles []tile) []tile     { return nil }
+func (ppu *ppu) extractScanlinePixels(mixed []tile, scanline byte) []Pixel { return nil }
+func (ppu *ppu) setScanlinePixels(pixels []Pixel, scanline byte)           {}
+
+func (ppu *ppu) visiblePixels() []Pixel { return nil }
