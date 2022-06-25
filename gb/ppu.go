@@ -62,7 +62,7 @@ func (ppu *ppu) objEnable() bool {
 	return getBit(ppu.lcdc.get(), 1)
 }
 
-func (ppu *ppu) bgEnable() bool {
+func (ppu *ppu) bgAndWindowEnable() bool {
 	return getBit(ppu.lcdc.get(), 0)
 }
 
@@ -184,12 +184,14 @@ func (ppu *ppu) incrementScanline() {
 }
 
 func (ppu *ppu) drawScanline(scanline byte) {
-	if ppu.bgEnable() {
+	if ppu.bgAndWindowEnable() {
 		ppu.drawBG(scanline)
-	}
 
-	if ppu.windowEnable() {
-		ppu.drawWindow(scanline)
+		if ppu.windowEnable() {
+			ppu.drawWindow(scanline)
+		}
+	} else {
+		ppu.drawWhiteBgAndWindow(scanline)
 	}
 
 	if ppu.objEnable() {
@@ -200,3 +202,6 @@ func (ppu *ppu) drawScanline(scanline byte) {
 func (ppu *ppu) drawBG(scanline byte)     {}
 func (ppu *ppu) drawWindow(scanline byte) {}
 func (ppu *ppu) drawObjs(scanline byte)   {}
+
+// TODO: this is a terrible name
+func (ppu *ppu) drawWhiteBgAndWindow(scanline byte) {}
