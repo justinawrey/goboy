@@ -127,7 +127,7 @@ func (cpu *cpu) tick() {
 
 		if scanCycles >= cyclesPerScanline {
 			cpu.ppu.drawScanline()
-			cpu.ppu.ly.inc()
+			cpu.ppu.incrementScanline()
 			scanCycles = 0
 		}
 	}

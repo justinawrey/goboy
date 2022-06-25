@@ -34,10 +34,6 @@ func (mr *memReg) set(b byte) {
 	mr.ppu.memory.writeByte(mr.index, b)
 }
 
-func (mr *memReg) inc() {
-	mr.set(mr.get() + 1)
-}
-
 func (ppu *ppu) lcdEnable() bool {
 	return getBit(ppu.lcdc.get(), 7)
 }
@@ -187,6 +183,18 @@ func (ppu *ppu) drawScanline() {
 	if ppu.objEnable() {
 		ppu.drawObjs()
 	}
+}
+
+func (ppu *ppu) incrementScanline() {
+	ly := ppu.ly.get()
+	maxScanlines := byte(153)
+
+	if ly >= maxScanlines {
+		ppu.ly.set(0)
+		return
+	}
+
+	ppu.ly.set(ly + 1)
 }
 
 func (ppu *ppu) drawBG()     {}
