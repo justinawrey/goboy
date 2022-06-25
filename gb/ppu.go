@@ -171,6 +171,18 @@ func (ppu *ppu) updateLcdStatus(cycles int) {
 	ppu.lcds.set(status)
 }
 
+func (ppu *ppu) incrementScanline() {
+	ly := ppu.ly.get()
+	maxScanlines := byte(153)
+
+	if ly >= maxScanlines {
+		ppu.ly.set(0)
+		return
+	}
+
+	ppu.ly.set(ly + 1)
+}
+
 func (ppu *ppu) drawScanline(scanline byte) {
 	if ppu.bgEnable() {
 		ppu.drawBG(scanline)
@@ -183,18 +195,6 @@ func (ppu *ppu) drawScanline(scanline byte) {
 	if ppu.objEnable() {
 		ppu.drawObjs(scanline)
 	}
-}
-
-func (ppu *ppu) incrementScanline() {
-	ly := ppu.ly.get()
-	maxScanlines := byte(153)
-
-	if ly >= maxScanlines {
-		ppu.ly.set(0)
-		return
-	}
-
-	ppu.ly.set(ly + 1)
 }
 
 func (ppu *ppu) drawBG(scanline byte)     {}
