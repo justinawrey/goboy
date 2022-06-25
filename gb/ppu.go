@@ -1,7 +1,5 @@
 package gb
 
-import "fmt"
-
 const (
 	lcdHeight = 144
 	lcdWidth  = 160
@@ -11,7 +9,10 @@ const (
 type Pixel = int
 type ppu struct {
 	*memory
-	pixels []Pixel
+
+	// 32 x 32 tiles - 1024 tiles each
+	bgTiles     []tile
+	windowTiles []tile
 
 	lcdc memReg
 	lcds memReg
@@ -142,9 +143,8 @@ func newPixel(bit1 bool, bit2 bool) (pixel Pixel) {
 }
 
 func newPpu() *ppu {
-	pixels := make([]Pixel, numPixels)
+	ppu := ppu{}
 
-	ppu := ppu{pixels: pixels}
 	ppu.lcdc = memReg{&ppu, 0xff40}
 	ppu.lcds = memReg{&ppu, 0xff41}
 	ppu.scy = memReg{&ppu, 0xff42}
@@ -227,6 +227,7 @@ func (ppu *ppu) drawScanline(scanline byte) {
 	}
 }
 
+// sets ppu.bgTiles
 // TODO: this seems like it could be factored better too
 func (ppu *ppu) drawBG(scanline byte) {
 	// 1. Choose tile map
@@ -262,8 +263,7 @@ func (ppu *ppu) drawBG(scanline byte) {
 		tiles = append(tiles, newTile(tileData))
 	}
 
-	// TODO: do what with tiles?
-	fmt.Println(tiles)
+	ppu.bgTiles = tiles
 }
 
 func (ppu *ppu) drawWindow(scanline byte) {}
