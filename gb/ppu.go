@@ -10,73 +10,60 @@ type Pixel = int
 type ppu struct {
 	*memory
 	pixels []Pixel
+
+	lcdc memReg
+	lcds memReg
+	scy  memReg
+	scx  memReg
+	ly   memReg
+	lyc  memReg
+	wy   memReg
+	wx   memReg
 }
 
-// lcd control
-func (ppu *ppu) lcdc() byte {
-	return ppu.memory.readByte(0xff40)
+type memReg struct {
+	*ppu
+	index uint16
+}
+
+func (mr *memReg) get() byte {
+	return mr.ppu.memory.readByte(mr.index)
+}
+
+func (mr *memReg) set(b byte) {
+	mr.ppu.memory.writeByte(mr.index, b)
 }
 
 func (ppu *ppu) lcdEnable() bool {
-	return getBit(ppu.lcdc(), 7)
+	return getBit(ppu.lcdc.get(), 7)
 }
 
 func (ppu *ppu) windowTileMapSelect() bool {
-	return getBit(ppu.lcdc(), 6)
+	return getBit(ppu.lcdc.get(), 6)
 }
 
 func (ppu *ppu) windowEnable() bool {
-	return getBit(ppu.lcdc(), 5)
+	return getBit(ppu.lcdc.get(), 5)
 }
 
 func (ppu *ppu) bgAndWindowTileDataSelect() bool {
-	return getBit(ppu.lcdc(), 4)
+	return getBit(ppu.lcdc.get(), 4)
 }
 
 func (ppu *ppu) bgTileMapSelect() bool {
-	return getBit(ppu.lcdc(), 3)
+	return getBit(ppu.lcdc.get(), 3)
 }
 
 func (ppu *ppu) objSize() bool {
-	return getBit(ppu.lcdc(), 2)
+	return getBit(ppu.lcdc.get(), 2)
 }
 
 func (ppu *ppu) objEnable() bool {
-	return getBit(ppu.lcdc(), 1)
+	return getBit(ppu.lcdc.get(), 1)
 }
 
 func (ppu *ppu) bgAndWindowPriority() bool {
-	return getBit(ppu.lcdc(), 0)
-}
-
-// lcd status
-func (ppu *ppu) lcds() byte {
-	return ppu.memory.readByte(0xff41)
-}
-
-// scrolling related memory locations
-func (ppu *ppu) scy() byte {
-	return ppu.memory.readByte(0xff42)
-}
-
-func (ppu *ppu) scx() byte {
-	return ppu.memory.readByte(0xff43)
-}
-
-func (ppu *ppu) ly() byte {
-	return ppu.memory.readByte(0xff44)
-}
-
-func (ppu *ppu) lyc() byte {
-	return ppu.memory.readByte(0xff45)
-}
-
-func (ppu *ppu) wy() byte {
-	return ppu.memory.readByte(0xff4a)
-}
-
-func (ppu *ppu) wx() byte {
-	return ppu.memory.readByte(0xff4b)
+	return getBit(ppu.lcdc.get(), 0)
 }
 
 // an 8x8 grouping of pixels
@@ -129,7 +116,19 @@ func newPixel(bit1 bool, bit2 bool) (pixel Pixel) {
 
 func newPpu() *ppu {
 	pixels := make([]Pixel, numPixels)
-	return &ppu{pixels: pixels}
+
+	// TODO: maybe make these constants?
+	ppu := ppu{pixels: pixels}
+	ppu.lcdc = memReg{&ppu, 0xff40}
+	ppu.lcds = memReg{&ppu, 0xff41}
+	ppu.scy = memReg{&ppu, 0xff42}
+	ppu.scx = memReg{&ppu, 0xff43}
+	ppu.ly = memReg{&ppu, 0xff44}
+	ppu.lyc = memReg{&ppu, 0xff45}
+	ppu.wy = memReg{&ppu, 0xff4a}
+	ppu.wx = memReg{&ppu, 0xff4b}
+
+	return &ppu
 }
 
 func (ppu *ppu) getMode(scanline byte, cycles int) (mode byte) {
@@ -155,23 +154,22 @@ func (ppu *ppu) getMode(scanline byte, cycles int) (mode byte) {
 
 // cycles is 0 - 456 (cycles elapsed in given scanline)
 func (ppu *ppu) updateLcdStatus(cycles int) {
-	scanline := ppu.ly()
-	status := ppu.lcds()
+	scanline := ppu.ly.get()
+	status := ppu.lcds.get()
 	mode := ppu.getMode(scanline, cycles)
 
 	// bits 0, 1: set mode
 	status = (status & 0b11111100) | mode
 
 	// bit 2: lyc == ly flag
-	if scanline == ppu.lyc() {
+	if scanline == ppu.lyc.get() {
 		status = setBit(status, 2, true)
 	} else {
 		status = setBit(status, 2, false)
 	}
 
 	// TODO: set STAT interrupt source
-	// TODO: 0xff41 is hardcoded in two spots
-	ppu.memory.writeByte(0xff41, status)
+	ppu.lcds.set(status)
 }
 
 // Get tile -- calculate pointer to correct tile
@@ -181,6 +179,4 @@ func (ppu *ppu) updateLcdStatus(cycles int) {
 // Push -- get em into the fifos
 // Render -- RENDER!
 // needs to populate pixels
-func (ppu *ppu) drawScanline() {
-
-}
+func (ppu *ppu) drawScanline() {}

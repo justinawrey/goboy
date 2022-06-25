@@ -114,11 +114,10 @@ func (cpu *cpu) tick() {
 
 		// while the lcd is disabled,
 		// 1. scanline is set at 0
-		// 2. mode is set to v-blank
+		// 2. mode is set to v-blank (mode 1)
 		if !cpu.ppu.lcdEnable() {
-			// TODO: hardcoded mem locations
-			cpu.ppu.memory.writeByte(0xff44, 0)
-			cpu.ppu.memory.writeByte(0xff41, (cpu.ppu.lcds()&0b11111100)|1)
+			cpu.ppu.ly.set(0)
+			cpu.ppu.lcds.set((cpu.ppu.lcds.get() & 0b11111100) | 1)
 			scanCycles = 0
 			continue
 		}
