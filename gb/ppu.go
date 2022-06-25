@@ -34,6 +34,10 @@ func (mr *memReg) set(b byte) {
 	mr.ppu.memory.writeByte(mr.index, b)
 }
 
+func (mr *memReg) inc() {
+	mr.set(mr.get() + 1)
+}
+
 func (ppu *ppu) lcdEnable() bool {
 	return getBit(ppu.lcdc.get(), 7)
 }
@@ -171,20 +175,20 @@ func (ppu *ppu) updateLcdStatus(cycles int) {
 	ppu.lcds.set(status)
 }
 
-// Get tile -- calculate pointer to correct tile
-// Get tile data low -- get actual tile data low
-// Get tile data high -- get actual tile data high
-// Sleep -- do nothing
-// Push -- get em into the fifos
-// Render -- RENDER!
-// needs to populate pixels
 func (ppu *ppu) drawScanline() {
-	// access background!
 	if ppu.bgEnable() {
 		ppu.drawBG()
 	}
 
+	if ppu.windowEnable() {
+		ppu.drawWindow()
+	}
+
+	if ppu.objEnable() {
+		ppu.drawObjs()
+	}
 }
 
 func (ppu *ppu) drawBG()     {}
 func (ppu *ppu) drawWindow() {}
+func (ppu *ppu) drawObjs()   {}
