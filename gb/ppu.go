@@ -66,6 +66,14 @@ func (ppu *ppu) bgAndWindowEnable() bool {
 	return getBit(ppu.lcdc.get(), 0)
 }
 
+func (ppu *ppu) tileMap1() []byte {
+	return ppu.memory.Bytes()[0x9800:0x9C00]
+}
+
+func (ppu *ppu) tileMap2() []byte {
+	return ppu.memory.Bytes()[0x9C00:0xA000]
+}
+
 // an 8x8 grouping of pixels
 type tile struct {
 	pixels []Pixel
