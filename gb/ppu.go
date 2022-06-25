@@ -62,7 +62,7 @@ func (ppu *ppu) objEnable() bool {
 	return getBit(ppu.lcdc.get(), 1)
 }
 
-func (ppu *ppu) bgAndWindowEnable() bool {
+func (ppu *ppu) bgEnable() bool {
 	return getBit(ppu.lcdc.get(), 0)
 }
 
@@ -180,5 +180,11 @@ func (ppu *ppu) updateLcdStatus(cycles int) {
 // needs to populate pixels
 func (ppu *ppu) drawScanline() {
 	// access background!
-	if ppu.bgAndWindowEnable()
+	if ppu.bgEnable() {
+		ppu.drawBG()
+	}
+
 }
+
+func (ppu *ppu) drawBG()     {}
+func (ppu *ppu) drawWindow() {}
