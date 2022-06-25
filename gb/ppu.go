@@ -171,17 +171,17 @@ func (ppu *ppu) updateLcdStatus(cycles int) {
 	ppu.lcds.set(status)
 }
 
-func (ppu *ppu) drawScanline() {
+func (ppu *ppu) drawScanline(scanline byte) {
 	if ppu.bgEnable() {
-		ppu.drawBG()
+		ppu.drawBG(scanline)
 	}
 
 	if ppu.windowEnable() {
-		ppu.drawWindow()
+		ppu.drawWindow(scanline)
 	}
 
 	if ppu.objEnable() {
-		ppu.drawObjs()
+		ppu.drawObjs(scanline)
 	}
 }
 
@@ -197,6 +197,6 @@ func (ppu *ppu) incrementScanline() {
 	ppu.ly.set(ly + 1)
 }
 
-func (ppu *ppu) drawBG()     {}
-func (ppu *ppu) drawWindow() {}
-func (ppu *ppu) drawObjs()   {}
+func (ppu *ppu) drawBG(scanline byte)     {}
+func (ppu *ppu) drawWindow(scanline byte) {}
+func (ppu *ppu) drawObjs(scanline byte)   {}
