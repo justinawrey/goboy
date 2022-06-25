@@ -66,12 +66,29 @@ func (ppu *ppu) bgAndWindowEnable() bool {
 	return getBit(ppu.lcdc.get(), 0)
 }
 
-func (ppu *ppu) tileMap1() []byte {
-	return ppu.memory.Bytes()[0x9800:0x9C00]
+// 0x9800 - 0x9bff
+func (ppu *ppu) tileMap0() []byte {
+	return ppu.memory.Bytes()[0x9800:0x9c00]
 }
 
-func (ppu *ppu) tileMap2() []byte {
-	return ppu.memory.Bytes()[0x9C00:0xA000]
+// 0x9c00 - 0x9fff
+func (ppu *ppu) tileMap1() []byte {
+	return ppu.memory.Bytes()[0x9c00:0xa000]
+}
+
+// 0x8000 - 0x87ff
+func (ppu *ppu) tileData0() []byte {
+	return ppu.memory.Bytes()[0x8000:0x8800]
+}
+
+// 0x8800 - 0x8fff
+func (ppu *ppu) tileData1() []byte {
+	return ppu.memory.Bytes()[0x8800:0x9000]
+}
+
+// 0x9000 - 0x97ff
+func (ppu *ppu) tileData2() []byte {
+	return ppu.memory.Bytes()[0x9000:0x9800]
 }
 
 // an 8x8 grouping of pixels
