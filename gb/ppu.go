@@ -1,5 +1,7 @@
 package gb
 
+import "fmt"
+
 const (
 	lcdHeight = 144
 	lcdWidth  = 160
@@ -208,6 +210,7 @@ func (ppu *ppu) incrementScanline() {
 	ppu.ly.set(ly + 1)
 }
 
+// TODO: this is terribly optimized.  does it matter?
 func (ppu *ppu) drawScanline(scanline byte) {
 	if ppu.bgAndWindowEnable() {
 		ppu.drawBG(scanline)
@@ -224,9 +227,48 @@ func (ppu *ppu) drawScanline(scanline byte) {
 	}
 }
 
-func (ppu *ppu) drawBG(scanline byte)     {}
+// TODO: this seems like it could be factored better too
+func (ppu *ppu) drawBG(scanline byte) {
+	// 1. Choose tile map
+	var tileMap []byte
+	if ppu.bgTileMapSelect() {
+		tileMap = ppu.tileMap1()
+	} else {
+		tileMap = ppu.tileMap0()
+	}
+
+	// 2. Choose lower tile data
+	var lowerTileData []byte
+	if ppu.bgAndWindowTileDataSelect() {
+		lowerTileData = ppu.tileData0()
+	} else {
+		lowerTileData = ppu.tileData2()
+	}
+
+	// 3. Access tiles
+	var tiles []tile
+	for _, tileIndex := range tileMap {
+		tileStart := tileIndex * 16
+
+		var tileData []byte
+		if tileIndex <= 127 {
+			// use lowerTileData (tileData0 or tileData2)
+			tileData = lowerTileData[tileStart : tileStart+16]
+		} else {
+			// use tileData1
+			tileData = ppu.tileData1()[tileStart : tileStart+16]
+		}
+
+		tiles = append(tiles, newTile(tileData))
+	}
+
+	// TODO: do what with tiles?
+	fmt.Println(tiles)
+}
+
 func (ppu *ppu) drawWindow(scanline byte) {}
 func (ppu *ppu) drawObjs(scanline byte)   {}
 
 // TODO: this is a terrible name
 func (ppu *ppu) drawWhiteBgAndWindow(scanline byte) {}
+func (ppu *ppu) visiblePixels() []Pixel             { return nil }

@@ -68,7 +68,7 @@ func (gb *Gb) mainLoop() {
 
 	for range c {
 		gb.cpu.tick()
-		gb.renderer.Render(gb.ppu.pixels)
+		gb.renderer.Render(gb.ppu.visiblePixels())
 	}
 }
 
