@@ -117,7 +117,6 @@ func newPixel(bit1 bool, bit2 bool) (pixel Pixel) {
 func newPpu() *ppu {
 	pixels := make([]Pixel, numPixels)
 
-	// TODO: maybe make these constants?
 	ppu := ppu{pixels: pixels}
 	ppu.lcdc = memReg{&ppu, 0xff40}
 	ppu.lcds = memReg{&ppu, 0xff41}
