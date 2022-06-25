@@ -102,6 +102,7 @@ func (cpu *cpu) decode() Instruction {
 }
 
 // invoked at 60Hz
+// TODO: this could be factored out in a nicer way probably?
 func (cpu *cpu) tick() {
 	elapsedCycles := 0
 	scanCycles := 0
