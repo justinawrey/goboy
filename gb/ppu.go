@@ -98,7 +98,14 @@ type tile struct {
 	pixels []Pixel
 }
 
+func (tile *tile) getPixelsAt(row byte) []Pixel {
+	offset := row * 8
+	return tile.pixels[offset : offset+8]
+}
+
 // constructs a well-formed 'tile' from 16 bytes
+// TODO: we don't actually need to do all this
+// because we only care about specific rows
 func newTile(bytes []byte) tile {
 	pixels := make([]Pixel, 64)
 
@@ -249,9 +256,16 @@ func (ppu *ppu) getBgPixels(scanline byte) []Pixel {
 		lowerTileData = ppu.tileData2()
 	}
 
-	// 3. Access tiles
+	// 3. Which tiles do we actually care about?
+	// TODO: terrible naming
+	absoluteY := scanline + ppu.scy.get() // transform to 256x256 space
+	tileOffset := (absoluteY / 8) * 32
+	tileMapRow := tileMap[tileOffset : tileOffset+32]
+
+	// 4. Access tiles
 	var tiles []tile
-	for _, tileIndex := range tileMap {
+	for _, tileIndex := range tileMapRow {
+		// each tile is encoded into 16 bytes
 		tileStart := tileIndex * 16
 
 		var tileData []byte
@@ -266,8 +280,14 @@ func (ppu *ppu) getBgPixels(scanline byte) []Pixel {
 		tiles = append(tiles, newTile(tileData))
 	}
 
-	// TODO~ finish this!
-	return nil
+	// 5. We should now have 32 tile objects (a row of tiles),
+	// but we only care about pixels from one row
+	pixels := make([]Pixel, 256)
+	for _, tile := range tiles {
+		pixels = append(pixels, tile.getPixelsAt(absoluteY%8)...)
+	}
+
+	return pixels
 }
 
 func (ppu *ppu) getWindowPixels(scanline byte) []Pixel                       { return nil }
