@@ -1,7 +1,5 @@
 package gb
 
-import "fmt"
-
 const (
 	lcdHeight = 144
 	lcdWidth  = 160
@@ -225,8 +223,12 @@ func (ppu *ppu) drawScanline(scanline byte) {
 
 	cropped := ppu.cropPixels(mixed)
 
-	// save to ppu.pixels
-	fmt.Println(cropped)
+	// actually save to our screen representation
+	// TODO: maybe this could be more idiomatic
+	offset := scanline * lcdWidth
+	for i := byte(0); i < lcdWidth; i++ {
+		ppu.pixels[offset+i] = cropped[i]
+	}
 }
 
 // TODO: this seems like it could be factored better too
@@ -271,4 +273,13 @@ func (ppu *ppu) getBgPixels(scanline byte) []Pixel {
 func (ppu *ppu) getWindowPixels(scanline byte) []Pixel                       { return nil }
 func (ppu *ppu) getObjPixels(scanline byte) []Pixel                          { return nil }
 func (ppu *ppu) mixPixels(bgPixels, windowPixels, objPixels []Pixel) []Pixel { return nil }
-func (ppu *ppu) cropPixels(pixels []Pixel) []Pixel                           { return nil }
+
+// given an uncropped "row" of 256 pixels, crops it to a visible 160 according to window
+func (ppu *ppu) cropPixels(pixels []Pixel) []Pixel {
+	// double to account for wrap around
+	copied := make([]Pixel, len(pixels))
+	copy(pixels, copied)
+	pixels = append(pixels, copied...)
+
+	return pixels[ppu.scx.get():lcdWidth]
+}
