@@ -287,9 +287,9 @@ func (ppu *ppu) getPixelsFromTiles(tiles []tile, row byte) []Pixel {
 	return pixels
 }
 
-func (ppu *ppu) getBgPixels(scanline byte) []Pixel {
+func (ppu *ppu) getScanlinePixels(scanline byte, useTileMap1 bool) []Pixel {
 	// 1. Get tile map info
-	tileMap, lowerTileData := ppu.getTileInfo(ppu.bgTileMapSelect())
+	tileMap, lowerTileData := ppu.getTileInfo(useTileMap1)
 
 	// 2. Which tiles do we actually care about?
 	absoluteY := scanline + ppu.scy.get() // transform to 256x256 space
@@ -304,7 +304,15 @@ func (ppu *ppu) getBgPixels(scanline byte) []Pixel {
 	return ppu.getPixelsFromTiles(tiles, absoluteY%8)
 }
 
-func (ppu *ppu) getWindowPixels(scanline byte) []Pixel                       { return nil }
+func (ppu *ppu) getBgPixels(scanline byte) []Pixel {
+	return ppu.getScanlinePixels(scanline, ppu.bgTileMapSelect())
+}
+
+// TODO: I think this is wrong!!
+func (ppu *ppu) getWindowPixels(scanline byte) []Pixel {
+	return ppu.getScanlinePixels(scanline, ppu.windowTileMapSelect())
+}
+
 func (ppu *ppu) getObjPixels(scanline byte) []Pixel                          { return nil }
 func (ppu *ppu) mixPixels(bgPixels, windowPixels, objPixels []Pixel) []Pixel { return nil }
 
