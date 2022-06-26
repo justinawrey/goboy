@@ -238,56 +238,70 @@ func (ppu *ppu) drawScanline(scanline byte) {
 	}
 }
 
-// TODO: this seems like it could be factored better too
-func (ppu *ppu) getBgPixels(scanline byte) []Pixel {
-	// 1. Choose tile map
-	var tileMap []byte
-	if ppu.bgTileMapSelect() {
+func (ppu *ppu) getTileInfo(useTileMap1 bool) (tileMap []byte, lowerTileData []byte) {
+	if useTileMap1 {
 		tileMap = ppu.tileMap1()
 	} else {
 		tileMap = ppu.tileMap0()
 	}
 
-	// 2. Choose lower tile data
-	var lowerTileData []byte
 	if ppu.bgAndWindowTileDataSelect() {
 		lowerTileData = ppu.tileData0()
 	} else {
 		lowerTileData = ppu.tileData2()
 	}
 
-	// 3. Which tiles do we actually care about?
-	// TODO: terrible naming
-	absoluteY := scanline + ppu.scy.get() // transform to 256x256 space
-	tileOffset := (absoluteY / 8) * 32
-	tileMapRow := tileMap[tileOffset : tileOffset+32]
+	return tileMap, lowerTileData
+}
 
-	// 4. Access tiles
-	var tiles []tile
-	for _, tileIndex := range tileMapRow {
+// returns 32 tile objects -- a row
+func (ppu *ppu) createTileRow(dataIndices []byte, lowerTileData []byte) []tile {
+	tiles := make([]tile, 32)
+
+	for _, i := range dataIndices {
 		// each tile is encoded into 16 bytes
-		tileStart := tileIndex * 16
+		tileStart := i * 16
 
 		var tileData []byte
-		if tileIndex <= 127 {
+		if i <= 127 {
 			// use lowerTileData (tileData0 or tileData2)
 			tileData = lowerTileData[tileStart : tileStart+16]
 		} else {
-			// use tileData1
+			// always use tileData1
 			tileData = ppu.tileData1()[tileStart : tileStart+16]
 		}
 
 		tiles = append(tiles, newTile(tileData))
 	}
 
-	// 5. We should now have 32 tile objects (a row of tiles),
-	// but we only care about pixels from one row
+	return tiles
+}
+
+func (ppu *ppu) getPixelsFromTiles(tiles []tile, row byte) []Pixel {
 	pixels := make([]Pixel, 256)
+
 	for _, tile := range tiles {
-		pixels = append(pixels, tile.getPixelsAt(absoluteY%8)...)
+		pixels = append(pixels, tile.getPixelsAt(row)...)
 	}
 
 	return pixels
+}
+
+func (ppu *ppu) getBgPixels(scanline byte) []Pixel {
+	// 1. Get tile map info
+	tileMap, lowerTileData := ppu.getTileInfo(ppu.bgTileMapSelect())
+
+	// 2. Which tiles do we actually care about?
+	absoluteY := scanline + ppu.scy.get() // transform to 256x256 space
+	tileOffset := (absoluteY / 8) * 32
+	dataIndices := tileMap[tileOffset : tileOffset+32]
+
+	// 3. Access and create tiles
+	tiles := ppu.createTileRow(dataIndices, lowerTileData)
+
+	// 4. We should now have 32 tile objects (a row of tiles),
+	// but we only care about pixels from one row of pixels
+	return ppu.getPixelsFromTiles(tiles, absoluteY%8)
 }
 
 func (ppu *ppu) getWindowPixels(scanline byte) []Pixel                       { return nil }
