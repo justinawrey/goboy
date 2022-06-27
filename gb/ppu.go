@@ -316,7 +316,7 @@ func (ppu *ppu) getWindowPixels(scanline byte) []Pixel {
 func (ppu *ppu) getObjPixels(scanline byte) []Pixel                          { return nil }
 func (ppu *ppu) mixPixels(bgPixels, windowPixels, objPixels []Pixel) []Pixel { return nil }
 
-// given an uncropped "row" of 256 pixels, crops it to a visible 160 according to window
+// given an uncropped "row" of 256 pixels, crops it to a visible 160 according to viewport
 func (ppu *ppu) cropPixels(pixels []Pixel) []Pixel {
 	// double to account for wrap around
 	copied := make([]Pixel, len(pixels))
