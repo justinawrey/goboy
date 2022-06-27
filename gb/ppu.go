@@ -217,18 +217,25 @@ func (ppu *ppu) incrementScanline() {
 }
 
 // TODO: this is terribly optimized.  does it matter?
-func (ppu *ppu) drawScanline(scanline byte) {
+// TODO: also not done
+func (ppu *ppu) drawScanline() {
+	scanline := ppu.ly.get()
 	if scanline >= 144 {
 		return
 	}
 
-	mixed := ppu.mixPixels(
-		ppu.getBgPixels(scanline),
-		ppu.getWindowPixels(scanline),
-		ppu.getObjPixels(scanline),
-	)
+	pixels := getWhitePixelRow()
 
-	cropped := ppu.cropPixels(mixed)
+	if ppu.bgAndWindowEnable() {
+		pixels = ppu.getBgPixels()
+	}
+
+	scanlineHasWindow := ppu.wy.get() <= scanline
+	if ppu.bgAndWindowEnable() && ppu.windowEnable() && scanlineHasWindow {
+		pixels = ppu.applyWindowPixels(pixels)
+	}
+
+	cropped := ppu.cropPixels()
 
 	// actually save to our screen representation
 	// TODO: maybe this could be more idiomatic
@@ -287,13 +294,13 @@ func (ppu *ppu) getPixelsFromTiles(tiles []tile, row byte) []Pixel {
 	return pixels
 }
 
-func (ppu *ppu) getScanlinePixels(scanline byte, useTileMap1 bool) []Pixel {
+func (ppu *ppu) getScanlinePixels(useTileMap1 bool) []Pixel {
 	// 1. Get tile map info
 	tileMap, lowerTileData := ppu.getTileInfo(useTileMap1)
 
 	// 2. Which tiles do we actually care about?
 	// TODO: is vertical wrap-around broken here?
-	absoluteY := scanline + ppu.scy.get() // transform to 256x256 space
+	absoluteY := ppu.ly.get() + ppu.scy.get() // transform to 256x256 space
 	tileOffset := (absoluteY / 8) * 32
 	dataIndices := tileMap[tileOffset : tileOffset+32]
 
@@ -305,17 +312,16 @@ func (ppu *ppu) getScanlinePixels(scanline byte, useTileMap1 bool) []Pixel {
 	return ppu.getPixelsFromTiles(tiles, absoluteY%8)
 }
 
-func (ppu *ppu) getBgPixels(scanline byte) []Pixel {
-	return ppu.getScanlinePixels(scanline, ppu.bgTileMapSelect())
+func (ppu *ppu) getBgPixels() []Pixel {
+	return ppu.getScanlinePixels(ppu.bgTileMapSelect())
 }
 
 // TODO: I think this is wrong!!
-func (ppu *ppu) getWindowPixels(scanline byte) []Pixel {
-	return ppu.getScanlinePixels(scanline, ppu.windowTileMapSelect())
+func (ppu *ppu) getWindowPixels() []Pixel {
+	return ppu.getScanlinePixels(ppu.windowTileMapSelect())
 }
 
-func (ppu *ppu) getObjPixels(scanline byte) []Pixel                          { return nil }
-func (ppu *ppu) mixPixels(bgPixels, windowPixels, objPixels []Pixel) []Pixel { return nil }
+func (ppu *ppu) getObjPixels() []Pixel { return nil }
 
 // given an uncropped "row" of 256 pixels, crops it to a visible 160 according to viewport
 func (ppu *ppu) cropPixels(pixels []Pixel) []Pixel {
@@ -326,4 +332,14 @@ func (ppu *ppu) cropPixels(pixels []Pixel) []Pixel {
 
 	x := ppu.scx.get()
 	return pixels[x : x+lcdWidth]
+}
+
+// TODO: is this actually white?
+// TODO: is this idiomatic?
+func getWhitePixelRow() []Pixel {
+	pixels := make([]Pixel, 256)
+
+	for i := 0; i < len(pixels); i++ {
+		pixels[i] = 0
+	}
 }

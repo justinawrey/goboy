@@ -126,7 +126,7 @@ func (cpu *cpu) tick() {
 		cpu.ppu.updateLcdStatus(scanCycles)
 
 		if scanCycles >= cyclesPerScanline {
-			cpu.ppu.drawScanline(cpu.ppu.ly.get())
+			cpu.ppu.drawScanline()
 			cpu.ppu.incrementScanline()
 			scanCycles = 0
 		}
