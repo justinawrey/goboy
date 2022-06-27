@@ -324,5 +324,6 @@ func (ppu *ppu) cropPixels(pixels []Pixel) []Pixel {
 	copy(pixels, copied)
 	pixels = append(pixels, copied...)
 
-	return pixels[ppu.scx.get():lcdWidth]
+	x := ppu.scx.get()
+	return pixels[x : x+lcdWidth]
 }
