@@ -292,6 +292,7 @@ func (ppu *ppu) getScanlinePixels(scanline byte, useTileMap1 bool) []Pixel {
 	tileMap, lowerTileData := ppu.getTileInfo(useTileMap1)
 
 	// 2. Which tiles do we actually care about?
+	// TODO: is vertical wrap-around broken here?
 	absoluteY := scanline + ppu.scy.get() // transform to 256x256 space
 	tileOffset := (absoluteY / 8) * 32
 	dataIndices := tileMap[tileOffset : tileOffset+32]
