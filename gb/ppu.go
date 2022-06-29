@@ -216,6 +216,14 @@ func (ppu *ppu) incrementScanline() {
 	ppu.ly.set(ly + 1)
 }
 
+// TODO: maybe this could be more idiomatic
+func (ppu *ppu) savePixels(scanline byte, pixels []Pixel) {
+	offset := scanline * lcdWidth
+	for i := byte(0); i < lcdWidth; i++ {
+		ppu.pixels[offset+i] = pixels[i]
+	}
+}
+
 // TODO: this is terribly optimized.  does it matter?
 // TODO: also not done
 func (ppu *ppu) drawScanline() {
@@ -225,7 +233,6 @@ func (ppu *ppu) drawScanline() {
 	}
 
 	pixels := getWhitePixelRow()
-
 	if ppu.bgAndWindowEnable() {
 		pixels = ppu.getBgPixels()
 	}
@@ -235,14 +242,9 @@ func (ppu *ppu) drawScanline() {
 		pixels = ppu.applyWindowPixels(pixels)
 	}
 
-	cropped := ppu.cropPixels()
-
-	// actually save to our screen representation
-	// TODO: maybe this could be more idiomatic
-	offset := scanline * lcdWidth
-	for i := byte(0); i < lcdWidth; i++ {
-		ppu.pixels[offset+i] = cropped[i]
-	}
+	pixels = ppu.applyObjPixels(pixels)
+	cropped := ppu.cropPixels(pixels)
+	ppu.savePixels(scanline, cropped)
 }
 
 func (ppu *ppu) getTileInfo(useTileMap1 bool) (tileMap []byte, lowerTileData []byte) {
@@ -316,12 +318,8 @@ func (ppu *ppu) getBgPixels() []Pixel {
 	return ppu.getScanlinePixels(ppu.bgTileMapSelect())
 }
 
-// TODO: I think this is wrong!!
-func (ppu *ppu) getWindowPixels() []Pixel {
-	return ppu.getScanlinePixels(ppu.windowTileMapSelect())
-}
-
-func (ppu *ppu) getObjPixels() []Pixel { return nil }
+func (ppu *ppu) applyWindowPixels(pixels []Pixel) []Pixel { return nil }
+func (ppu *ppu) applyObjPixels(pixels []Pixel) []Pixel    { return nil }
 
 // given an uncropped "row" of 256 pixels, crops it to a visible 160 according to viewport
 func (ppu *ppu) cropPixels(pixels []Pixel) []Pixel {
@@ -342,4 +340,6 @@ func getWhitePixelRow() []Pixel {
 	for i := 0; i < len(pixels); i++ {
 		pixels[i] = 0
 	}
+
+	return pixels
 }
